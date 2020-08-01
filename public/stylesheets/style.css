@@ -1,10 +1,31 @@
-body {
+body{ 
+  background-color: cyan;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-
-/* //clau boorra */
+  }
+  
+  .navbar {
+    background-color: rgba(255, 255, 255, 1);
+    position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    
+  }
+  nav ul {
+    /*float: right; recordar quitar y 
+    usar bootstrap*/
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  nav li {
+    display: inline-block;
+    padding: .4rem 1em;/*cambiar en res 500 y 100*/ 
+  
+  }
+  a { 
+    color:rgb(218, 192, 77);
+    font-size: 1.2rem;/*cambiar en res 500 y 100*/
+    text-decoration: none;  
+  }
