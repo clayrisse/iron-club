@@ -5,9 +5,12 @@ const activitySchema = new Schema({
     title: String,
     img: { type: String, default: '#' },
     description: String,
-    sport: { type: String, enum: ['tennis', 'football', 'swimming'] },
+    // no era esto el id de la cancha para porder unir las db?
+    amenity: { type: String, enum: ['tennis', 'football', 'swimming'] },
     participants: Number,
     date: Date, 
+    // faltaria hora_?
+    time: time
     instructor:  { type: Schema.Types.ObjectId, ref: 'User' },
     asisted: { type: Boolean, default: false },
     coments: String,
@@ -17,3 +20,45 @@ const activitySchema = new Schema({
 const Activity = mongoose.model("Activity", activitySchema);
 
 module.exports = Activity;
+
+
+//   ---------------Reubicar
+
+// const amenities = [
+//     {
+//         amenity: 'Tennis',
+//         id: 01
+//         courtNumber: '1',
+//         schedule: [8:00, 9:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00]
+//         openDays: ['mon', 'thu', 'wed', 'tue', 'fri', 'sat', 'sun'],
+//         capacity: 10,
+//         availability: true.
+//     },
+//     {
+//         amenity: 'Tennis',
+//         id: 02
+//         courtNumber: '2',
+//         schedule: [8:00, 9:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00]
+//         openDays: ['mon', 'thu', 'wed', 'tue', 'fri', 'sat', 'sun'],
+//         capacity: 10,
+//         availability: true.
+//     },
+//     {
+//         amenity: 'Pool',
+//         id: 03
+//         courtNumber: '1',
+//         schedule: [8:00, 9:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00]
+//         openDays: ['mon', 'thu', 'wed', 'tue', 'fri', 'sat', 'sun'],
+//         capacity: 30,
+//         availability: true.
+//     },
+//     {
+//         amenity: 'Futboll',
+//         id: 03
+//         courtNumber: '1',
+//         schedule: [8:00, 9:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00]
+//         openDays: ['mon', 'thu', 'wed', 'tue', 'fri', 'sat', 'sun'],
+//         capacity: 40,
+//         availability: true.
+//     },
+// ]

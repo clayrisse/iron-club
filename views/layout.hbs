@@ -25,7 +25,7 @@
                 {{#if isUserLoggedIn}}      
                   <li class="nav-item"><a class="" href="/">Home</a></li>
                   <li class="nav-item"><a class="" href="/faq">FAQ</a></li>
-                  <li class="nav-item"><a class="" href="/classes">Activities</a></li>
+                  <li class="nav-item"><a class="" href="/activity">Activities</a></li>
                   <li class="nav-item"><a class="" href="/amenities">Amenities</a></li>    
                   <li><div>     
                     <li class="nav-item"><a class="" href="/logout">Sign Up</a></li> 
@@ -34,7 +34,7 @@
                  {{else}}
                   <li class="nav-item"><a class="" href="/">Home</a></li>
                   <li class="nav-item"><a class="" href="/faq">FAQ</a></li>
-                  <li class="nav-item"><a class="" href="/classes">Activities</a></li>
+                  <li class="nav-item"><a class="" href="/activity-calendar">Activities</a></li>
                   <li class="nav-item"><a class="" href="/amenities">Amenities</a></li>   
                   <li><div>
                     <li class="nav-item"><a class="" href="/login">Log In</a></li>
@@ -48,6 +48,10 @@
     </header>
     
     <main>
+      {{#if isUserLoggedIn}}
+        <p> Hello, {{ currentUserInfo.name }}. </p>
+      {{/if}}
+
        <title>{{title}}</title>
           {{{body}}}
     </main>
@@ -56,22 +60,6 @@
 
 
 
-{{#if isUserLoggedIn}}
-  <p> Hello, {{ currentUserInfo.name }}. </p>
-{{/if}}
-
-<nav>
-  <ul>
-    {{#if isUserLoggedIn}}
-     <li> <a href="/launderers"> Find a Launderer </a> </li>
-      <li> <a href="/dashboard"> See Dashboard </a> </li>
-      <li> <a href="/logout"> Log Out </a> </li>
-    {{else}}
-      <li> <a href="/signup"> Sign Up </a> </li>
-      <li> <a href="/login"> Log In </a> </li>
-    {{/if}}
-  </ul>
-</na
 
 
 

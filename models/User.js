@@ -15,7 +15,7 @@ const userSchema = new Schema({
     instructor: { type: Boolean, default: false },
     activities: {
         creatAct: { type: Schema.Types.ObjectId, ref: 'CreatAct' },
-        reservAct: { type: Schema.Types.ObjectId, ref: 'CreatAct' }
+        reservAct: { type: Schema.Types.ObjectId, ref: 'CreatAct' }// es reservAct?
     }
 });
 

@@ -1,0 +1,9 @@
+{{!-- Calendar page whith activity listing
+searches partial: activitycalendarinfo.hbs --}}
+
+
+<div>
+  {{#each activities}} {{!-- ref app.js l-93 --}}
+    {{> getActivities  this}}
+  {{/each}}
+</div>

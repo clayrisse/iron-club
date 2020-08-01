@@ -84,6 +84,30 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//--------------------------------wheres does this goes?
+
+app.get('/activity', (req, res) => {
+ //xxxxx.findOne......
+     getActivities() //we need to program this
+    .then(allActivitiesDB => {
+      res.render('activity', { activities: allActivitiesDB });
+    })
+    .catch(error => console.log(error));
+});
+
+app.get('/activity/:id', (req, res) => {
+  //xxxxx.findOne......
+      getActivityDetail() //we need to program this
+     .then(activityDetailsDB => {
+       res.render('activity', { activityDetail: activityDetailsDB });
+     })
+     .catch(error => console.log(error));
+ });
+
+
+
+
+
 module.exports = app;
 
 
