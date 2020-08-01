@@ -19,6 +19,8 @@ Platform for creating sports activities in which, in addition, you can reserve y
 - **user class listing** - As a user I want to see the listings of past classes and reserved classes. Also be able to delete to sing out of the list. 
 - **instructor class listing** - As a user /instructor I want to see the event details and attendee list of one class and be able to edit or cancel them.
 
+## Wireframes
+![](public/images/wireframe-ironclub.jpg)
 
 ## Back-end
 
