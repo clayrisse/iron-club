@@ -29,4 +29,18 @@ body{
     font-size: 1.2rem;/*cambiar en res 500 y 100*/
     text-decoration: none;  
   }
+
+
+  colors {
+    color: #1e2434;
+    color: #2dc5fa;
+    color: #fef4e5;
+    color: #fcdfb5;
+    color: #eaeaed;
+    color: #ddb85e;
+    color: #e5f3f8;
+    color: #eaeaed;
+
+  }
+
 /* Clau, rease this test line */
