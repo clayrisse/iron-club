@@ -35,11 +35,22 @@ GET | /user/:id | Private route. Renders profile form view.
 GET | /user/:id/edit | Private route. Renders edit-profile form view.
 POST | /user/:id/edit | Private route. Renders edit-profile form view. | { img, username, age, instructor(y/n), activities }
 GET | /user/create-class | Private route. Renders create-class form profile.
-POST | /user/create-class | Private route. Renders create-class form profile. | { img, title, day, time, participants, amenity, description }
-GET | /classes | Private route. Renders classes view. 
+POST | /user/create-class | Private route. Renders create-class form profile. | { img, title, day, time, participants, amenityId, description }
+
+<!-- discuss if classes is a private route -->
+
+GET | /classes | Private route. Renders classes view.
 GET | /classes/:id | Private route. Renders class form profile.
 GET | /classes/:id/edit-class | Private route. Renders edit-class form profile.
-POST | /classes/:id/edit-class | Private route. Renders edit-class form profile. | { img, title, day, time, participants, amenity, description }
+POST | /classes/:id/edit-class | Private route. Renders edit-class form profile. | { img, title, day, time, participants, amenityId, description }
+
+<!-- add with angela -->
+GET | /faq | Renders questions Pricing and QnA. 
+GET | /amenities | Renders all amenities. 
+POST | /amenities | Sends picked id amenity. | { amenetyId }
+GET | /amenitie/:id | Renders class amenity information.
+
+LOG OUT
 
 
 ## Models
