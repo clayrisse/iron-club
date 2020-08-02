@@ -15,7 +15,7 @@ indexRouter.get('/activity-calendar', (req, res, next) => {
 });
 
 indexRouter.get('/activity', (req, res, next) => {
-  res.render('forusers/activity-create', { errorMessage: '' });
+  res.render('forusers/activity-detail', { errorMessage: '' });
 })
 
 module.exports = indexRouter;
