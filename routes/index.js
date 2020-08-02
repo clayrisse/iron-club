@@ -16,6 +16,10 @@ indexRouter.get('/activity-calendar', (req, res, next) => {
 
 indexRouter.get('/activity', (req, res, next) => {
   res.render('forusers/activity-detail', { errorMessage: '' });
-})
+});
+
+indexRouter.get('/amenities', (req, res, next) => {
+  res.render('amenities', { errorMessage: '' });
+});
 
 module.exports = indexRouter;
