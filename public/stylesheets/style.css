@@ -4,30 +4,63 @@ body{
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   }
   
-  .navbar {
-    background-color: rgba(255, 255, 255, 1);
+  .navbar-top{
+    background-color: rgba(255, 255, 255, 0.473);
     position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
-    width: 100%;
+    width: 100vw;
+    height: 10%;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-top .navbar-icon{
+    padding: 0px 10px;
+  }
+  #btn-back img {
+    height: 1.8em;
+    
+  }
+  .navbar-bottom {
+    background-color: rgba(255, 255, 255, 0.726);
+    position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
+    width: 100vw;
     bottom: 0px;
     left: 0px;
     
   }
-  nav ul {
+  .navbar-bottom ul {
     /*float: right; recordar quitar y 
     usar bootstrap*/
     text-align: center;
     padding: 0;
     margin: 0;
   }
-  nav li {
+  .navbar-bottom li {
     display: inline-block;
-    padding: .4rem 1em;/*cambiar en res 500 y 100*/ 
+    padding: .4rem 3%;
   
   }
-  a { 
-    color:rgb(218, 192, 77);
-    font-size: 1.2rem;/*cambiar en res 500 y 100*/
+  .navbar-bottom a {    
     text-decoration: none;  
+  }
+  .navbar-title{
+    color:#000;
+    font-size: 0.7rem;
+    margin: 0px;
+  }
+
+  .navbar-texticon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-icon{
+    height: 40px;
+  
   }
 
 

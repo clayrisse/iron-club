@@ -96,7 +96,7 @@ authRouter.post('/login', (req, res, next) => {
               res.render('auth/login', { errorMessage: 'Incorrect password.' })
             } else {
               req.session.currentUser = user;
-                res.redirect('/');
+                res.redirect('/:_id');
             }
         })
         .catch((error) => {
@@ -104,10 +104,20 @@ authRouter.post('/login', (req, res, next) => {
         })  
 });
 
+
 authRouter.get('/logout', (req, res, next) => {
     req.session.destroy(err => {
       res.redirect("/");
     });
+});
+
+authRouter.get('/:_id', (req, res, next) => {
+    
+  User
+      .findById(req.params.id)
+      .then(userData => {
+          res.render('forusers/user-profile', {theUser: userData})
+      });
 });
 
 module.exports = authRouter;
