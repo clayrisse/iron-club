@@ -1,5 +1,5 @@
 body{ 
-  background-color: cyan;
+  background-color: #1e2434;;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   }
@@ -8,7 +8,7 @@ body{
     background-color: rgba(255, 255, 255, 0.473);
     position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
     width: 100vw;
-    height: 10%;
+    height: 7%;
     top: 0px;
     left: 0px;
     display: flex;
@@ -24,7 +24,7 @@ body{
     
   }
   .navbar-bottom {
-    background-color: rgba(255, 255, 255, 0.726);
+    background-color: rgb(255, 255, 255);
     position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
     width: 100vw;
     bottom: 0px;
