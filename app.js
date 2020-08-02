@@ -29,6 +29,8 @@ mongoose
 
 var indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const userRouter = require('./routes/user');
+
 
 var app = express();
 
@@ -47,7 +49,7 @@ app.use(session({
   secret: 'never do your own laundry again',
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 600000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
@@ -67,6 +69,7 @@ app.use((req, res, next) => {
 // -------------r o u t e s
 app.use('/', indexRouter);
 app.use('/', authRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

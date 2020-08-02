@@ -1,4 +1,14 @@
-{{!-- User Profile form --}}
+{{!-- User Profile form --}} 
+<img src="{{theUser.imgProfile}}"> 
+{{!-- asegurarsr en la ruta el nombre de "user" --}} 
+<h1>{{theUser.name}}</h1> 
+<h3>Email:</h3> <h2>{{theUser.email}}</h2> 
+<h3>Age:</h3> <h2>{{theUser.age}}</h2> 
+<h3>Instructor</h3> {{!-- chequiar esta comprobacion --}} 
+{{#if theUser.instructor:true}} <h2>Yes</h2> {{else}} <h2>No</h2> {{/if}} 
+<button>Edit Pofile</button> 
+<button>Delete Pofile</button> 
+<button>See all activities</button> 
 
 <img src="{{theUser.imgProfile}}">
 {{!-- asegurarsr en la ruta el nombre de "user" --}}
