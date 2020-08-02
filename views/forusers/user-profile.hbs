@@ -1,1 +1,61 @@
 {{!-- User Profile form --}}
+
+<img src="{{theUser.imgProfile}}">
+{{!-- asegurarsr en la ruta el nombre de "user" --}}
+
+<h1>{{theUser.name}}</h1>
+
+<h3>Email:</h3>
+<h2>{{theUser.email}}</h2>
+
+<h3>Age:</h3>
+<h2>{{theUser.age}}</h2>
+
+<h3>Instructor</h3>
+{{!-- chequiar esta comprobacion --}}
+{{#if theUser.instructor:true}} 
+    <h2>Yes</h2>
+{{else}}
+    <h2>No</h2>
+{{/if}}
+
+{{!-- hay que chequear el "this.name" porque no sabemos cual es --}}
+<div class="btn-profile-container">
+    <form action="/user/{{this._id}}/delete" method="POST">
+    <button type="submit" class="btn-profile">DELETE</button>
+````````</form>
+    <form action="/user/{{this._id}}/edit" method="GET">
+    <button type="submit" class="btn-profile">EDIT</button>
+    </form>
+</div>
+<div>
+    <a class="btn-profile" href="/user/activity-listing">See all activities</a>
+</div>
+
+
+<a class="btn-profile" href="/user/activity-profile">Edit Pofile</a>
+<a class="btn-profile" href="/delete" method>Delete Pofile</a>
+<a class="btn-profile" href="/user/activity-listing">See all activities</a>
+
+
+
+
+
+
+const userSchema = new Schema({
+    <page: Number, 
+    name: { type: String, required: true },
+    email: { 
+        type: String, 
+        match: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/, 
+        required: true, 
+        unique: true 
+    },
+    password: { type: String, minlength: 6, required: true },
+    imgProfile: { type: String, default: '#' },
+    instructor: { type: Boolean, default: false },
+    activities: {
+        creatAct: { type: Schema.Types.ObjectId, ref: 'CreatAct' },
+        reservAct: { type: Schema.Types.ObjectId, ref: 'CreatAct' }// es reservAct?
+    }
+});

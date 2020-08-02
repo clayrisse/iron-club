@@ -2,12 +2,20 @@
 
 {{> getActivityDetail activityDetail}}
 
-
-
-
-
+<div>
+    <img src={{this.img}} alt="">
+</div>
 
 <div>
-    {{> getBeers cerveza}}
-    {{> foodPairing cerveza}}
-</div>
+    <h1>{{this.title}}</h1>
+    <p>{{this.description}}</p>
+    <p><b>Amenity:</b>{{this.amenity}}</p>
+    <p><b>Instructor:</b>{{this.instructor}}</p>
+    <p><b>Day:</b>{{this.date}}</p>
+    {{!-- //???? como es aca --}}
+    <p><b>Time:</b>{{this.date}}</p>
+    {{!-- VER COMO HACER ESTO --}}
+    <p><b>Places left:</b>`${amenities.capaciy}-{{this.usuarios inscritos}}</p>  
+    <P><b>Reviews: </b></P>
+    {{!-- show partials of comments --}}
+</div> 

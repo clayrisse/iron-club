@@ -31,26 +31,22 @@ GET | /login | Renders login form view.
 POST | /login | Sends Login form data to the server. | { email, password }
 GET | /signup | Renders signup form view.
 POST | /signup | Sends Sign Up info to the server and creates user in the DB. | { username, email, password }
-GET | /user/:id | Private route. Renders profile form view.
-GET | /user/:id/edit | Private route. Renders edit-profile form view.
-POST | /user/:id/edit | Private route. Renders edit-profile form view. | { img, username, age, instructor(y/n), activities }
-GET | /user/create-activity | Private route. Renders create-activity form profile.
-POST | /user/create-activity | Private route. Renders create-activity form profile. | { img, title, day, time, participants, amenityId, description }
-
-<!-- discuss if activities is a private route -->
-
-GET | /activity | Private route. Renders activities view.
-GET | /activity/:id | Private route. Renders activity form profile.
-GET | /activity/:id/edit-activity | Private route. Renders edit-activity form profile.
-POST | /activity/:id/edit-activity | Private route. Renders edit-activity form profile. | { img, title, day, time, participants, amenityId, description }
-
-<!-- add with angela -->
+GET | /activity | Renders activities view.
+GET | /activity/:id | Renders activity form profile.
 GET | /faq | Renders questions Pricing and QnA. 
 GET | /amenities | Renders all amenities. 
 POST | /amenities | Sends picked id amenity. | { amenetyId }
 GET | /amenitie/:id | Renders activity amenity information.
 
-LOG OUT
+Private Routes
+GET | /user/:id | Private route. Renders profile form view.
+GET | /user/:id/edit | Private route. Renders edit-profile form view.
+POST | /user/:id/edit | Private route. Renders edit-profile form view. | { img, username, age, instructor(y/n), activities }
+GET | /user/create-activity | Private route. Renders create-activity form profile.
+POST | /user/create-activity | Private route. Renders create-activity form profile. | { img, title, day, time, participants, amenityId, description }
+GET | /user/edit-activity | Private route. Renders edit-activity form profile.
+POST | /user/edit-activity | Private route. Renders edit-activity form profile. | { img, title, day, time, participants, amenityId, description }
+GET | /logout | Redirects to home and signs off
 
 
 ## Models
