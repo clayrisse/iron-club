@@ -28,7 +28,7 @@ authRouter.post('/signup', async (req, res, next) => {
     
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPassword = bcrypt.hashSync(password, salt);
-    
+  
     await User.create({ name, email, password: hashedPassword })
     
     res.redirect('/login'); //levantar sesion al hacer signup
@@ -62,8 +62,8 @@ authRouter.post('/login', (req, res, next) => {
               res.render('auth/login', { errorMessage: 'Incorrect password.' })
             } else {
               req.session.currentUser = user;
-              res.render('forusers/user-profile', {user})  
-              //res.redirect('/user/profile', {user}); 
+              //res.render('forusers/user-profile', {user})  
+              res.redirect('/user/profile'); 
             }
         })
         .catch((error) => {

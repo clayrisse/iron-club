@@ -1,18 +1,18 @@
  
-<img src="{{theUser.imgProfile}}">
+<img src="{{currentUserInfo.imgProfile}}">
 {{!-- asegurarsr en la ruta el nombre de "user" --}}
 
-<h1>{{user.name}}</h1>
+<h1>{{currentUserInfo.name}}</h1>
 
 <h3>Email:</h3>
-<h2>{{user.email}}</h2>
+<h2>{{currentUserInfo.email}}</h2>
 
 <h3>Age:</h3>
-<h2>{{user.age}}</h2>
+<h2>{{currentUserInfo.age}}</h2>
 
 <h3>Instructor</h3>
 {{!-- chequiar esta comprobacion --}}
-{{#if user.instructor:true}} 
+{{#if currentUserInfo.instructor:true}} 
     <h2>Yes</h2>
 {{else}}
     <h2>No</h2>

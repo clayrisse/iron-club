@@ -15,9 +15,8 @@ userRouter.use((req, res, next) => {
 });
 // <= MIDDLEWARE
 
-
 userRouter.get('/profile', (req, res, next) => {
-    res.render('forusers/user-profile', {currentUser});
+    res.render('forusers/user-profile');
   });
 
   /*
@@ -55,12 +54,11 @@ userRouter.get('/new-activity', (req, res, next) => {
 userRouter.post('/new-activity', (req, res, next) => {
     
     const { title, description} = req.body;
-    const newActiv = new Activity({ title, description })
 
-    newActiv
-        .save()
-        .then(() => {
-        res.redirect('/')
+    Activity
+        .create({ title, description })
+        .then(newActivity => {
+        res.render('activity-detail', {activity: newActivity})
         })
         .catch(error => {
         console.log('Error while create the activity: ', error);
@@ -68,7 +66,11 @@ userRouter.post('/new-activity', (req, res, next) => {
         });
 });
 
-
-
+userRouter.get('/:_id/activity-edit', (req, res, next) => {
+    Activity.findById(req.params.id)
+            .then(actEdit => {
+                res.render('forusers/activity-edit', { actEdit } )
+            })
+});
 
 module.exports = userRouter;
