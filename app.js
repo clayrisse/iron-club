@@ -31,7 +31,6 @@ var indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');
 
-
 var app = express();
 
 // view engine setup
@@ -88,7 +87,7 @@ app.use(function(err, req, res, next) {
 });
 
 //--------------------------------wheres does this goes?
-
+/*
 app.get('/activity', (req, res) => {
  //xxxxx.findOne......
      getActivities() //we need to program this
@@ -106,7 +105,7 @@ app.get('/activity/:id', (req, res) => {
      })
      .catch(error => console.log(error));
  });
-
+*/
 
 
 

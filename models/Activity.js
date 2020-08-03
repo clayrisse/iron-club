@@ -10,7 +10,7 @@ const activitySchema = new Schema({
     participants: Number,
     date: Date, 
     // faltaria hora_?
-    time: time
+    //time: time,
     instructor:  { type: Schema.Types.ObjectId, ref: 'User' },
     asisted: { type: Boolean, default: false },
     coments: String,

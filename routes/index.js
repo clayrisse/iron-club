@@ -1,6 +1,8 @@
 var express = require('express');
 var indexRouter = express.Router();
 
+const Activity = require('./../models/Activity');
+
 /* GET home page. */
 indexRouter.get('/', function(req, res, next) {
   res.render('index', { errorMessage: '' });
@@ -11,11 +13,11 @@ indexRouter.get('/faq', (req, res, next) => {
 });
 
 indexRouter.get('/activity-calendar', (req, res, next) => {
-  res.render('activity-calendar', { errorMessage: '' });
+  res.render('activity-calendar', { activities });
 });
 
 indexRouter.get('/activity', (req, res, next) => {
-  res.render('forusers/activity-detail', { errorMessage: '' });
+  res.render('activity-detail', { errorMessage: '' });
 });
 
 indexRouter.get('/amenities', (req, res, next) => {
