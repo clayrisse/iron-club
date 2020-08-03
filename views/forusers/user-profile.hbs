@@ -1,19 +1,28 @@
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 8441794563e5e570a961c433ef2138e9e9b96e41
 <img src="{{theUser.imgProfile}}">
 {{!-- asegurarsr en la ruta el nombre de "user" --}}
 
-<h1>{{theUser.name}}</h1>
+<h1>{{user.name}}</h1>
 
 
 <h3>Email:</h3>
-<h2>{{theUser.email}}</h2>
+<h2>{{user.email}}</h2>
 
 <h3>Age:</h3>
-<h2>{{theUser.age}}</h2>
+<h2>{{user.age}}</h2>
 
 <h3>Instructor</h3>
 {{!-- chequiar esta comprobacion --}}
+<<<<<<< HEAD
 {{#if theUser.instructor:true}} 
     <h3>Yes</h3>
+=======
+{{#if user.instructor:true}} 
+    <h2>Yes</h2>
+>>>>>>> 8441794563e5e570a961c433ef2138e9e9b96e41
 {{else}}
     <h3>No</h3>
 {{/if}}
@@ -22,11 +31,27 @@
 <div class="btn-profile-container">
 <form action="/user/{{this._id}}/delete" method="POST">
     <button type="submit" class="btn-profile">DELETE</button>
+<<<<<<< HEAD
 </form>
 <form action="/user/{{this._id}}/edit" method="GET">
+=======
+    </form>
+    <form action="/user/edit" method="GET">
+>>>>>>> 8441794563e5e570a961c433ef2138e9e9b96e41
     <button type="submit" class="btn-profile">EDIT</button>
 </form>
 </div>
 <div>
     <a class="btn-profile" href="/user/activity-listing">See all activities</a>
 </div>
+<<<<<<< HEAD
+=======
+
+<div>
+    <a class="btn-profile" href="/user/new-activity">Create an activity</a>
+</div>
+
+
+
+
+>>>>>>> 8441794563e5e570a961c433ef2138e9e9b96e41

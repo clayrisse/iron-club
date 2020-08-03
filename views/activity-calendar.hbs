@@ -1,9 +1,18 @@
 {{!-- Calendar page whith activity listing
 searches partial: activitycalendarinfo.hbs --}}
 <h1>Calendar</h1>
-
+<!--
 <div>
   {{#each activities}} {{!-- ref app.js l-93 --}}
     {{> getActivities  this}}
+  {{/each}}
+</div>
+-->
+
+<div>
+  {{#each activities}} {{!-- ref app.js l-93 --}}
+    <ul>
+      <li>{{this.name}}</li>
+    </ul>
   {{/each}}
 </div>

@@ -31,7 +31,6 @@ var indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');
 
-
 var app = express();
 
 // view engine setup
@@ -88,25 +87,25 @@ app.use(function(err, req, res, next) {
 });
 
 //--------------------------------wheres does this goes?
+/*
+app.get('/activity', (req, res) => {
+ //xxxxx.findOne......
+     getActivities() //we need to program this
+    .then(allActivitiesDB => {
+      res.render('activity', { activities: allActivitiesDB });
+    })
+    .catch(error => console.log(error));
+});
 
-// app.get('/activity', (req, res) => {
-//  //xxxxx.findOne......
-//      getActivities() //we need to program this
-//     .then(allActivitiesDB => {
-//       res.render('activity', { activities: allActivitiesDB });
-//     })
-//     .catch(error => console.log(error));
-// });
-
-// app.get('/activity/:id', (req, res) => {
-//   //xxxxx.findOne......
-//       getActivityDetail() //we need to program this
-//      .then(activityDetailsDB => {
-//        res.render('activity', { activityDetail: activityDetailsDB });
-//      })
-//      .catch(error => console.log(error));
-//  });
-
+app.get('/activity/:id', (req, res) => {
+  //xxxxx.findOne......
+      getActivityDetail() //we need to program this
+     .then(activityDetailsDB => {
+       res.render('activity', { activityDetail: activityDetailsDB });
+     })
+     .catch(error => console.log(error));
+ });
+*/
 
 
 
