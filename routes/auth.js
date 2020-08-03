@@ -5,14 +5,17 @@ const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 const User = require('./../models/User');
 
+const parser = require('./../config/cloudinary');
+
 //SIGNUP
 authRouter.get('/signup', (req, res, next) => {
   res.render('auth/signup', { errorMessage: '' });
 });
-
-authRouter.post('/signup', async (req, res, next) => {
+// esto "parser.single('profilepic')" es para la foto en el sign up
+authRouter.post('/signup', parser.single('profilepic'), async (req, res, next) => {
   console.log('req.body', req.body);
   const { name, email, password } = req.body;
+  const image_url = req.file.secure_url;
 
   if(email === "" || password === "") {
     res.render('auth/signup', { errorMessage: "Enter both email and password "});
@@ -29,7 +32,8 @@ authRouter.post('/signup', async (req, res, next) => {
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPassword = bcrypt.hashSync(password, salt);
     
-    await User.create({ name, email, password: hashedPassword })
+    // esto "profilepic: image_url " es para pasar el profilepic
+    await User.create({ name, email, password: hashedPassword, profilepic: image_url  })
     
     res.redirect('/login'); //levantar sesion al hacer signup
   } 

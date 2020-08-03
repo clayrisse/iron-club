@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(session({
-  secret: 'never do your own laundry again',
+  secret: process.env.SECRET_SESSION,
   resave: true,
   saveUninitialized: true,
   cookie: { maxAge: 600000 },
