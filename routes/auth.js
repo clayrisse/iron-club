@@ -96,12 +96,16 @@ authRouter.post('/login', (req, res, next) => {
               res.render('auth/login', { errorMessage: 'Incorrect password.' })
             } else {
               req.session.currentUser = user;
-                res.redirect('/:_id');
+                res.redirect('/user/profile');
             }
         })
         .catch((error) => {
             console.log(error);
         })  
+});
+
+authRouter.get('/profile', (req, res, next) => {
+  res.render('forusers/user-profile');
 });
 
 
@@ -111,13 +115,6 @@ authRouter.get('/logout', (req, res, next) => {
     });
 });
 
-authRouter.get('/:_id', (req, res, next) => {
-    
-  User
-      .findById(req.params.id)
-      .then(userData => {
-          res.render('forusers/user-profile', {theUser: userData})
-      });
-});
+
 
 module.exports = authRouter;

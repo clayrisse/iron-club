@@ -7,50 +7,54 @@
     <!-- para agregar el favicon 
     <link rel="shortcut icon" type="image/png" href="images/title-img.png">
     -->
-    <!-- bootstrap 4 css 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    -->
+    <!-- Bootstrap CSS -->
+    {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> --}}
+    
     <!-- íconos fontawesome 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     -->
+  
+
   
     <title>IronClub</title>
   </head>
 
   <body>
     <header>
+      {{!-- top navbar --}}
       <nav  class="navbar-top">
         <div id="btn-back">
-          <a class="navbar-icontitle" href="/">
+          <a class="xnavbar-icontitle" href="/">
             <img class="navbar-icon" src="../images/icon-back.png">
           </a>
         </div>
+        
+        {{#if isUserLoggedIn}}
         <div>
-          {{#if isUserLoggedIn}}
-          <p> Hello, {{ currentUserInfo.name }}. </p>
-
-         
-          <div class="navbar-texticon">
-            <a class="navbar-icontitle" href="/logout">
-              <p class="navbar-title">Log out</p>
-            </a>
-          </div>
-                   
-
-
-          {{/if}}
+          <p>{{ currentUserInfo.name }}, you're loged </p>
         </div>
+        <div class="navbar-texticon">
+          <a class="navbar-icontitle" href="/logout">
+            <p class="navbar-title">Log out</p>
+          </a>
+        </div>
+        {{/if}}
+        
         <div id="logo">
           <a class="navbar-icontitle" href="/">
             <img class="navbar-icon" src="../images/logo-ironclub.png">
           </a>
         </div>
       </nav>
+      {{!-- END top navbar --}}
 
+      {{!-- bootom navbar --}}
       <nav class="navbar-bottom">
           <div class="" id="nav">
               <ul class="navbar-nav">
-                {{#if isUserLoggedIn}}      
+
+                {{#if isUserLoggedIn}}
+
                   <li class="nav-item">
                     <div class="navbar-texticon">
                       <a class="navbar-icontitle" href="/">
@@ -85,18 +89,21 @@
                   </li>
                   <li class="nav-item">
                     <div class="navbar-texticon">
-                      <a class="navbar-icontitle" href="/user-profile">
+                      <a class="navbar-icontitle" href="/user/profile">
                         <img class="navbar-icon" src="../images/icon-user.png">
                         <p class="navbar-title">Profile</p>
                       </a>
                     </div>
                   </li>  
-                  
-    {{!-- faltaria hacer un deplegable con log out --}}
-    {{!-- <li class="nav-item"><a class="" href="/logout">Log out</a></li>  --}}
-                    
-                  </div></li>
+                  {{!-- <li class="nav-item"> --}}
+                    {{!-- <div class="navbar-texticon"> --}}
+                      {{!-- faltaria hacer un deplegable con log out --}}
+                      {{!-- <li class="nav-item"><a class="" href="/logout">Log out</a></li>  --}}
+                    {{!-- </div> --}}
+                  {{!-- </li>  --}}
+
                  {{else}}
+
                   <li class="nav-item">
                     <div class="navbar-texticon">
                       <a class="navbar-icontitle" href="/">
@@ -136,26 +143,33 @@
                         <p class="navbar-title">User</p>
                       </a>
                     </div>
-    {{!-- faltaria hacer un deplegable con signup --}}
-    {{!-- <li class="nav-item"><a class="" href="/signup">Sign Up</a></li>  --}}
-                   
-                    
-                  </div></li>
+                  </li>
+                  {{!-- <li class="nav-item"> --}}
+                    {{!-- <div class="navbar-texticon"> --}}
+                      {{!-- faltaria hacer un deplegable con signup --}}
+                      {{!-- <li class="nav-item"><a class="" href="/signup">Sign Up</a></li>  --}}
+                    {{!-- </div> --}}
+                  {{!-- </li>  --}}
                 {{/if}}
 
               </ul>
           </div>
       </nav>
+      {{!-- END top navbar --}}
     </header>
     
     <main>
-      {{#if isUserLoggedIn}}
-        <p> Hello, {{ currentUserInfo.name }}. </p>
-      {{/if}}
+   
 
        <title>{{title}}</title>
           {{{body}}}
     </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  
   </body>
 </html>
 

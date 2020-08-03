@@ -18,4 +18,9 @@ indexRouter.get('/activity', (req, res, next) => {
   res.render('forusers/activity-create', { errorMessage: '' });
 })
 
+indexRouter.get('/amenities', (req, res, next) => {
+  res.render('amenities', { errorMessage: '' });
+});
+
+
 module.exports = indexRouter;
