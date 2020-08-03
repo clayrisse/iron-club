@@ -12,9 +12,11 @@ const activitySchema = new Schema({
     // faltaria hora_?
     //time: time,
     instructor:  { type: Schema.Types.ObjectId, ref: 'User' },
-    asisted: { type: Boolean, default: false },
+    // asisted: { type: Boolean, default: false },
     coments: String,
-    rating: { type: Number, min: 1, max: 5 }
+    rating: { type: Number, min: 1, max: 5 },
+
+usersJoined: ["_id"] //ID de personas inscritas.
 });
 
 const Activity = mongoose.model("Activity", activitySchema);

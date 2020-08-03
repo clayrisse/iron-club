@@ -1,6 +1,6 @@
 body{ 
-  background-color: #1e2434;;
-  /* padding: 50px; */
+  background-color: #1e24346b;
+  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0px;
 }
@@ -29,8 +29,8 @@ body{
     position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
     width: 100%;
     bottom: 0;
-    /* overflow: hidden; */
-    /* left: 0px; */
+    overflow: hidden;
+    left: 0px;
   }
 
   .navbar-bottom ul {
