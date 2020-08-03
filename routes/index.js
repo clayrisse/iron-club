@@ -15,7 +15,7 @@ indexRouter.get('/faq', (req, res, next) => {
 indexRouter.get('/activity-calendar', (req, res, next) => {
   Activity.find()
           .then(activitiesFromDB => {
-            console.log(activitiesFromDB)
+            //console.log(activitiesFromDB)
             res.render('activity-calendar', { activities: activitiesFromDB  });
           })
           .catch(error => {

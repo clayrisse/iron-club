@@ -58,7 +58,7 @@ userRouter.post('/new-activity', (req, res, next) => {
     Activity
         .create({ title, description })
         .then(newActivity => {
-        res.render('activity-detail', {activity: newActivity})
+        res.redirect(`/user/activity/${newActivity._id}`)
         })
         .catch(error => {
         console.log('Error while create the activity: ', error);
@@ -66,11 +66,16 @@ userRouter.post('/new-activity', (req, res, next) => {
         });
 });
 
-userRouter.get('/:_id/activity-edit', (req, res, next) => {
-    Activity.findById(req.params.id)
-            .then(actEdit => {
-                res.render('forusers/activity-edit', { actEdit } )
-            })
+userRouter.get('/activity/:id', (req, res, next) => {
+    Activity
+        .findById(req.params.id)
+        .then(actDetail => {
+            console.log(actDetail)
+        res.render('activity-detail', {activity: actDetail})
+        })
+        .catch(error => {
+        console.log(error);
+        });
 });
 
 module.exports = userRouter;
