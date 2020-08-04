@@ -5,6 +5,7 @@ const activitySchema = new Schema({
     title: String,
     img: { type: String, default: '#' },
     description: String,
+    amenity: { type: String, enum: ['tennis', 'football', 'swimming'] }, 
     participants: Number,
     date: Date, 
     // faltaria hora_?
