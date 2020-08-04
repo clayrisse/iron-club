@@ -18,6 +18,7 @@ userRouter.use((req, res, next) => {
 });
 // <= MIDDLEWARE
 
+//USER
 userRouter.get('/profile', (req, res, next) => {
     res.render('forusers/user-profile');
   });
@@ -51,6 +52,20 @@ userRouter.post('/edit-profile', (req, res, next) => {
         })
 });
 
+userRouter.post('/delete', (req, res, next) => {
+    const userId = req.session.currentUser._id;
+
+    User
+        .findByIdAndDelete(userId)
+        .then(() => {
+            res.redirect('/');
+        })
+        .catch(error => {
+        console.log(error);
+        });
+});
+
+//ACTIVITY
 userRouter.get('/new-activity', (req, res, next) => {
     res.render('forusers/activity-create', { errorMessage: '' });
 });
@@ -74,7 +89,6 @@ userRouter.post('/new-activity', (req, res, next) => {
                     console.log(user);
                     res.redirect(`/user/activity/${newActivity._id}`)
                 })
-        //res.redirect(`/user/activity/${newActivity._id}`)
         })
         .catch(error => {
         console.log('Error while create the activity: ', error);
