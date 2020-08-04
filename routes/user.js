@@ -7,6 +7,20 @@ const saltRounds = 10;
 const User = require('./../models/User');
 const Activity = require('./../models/Activity');
 
+userRouter.get('/activity/:id', (req, res, next) => {
+    
+    Activity
+        .findById(req.params.id)
+        .then(actDetail => {
+            //console.log(actDetail)
+        res.render('activity-detail', {activity: actDetail})
+        })
+        .catch(error => {
+        console.log(error);
+        });
+});
+
+
 // MIDDLEWARE =>
 userRouter.use((req, res, next) => {
   if (req.session.currentUser) {
@@ -112,19 +126,6 @@ userRouter.post('/new-activity', (req, res, next) => {
 
 });
 
-userRouter.get('/activity/:id', (req, res, next) => {
-    
-    Activity
-        .findById(req.params.id)
-        .then(actDetail => {
-            //console.log(actDetail)
-        res.render('activity-detail', {activity: actDetail})
-        })
-        .catch(error => {
-        console.log(error);
-        });
-});
-
 userRouter.get('/activity/:id/edit', async(req, res, next) => {
     
     Activity
@@ -161,7 +162,6 @@ userRouter.post('/activity/:id/book-activity', (req, res, next) => {
 
     const currUser = req.session.currentUser._id;
 
-
     Activity
         .findById(req.params.id)
         .then(bookAct => {
@@ -171,6 +171,36 @@ userRouter.post('/activity/:id/book-activity', (req, res, next) => {
             User.findByIdAndUpdate(
                 currUser,
                 { $push: { reservAct: bookId} },
+                { new: true }
+                )
+                .then((user) => {
+                    console.log(user);
+                    res.redirect('/user/profile')
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        })
+        .catch(error => {
+            console.log('Error while save the activity: ', error);
+            res.redirect('/activity-calendar');
+        });
+
+});
+
+userRouter.post('/activity/:id/book-activity-delete', (req, res, next) => {
+
+    const currUser = req.session.currentUser._id;
+
+    Activity
+        .findById(req.params.id)
+        .then(bookAct => {
+            
+            const bookId = bookAct._id;
+
+            User.findByIdAndUpdate(
+                currUser,
+                { $pull: { reservAct: bookId} },
                 { new: true }
                 )
                 .then((user) => {
