@@ -1,10 +1,22 @@
 body{ 
-  background-color: #1e24346b;
+  background-color: #f8f8f8;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0px;
+  margin: 0px auto;
+ text-align: center;
 }
+/* .superback{
   
+  background: no-repeat center 5% fixed;
+  background-size: cover;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.959) 0%, rgba(0, 0, 0, 0.486) 4%,rgba(255, 255, 255, 0.911) 20%, transparent 30%, rgba(0, 0, 0, 0.308) 55%,rgba(0, 0, 0, 0.226) 100%), url(/images/football0.jpg);
+  background-blend-mode: multiply; 
+  height: 99vh;
+  font-family: 'Montaga', serif;
+  font-size: 10px;
+  text-align: center;
+  margin: auto;
+} */
   .navbar-top{
     background-color: rgba(255, 255, 255, 0.473);
     position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
@@ -20,8 +32,10 @@ body{
   .navbar-top .navbar-icon{
     padding: 0px 10px;
   }
-  #btn-back img {
-    height: 1.8em;
+  .car-img{
+    height: 300px;
+    background-color: red;
+    background-blend-mode: multiply; 
     
   }
   .navbar-bottom {
@@ -42,7 +56,7 @@ body{
   }
   .navbar-bottom li {
     display: inline-block;
-    padding: .4rem 3%;
+    padding: .4rem 4%;
   
   }
   .navbar-bottom a {    
@@ -61,10 +75,15 @@ body{
   }
 
   .navbar-icon{
-    height: 40px;
-  
-  }
+    height: 10vh;
+    min-height: 25px;
+    max-height: 45px;
 
+  }
+  #btn-back img {
+    height: 1.8em;
+        
+  }
 
   colors {
     color: #1e2434;
@@ -78,8 +97,6 @@ body{
 
   }
 
-  .car-img{
-    height: 300px;
-  }
+ 
 
 /* Clau, rease this test line */
