@@ -13,7 +13,14 @@ indexRouter.get('/faq', (req, res, next) => {
 });
 
 indexRouter.get('/activity-calendar', (req, res, next) => {
-  res.render('activity-calendar', { activities });
+  Activity.find()
+          .then(activitiesFromDB => {
+            //console.log(activitiesFromDB)
+            res.render('activity-calendar', { activities: activitiesFromDB  });
+          })
+          .catch(error => {
+            console.log(error);
+          })
 });
 
 indexRouter.get('/activity', (req, res, next) => {
