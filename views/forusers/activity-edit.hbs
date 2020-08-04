@@ -1,11 +1,8 @@
 <h1>EDIT</h1>
 
-<h2>Play whith me!!</h2>
-{{#each celebEdit}}
-<form action="celebrities/{{this._id}}" method="POST">
-    <input type="text" name="celName" value="{{this.name}}">
-    <input type="text" name="celbOccupation" value="{{this.occupation}}">
-    <input type="text" name="celbPhrase" value="{{this.catchPhrase}}">
+<!--<form action="/user/activity/edit?activity_id={{activity._id}}" method="POST">-->
+<form action="/user/activity/{{activity._id}}/edit" method="POST">
+    <input type="text" name="title" placeholder="{{activity.title}}">
+    <input type="text" name="description"  placeholder="{{activity.description}}">
     <button type="submit">Send</button>
 </form>
-{{/each}}

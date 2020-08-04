@@ -1,5 +1,5 @@
  
-<img src="{{currentUserInfo.imgProfile}}">
+<img src="{{currentUserInfo.profilepic}}">
 {{!-- asegurarsr en la ruta el nombre de "user" --}}
 
 <h1>{{currentUserInfo.name}}</h1>
@@ -23,7 +23,7 @@
     <form action="/user/{{this._id}}/delete" method="POST">
     <button type="submit" class="btn-profile">DELETE</button>
     </form>
-    <form action="/user/edit" method="GET">
+    <form action="/user/edit-profile" method="GET">
     <button type="submit" class="btn-profile">EDIT</button>
     </form>
 </div>
@@ -34,6 +34,8 @@
 <div>
     <a class="btn-profile" href="/user/new-activity">Create an activity</a>
 </div>
+
+
 
 
 

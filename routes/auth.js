@@ -52,12 +52,12 @@ authRouter.post('/login', (req, res, next) => {
     }
     
     User.findOne({ email }) 
-        .then((user) => { //este user
+        .then((user) => { 
             if(!user) {
                 res.render('auth/login', { errorMessage: "The user doesn't exist"});
                 return;
             }
-            const correctePass = (bcrypt.compareSync(password, user.password))//es este user
+            const correctePass = (bcrypt.compareSync(password, user.password))
             if(!correctePass) { 
               res.render('auth/login', { errorMessage: 'Incorrect password.' })
             } else {

@@ -11,7 +11,7 @@ const userSchema = new Schema({
         unique: true 
     },
     password: { type: String, minlength: 6, required: true },
-    imgProfile: { type: String, default: '#' },
+    profilepic: { type: String, default: '#' },
     instructor: { type: Boolean, default: false },
     activities: {
         creatAct: { type: Schema.Types.ObjectId, ref: 'CreatAct' },

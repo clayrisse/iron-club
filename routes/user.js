@@ -1,6 +1,9 @@
 const express = require('express');
 const userRouter = express.Router();
 
+const bcrypt = require('bcryptjs');
+const saltRounds = 10;
+
 const User = require('./../models/User');
 const Activity = require('./../models/Activity');
 
@@ -19,34 +22,35 @@ userRouter.get('/profile', (req, res, next) => {
     res.render('forusers/user-profile');
   });
 
-  /*
-userRouter.get('/user/edit', (req, res, next) => {
-    req.session.currentUser = user;
+
+userRouter.get('/edit-profile', (req, res, next) => {
+    res.render('forusers/user-profile-edit', { errorMessage: '' });
+    
+});
+
+userRouter.post('/edit-profile', (req, res, next) => {
+    
+    const { name, email, password } = req.body;
+
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hashedPassword = bcrypt.hashSync(password, salt);
+    
     User
-        .then(userEdit => {
-            res.render('forusers/user-profile-edit', { user: userEdit })
+        .findByIdAndUpdate(
+            req.session.currentUser._id ,
+            { $set: { name, email, password: hashedPassword } },
+            { new: true }
+        )
+        .then((userEDit) => {
+            console.log(userEDit)
+            req.session.currentUser = userEDit;
+            res.redirect('/user/profile')
         })
         .catch(error => {
             console.log('Error while retrieving user details: ', error);
         })
 });
 
-userRouter.post('/user/:id/edit', (req, res, next) => {
-    const { name, age, email, password, imgProfile, instructor } = req.body;
-    User
-        .update(
-            { _id: req.query.user_id },
-            { $set: { name, age, email, password, imgProfile, instructor } },
-            { new: true }
-        )
-        .then(() => {
-            res.redirect('forusers/user-profile')
-        })
-        .catch(error => {
-            console.log('Error while retrieving user details: ', error);
-        })
-});
-*/
 userRouter.get('/new-activity', (req, res, next) => {
     res.render('forusers/activity-create', { errorMessage: '' });
 });
@@ -64,18 +68,52 @@ userRouter.post('/new-activity', (req, res, next) => {
         console.log('Error while create the activity: ', error);
         res.render("forusers/activity-create");
         });
+
 });
 
 userRouter.get('/activity/:id', (req, res, next) => {
+    
     Activity
         .findById(req.params.id)
         .then(actDetail => {
-            console.log(actDetail)
+            //console.log(actDetail)
         res.render('activity-detail', {activity: actDetail})
         })
         .catch(error => {
         console.log(error);
         });
+});
+
+userRouter.get('/activity/:id/edit', async(req, res, next) => {
+    
+    Activity
+        .findById(req.params.id)
+        .then((activity) => {
+            console.log(activity)
+            res.render('forusers/activity-edit', {activity});
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+});
+
+userRouter.post('/activity/:id/edit', async(req, res, next) => {
+    
+    const { title, description } = req.body;
+
+    Activity
+        .findByIdAndUpdate(
+            req.params.id,
+            { $set: { title, description } },
+            { new: true }
+        )
+        .then( (actUpdate) => {
+            console.log(actUpdate);
+        res.redirect(`/user/activity/${actUpdate._id}`)
+        })
+        .catch(error => {
+            console.log('Error while retrieving activity details: ', error);
+        })
 });
 
 module.exports = userRouter;

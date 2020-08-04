@@ -12,7 +12,7 @@ const activitySchema = new Schema({
     // faltaria hora_?
     //time: time,
     instructor:  { type: Schema.Types.ObjectId, ref: 'User' },
-    asisted: { type: Boolean, default: false },
+    //asisted: { type: Boolean, default: false },
     coments: String,
     rating: { type: Number, min: 1, max: 5 }
 });
