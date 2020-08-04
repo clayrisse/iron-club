@@ -12,6 +12,10 @@
         {{#if currentUser.instructor}}
           <a href="/user/activity/{{this.id}}/edit">EDIT</a>
         {{/if}}
+        
+        <form action="/user/activity/{{this.id}}/book-activity" method="POST">
+          <button type="submit" class="btn-profile">JOIN</button>
+        </form>
       </li>
     </ul>
   {{/each}}

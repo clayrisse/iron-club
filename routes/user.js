@@ -7,6 +7,20 @@ const saltRounds = 10;
 const User = require('./../models/User');
 const Activity = require('./../models/Activity');
 
+userRouter.get('/activity/:id', (req, res, next) => {
+    
+    Activity
+        .findById(req.params.id)
+        .then(actDetail => {
+            //console.log(actDetail)
+        res.render('activity-detail', {activity: actDetail})
+        })
+        .catch(error => {
+        console.log(error);
+        });
+});
+
+
 // MIDDLEWARE =>
 userRouter.use((req, res, next) => {
   if (req.session.currentUser) {
@@ -20,11 +34,22 @@ userRouter.use((req, res, next) => {
 
 //USER
 userRouter.get('/profile', (req, res, next) => {
-    res.render('forusers/user-profile');
-  });
+    
+    const currUser = req.session.currentUser._id;
 
+    User
+        .findById(currUser)
+        .populate ('creatAct reservAct')
+        .then(user => {
+            res.render('forusers/user-profile', {user});
+        })
+        .catch(error => {
+            console.log(error);
+        });
+});
 
 userRouter.get('/edit-profile', (req, res, next) => {
+    
     res.render('forusers/user-profile-edit', { errorMessage: '' });
     
 });
@@ -53,12 +78,11 @@ userRouter.post('/edit-profile', (req, res, next) => {
 });
 
 userRouter.post('/delete', (req, res, next) => {
-    const userId = req.session.currentUser._id;
 
     User
-        .findByIdAndDelete(userId)
+        .findByIdAndDelete(req.session.currentUser._id)
         .then(() => {
-            res.redirect('/');
+            res.redirect('/logout');
         })
         .catch(error => {
         console.log(error);
@@ -67,7 +91,9 @@ userRouter.post('/delete', (req, res, next) => {
 
 //ACTIVITY
 userRouter.get('/new-activity', (req, res, next) => {
+    
     res.render('forusers/activity-create', { errorMessage: '' });
+
 });
 
 userRouter.post('/new-activity', (req, res, next) => {
@@ -81,7 +107,7 @@ userRouter.post('/new-activity', (req, res, next) => {
 
             const actId = newActivity._id;
             User.findByIdAndUpdate(
-                curUser,
+                currUser,
                 { $push: { creatAct: actId} },
                 { new: true }
                 )
@@ -89,25 +115,15 @@ userRouter.post('/new-activity', (req, res, next) => {
                     console.log(user);
                     res.redirect(`/user/activity/${newActivity._id}`)
                 })
+                .catch(error => {
+                    console.log(error);
+                });
         })
         .catch(error => {
         console.log('Error while create the activity: ', error);
         res.render("forusers/activity-create");
         });
 
-});
-
-userRouter.get('/activity/:id', (req, res, next) => {
-    
-    Activity
-        .findById(req.params.id)
-        .then(actDetail => {
-            //console.log(actDetail)
-        res.render('activity-detail', {activity: actDetail})
-        })
-        .catch(error => {
-        console.log(error);
-        });
 });
 
 userRouter.get('/activity/:id/edit', async(req, res, next) => {
@@ -123,7 +139,7 @@ userRouter.get('/activity/:id/edit', async(req, res, next) => {
         });
 });
 
-userRouter.post('/activity/:id/edit', async(req, res, next) => {
+userRouter.post('/activity/:id/edit', (req, res, next) => {
     
     const { title, description, amenity, participants, date, instructor } = req.body;
 console.log(req.body)
@@ -141,6 +157,78 @@ console.log(req.body)
         .catch(error => {
             console.log('Error while retrieving activity details: ', error);
         })
+});
+
+userRouter.post('/activity/:id/book-activity', (req, res, next) => {
+
+    const currUser = req.session.currentUser._id;
+
+    Activity
+        .findById(req.params.id)
+        .then(bookAct => {
+            
+            const bookId = bookAct._id;
+
+            User.findByIdAndUpdate(
+                currUser,
+                { $push: { reservAct: bookId} },
+                { new: true }
+                )
+                .then((user) => {
+                    console.log(user);
+                    res.redirect('/user/profile')
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        })
+        .catch(error => {
+            console.log('Error while save the activity: ', error);
+            res.redirect('/activity-calendar');
+        });
+
+});
+
+userRouter.post('/activity/:id/book-activity-delete', (req, res, next) => {
+
+    const currUser = req.session.currentUser._id;
+
+    Activity
+        .findById(req.params.id)
+        .then(bookAct => {
+            
+            const bookId = bookAct._id;
+
+            User.findByIdAndUpdate(
+                currUser,
+                { $pull: { reservAct: bookId} },
+                { new: true }
+                )
+                .then((user) => {
+                    console.log(user);
+                    res.redirect('/user/profile')
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        })
+        .catch(error => {
+            console.log('Error while save the activity: ', error);
+            res.redirect('/activity-calendar');
+        });
+
+});
+
+userRouter.post('/activity/:id/delete-activity', (req, res, next) => {
+
+    Activity
+        .findByIdAndDelete(req.params.id)
+        .then(() => {
+            res.redirect('/user/profile');
+        })
+        .catch(error => {
+        console.log(error);
+        });
 });
 
 
