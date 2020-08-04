@@ -1,7 +1,7 @@
-<h2>{{activity.title}}</h2>
+<h2>EDIT {{activity.title}}</h2>
 {{!-- cambiar userEdit --}}
 {{!-- {{#each userEdit}} --}}
-<form action="/user/activity/{{activity._id}}/edit" method= "POST">
+<form action="/user/activity/{{activity._id}}/edit" method="POST">
     <div>
         <label for="edituser-name">Title:</label>
         <input id="edituser-name" type="text" name="title" value="{{activity.title}}" placeholder="{{activity.title}}" >
@@ -11,27 +11,44 @@
         <input id="edituser-email" type="text" name="description" value="{{activity.description}}" placeholder="{{activity.description}}" >
     </div>
     <div>
-        <label for="edituser-password">Amenity:</label>
-        <select id="edituser-instructor" id="cars" name="amenity">
-            <option value="tennis">Tennis</option>
-            <option value="football">Football</option>
-            <option value="swimming">Swimming</option>
+        <label for="edituser-instructor">Amenity:</label>
+        <select id="edituser-instructor" name="amenity">
+            <option value="Tennis">Tennis</option>
+            <option value="Football">Football</option>
+            <option value="Pool">Pool</option>
         </select>
     </div>
     <div>
-        <label for="edituser-age">Age</label>
-        <input id="edituser-age" type="number" name="age" value="{{this.user.age}}" placeholder="{{user.age}}" >
+        <label for="edituser-participants">Participants</label>
+        <input id="edituser-participants" type="number" name="participants" value="{{activity.participants}}" placeholder="{{activity.participants}}" >
     </div>
-    
-</form>
 
-<button type="submit">Send</button>
-{{!-- {{/each}} --}}
-<h1>EDIT</h1>
-
-<!--<form action="/user/activity/edit?activity_id={{activity._id}}" method="POST">-->
-<form action="/user/activity/{{activity._id}}/edit" method="POST">
-    <input type="text" name="title" placeholder="{{activity.title}}">
-    <input type="text" name="description"  placeholder="{{activity.description}}">
+     <div>
+        <label for="edituser-date">Date</label>
+        <input id="edituser-date" type="date" name="date" value="{{activity.date}}">
+    </div>
+     <div>
+        <label for="edituser-time">Time:</label>
+        <select id="edituser-time"  name="time">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="8:00">8:00</option>
+            <option value="9:00">9:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+        </select>
+    </div>
+     <div>
+        <label for="edituser-instructor">Instructor</label>
+        <input id="edituser-instructor" type="text" name="instructor" value="{{activity.instructor}}" placeholder="{{activity.instructor}}" >
+    </div>
     <button type="submit">Send</button>
 </form>

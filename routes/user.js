@@ -72,11 +72,11 @@ userRouter.get('/new-activity', (req, res, next) => {
 
 userRouter.post('/new-activity', (req, res, next) => {
     
-    const { title, description} = req.body;
+    const { title, description, amenity, participants, date, time, instructor} = req.body;
     const curUser = req.session.currentUser._id;
 
     Activity
-        .create({ title, description })
+        .create({ title, description, amenity, participants, date, time, instructor })
         .then(newActivity => {
 
             const actId = newActivity._id;
@@ -125,12 +125,13 @@ userRouter.get('/activity/:id/edit', async(req, res, next) => {
 
 userRouter.post('/activity/:id/edit', async(req, res, next) => {
     
-    const { title, description } = req.body;
-
+    const { title, description, amenity, participants, date, instructor } = req.body;
+console.log(req.body)
     Activity
         .findByIdAndUpdate(
+
             req.params.id,
-            { $set: { title, description } },
+            { $set: { title, description, amenity, participants, date, instructor } },
             { new: true }
         )
         .then( (actUpdate) => {

@@ -5,11 +5,13 @@ const activitySchema = new Schema({
     title: String,
     img: { type: String, default: '#' },
     description: String,
+    amenity: { type: String, enum: ['Tennis', 'Football', 'Pool'] },
     participants: Number,
     date: Date, 
+    time: { type: String, enum: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'] },
     // faltaria hora_?
     //time: time,
-    instructor:  { type: Schema.Types.ObjectId, ref: 'User' },
+    instructor:  String,
     //asisted: { type: Boolean, default: false },
     coments: String,
     rating: { type: Number, min: 1, max: 5 }

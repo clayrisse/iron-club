@@ -9,7 +9,9 @@
         <p>{{title}}</p>
         <a class="" href="/user/activity/{{this.id}}">See More</a>
         <!--<a href="/user/activity/edit">EDIT</a>-->
-        <a href="/user/activity/{{this.id}}/edit">EDIT</a>
+        {{#if currentUser.instructor}}
+          <a href="/user/activity/{{this.id}}/edit">EDIT</a>
+        {{/if}}
       </li>
     </ul>
   {{/each}}
