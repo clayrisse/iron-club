@@ -1,3 +1,32 @@
+<h2>{{activity.title}}</h2>
+{{!-- cambiar userEdit --}}
+{{!-- {{#each userEdit}} --}}
+<form action="/user/activity/{{activity._id}}/edit" method= "POST">
+    <div>
+        <label for="edituser-name">Title:</label>
+        <input id="edituser-name" type="text" name="title" value="{{activity.title}}" placeholder="{{activity.title}}" >
+    </div>
+    <div>
+        <label for="edituser-email">Description:</label>
+        <input id="edituser-email" type="text" name="description" value="{{activity.description}}" placeholder="{{activity.description}}" >
+    </div>
+    <div>
+        <label for="edituser-password">Amenity:</label>
+        <select id="edituser-instructor" id="cars" name="amenity">
+            <option value="tennis">Tennis</option>
+            <option value="football">Football</option>
+            <option value="swimming">Swimming</option>
+        </select>
+    </div>
+    <div>
+        <label for="edituser-age">Age</label>
+        <input id="edituser-age" type="number" name="age" value="{{this.user.age}}" placeholder="{{user.age}}" >
+    </div>
+    
+</form>
+
+<button type="submit">Send</button>
+{{!-- {{/each}} --}}
 <h1>EDIT</h1>
 
 <!--<form action="/user/activity/edit?activity_id={{activity._id}}" method="POST">-->

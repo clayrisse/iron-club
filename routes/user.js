@@ -58,11 +58,23 @@ userRouter.get('/new-activity', (req, res, next) => {
 userRouter.post('/new-activity', (req, res, next) => {
     
     const { title, description} = req.body;
+    const curUser = req.session.currentUser._id;
 
     Activity
         .create({ title, description })
         .then(newActivity => {
-        res.redirect(`/user/activity/${newActivity._id}`)
+
+            const actId = newActivity._id;
+            User.findByIdAndUpdate(
+                curUser,
+                { $push: { creatAct: actId} },
+                { new: true }
+                )
+                .then((user) => {
+                    console.log(user);
+                    res.redirect(`/user/activity/${newActivity._id}`)
+                })
+        //res.redirect(`/user/activity/${newActivity._id}`)
         })
         .catch(error => {
         console.log('Error while create the activity: ', error);
@@ -115,5 +127,6 @@ userRouter.post('/activity/:id/edit', async(req, res, next) => {
             console.log('Error while retrieving activity details: ', error);
         })
 });
+
 
 module.exports = userRouter;

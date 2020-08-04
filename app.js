@@ -14,7 +14,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 mongoose
-  .connect('mongodb://localhost/ironclub', {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(session({
-  secret: 'never do your own laundry again',
+  secret: process.env.SECRET_SESSION,
   resave: true,
   saveUninitialized: true,
   cookie: { maxAge: 600000 },
@@ -88,5 +88,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-
-
