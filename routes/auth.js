@@ -5,17 +5,20 @@ const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 const User = require('./../models/User');
 
-const parser = require('./../config/cloudinary');
+const parser = require('./../config/cloudinary')
 
 //SIGNUP
 authRouter.get('/signup', (req, res, next) => {
   res.render('auth/signup', { errorMessage: '' });
 });
-// esto "parser.single('profilepic')" es para la foto en el sign up
+
 authRouter.post('/signup', parser.single('profilepic'), async (req, res, next) => {
-  console.log('req.body', req.body);
+  //console.log('req.body', req.body);
   const { name, email, password } = req.body;
-  const image_url = req.file.secure_url;
+  let image_url;
+  if (req.file){
+    image_url = req.file.secure_url;
+  }
 
   if(email === "" || password === "") {
     res.render('auth/signup', { errorMessage: "Enter both email and password "});
@@ -33,9 +36,10 @@ authRouter.post('/signup', parser.single('profilepic'), async (req, res, next) =
     const hashedPassword = bcrypt.hashSync(password, salt);
     
     // esto "profilepic: image_url " es para pasar el profilepic
-    await User.create({ name, email, password: hashedPassword, profilepic: image_url  })
-    
-    res.redirect('/login'); //levantar sesion al hacer signup
+    const newUser = await User.create({ name, email, password: hashedPassword, profilepic: image_url })
+    //console.log(newUser)
+    req.session.currentUser = newUser;
+    res.redirect('/user/profile'); 
   } 
   catch (error) {
     res.render('auth/signup', { errorMessage: "Error while creating account. Please try again."})
@@ -56,12 +60,12 @@ authRouter.post('/login', (req, res, next) => {
     }
     
     User.findOne({ email }) 
-        .then((user) => { //este user
+        .then((user) => { 
             if(!user) {
                 res.render('auth/login', { errorMessage: "The user doesn't exist"});
                 return;
             }
-            const correctePass = (bcrypt.compareSync(password, user.password))//es este user
+            const correctePass = (bcrypt.compareSync(password, user.password))
             if(!correctePass) { 
               res.render('auth/login', { errorMessage: 'Incorrect password.' })
             } else {

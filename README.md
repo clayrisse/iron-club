@@ -87,7 +87,7 @@ Activity Model
 
 **Trello**
 
-See our [Trello](https://trello.com/b/x0IQmzYu/ironclub) board.
+See our [Trello](https://trello.com/b/xgit0IQmzYu/ironclub) board.
 
 **Git**
 

@@ -1,8 +1,6 @@
 {{!-- Instructor activitiy form  --}}
 
-<h1>CREAR ACTIVIDAD</h1>
-
-
+<h1>CREATE ACTIVITY</h1>
 
 {{#if errorMessage}}
 <p class="error-message">
@@ -11,17 +9,59 @@
 {{/if}}
 
 <form action="/user/new-activity" method="post">
+
+     <div>
+        <label for='activitypic-input'>Activity picture</label>
+        <input type="file" name="activitypic" id="activitypic-input">
+    </div>
     <div>
-        <label for="title-input"> Title </label>
-        <input type="text" name="title" id="name-input" placeholder="Aquagym">
+        <label for="createactivity-name">Title:</label>
+        <input id="createactivity-name" type="text" name="title" value="" placeholder="Moon Walking" required>
+    </div>
+    <div>
+        <label for="createactivity-email">Description:</label>
+        <input id="createactivity-email" type="text" name="description" value="" placeholder="yada yada yada" required>
+    </div>
+    <div>
+        <label for="createactivity-password">Amenity:</label>
+        <select id="createactivity-instructor"  name="amenity">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="Tennis">Tennis</option>
+            <option value="Football">Football</option>
+            <option value="Pool">Pool</option>
+        </select>
+    </div>
+    <div>
+        <label for="createactivity-participants">Participants</label>
+        <input id="createactivity-participants" type="number" name="participants" value="" placeholder="0" required>
     </div>
 
-    <div>
-        <label for="description-input"> Description </label>
-        <input type="text" name="description" id="email-input" placeholder="Lorem ipsum dolor sit amet">
+     <div>
+        <label for="createactivity-date">Date</label>
+        <input id="createactivity-date" type="date" name="date" value="" placeholder="" required >
     </div>
-
-
+         <div>
+        <label for="createactivity-time">Time:</label>
+        <select id="createactivity-time"  name="time" required>
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="8:00">8:00</option>
+            <option value="9:00">9:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+        </select>
+    </div>
+     <div>
+        <label for="createactivity-instructor">Instructor</label>
+        <input id="createactivity-instructor" type="text" name="instructor" value="" placeholder="Michael Jackson" >
+    </div>
     <button> Create New Activity </button>
 </form>
-

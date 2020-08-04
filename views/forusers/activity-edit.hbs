@@ -1,35 +1,54 @@
-<h2>Change your profile info</h2>
+<h2>EDIT {{activity.title}}</h2>
 {{!-- cambiar userEdit --}}
 {{!-- {{#each userEdit}} --}}
-<form action="user/{{this._id}}" method= "POST">
+<form action="/user/activity/{{activity._id}}/edit" method="POST">
     <div>
-        <label for="edituser-img">Photo</label>
-        <img id="edituser-name" src="{{user.imgProfile}}"> {{!-- cambiar este nombre por el de UROS --}}
+        <label for="edituser-name">Title:</label>
+        <input id="edituser-name" type="text" name="title" value="{{activity.title}}" placeholder="{{activity.title}}" >
     </div>
     <div>
-        <label for="edituser-name">Name</label>
-        <input id="edituser-name" type="text" name="name" value="{{this.user.name}}" placeholder="{{user.name}}" >
+        <label for="edituser-email">Description:</label>
+        <input id="edituser-email" type="text" name="description" value="{{activity.description}}" placeholder="{{activity.description}}" >
     </div>
     <div>
-        <label for="edituser-email">Email</label>
-        <input id="edituser-email" type="email" name="email" value="{{this.user.email}}" placeholder="{{user.email}}" >
-    </div>
-    <div>
-        <label for="edituser-password">Password</label>
-        <input id="edituser-password" type="password" name="password" value="{{this.user.password}}" placeholder="{{user.password}}" >
-    </div>
-    <div>
-        <label for="edituser-age">Age</label>
-        <input id="edituser-age" type="number" name="age" value="{{this.user.age}}" placeholder="{{user.age}}" >
-    </div>
-    <div>
-        <label for="edituser-instructor">Instructor</label>
-        <select id="edituser-instructor" id="cars" name="instructor">
-            <option value="true">YES</option>
-            <option value="false" selected>N0</option>
+        <label for="edituser-instructor">Amenity:</label>
+        <select id="edituser-instructor" name="amenity">
+            <option value="Tennis">Tennis</option>
+            <option value="Football">Football</option>
+            <option value="Pool">Pool</option>
         </select>
     </div>
-</form>
+    <div>
+        <label for="edituser-participants">Participants</label>
+        <input id="edituser-participants" type="number" name="participants" value="{{activity.participants}}" placeholder="{{activity.participants}}" >
+    </div>
 
-<button type="submit">Send</button>
-{{!-- {{/each}} --}}
+     <div>
+        <label for="edituser-date">Date</label>
+        <input id="edituser-date" type="date" name="date" value="{{activity.date}}">
+    </div>
+     <div>
+        <label for="edituser-time">Time:</label>
+        <select id="edituser-time"  name="time">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="8:00">8:00</option>
+            <option value="9:00">9:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+        </select>
+    </div>
+     <div>
+        <label for="edituser-instructor">Instructor</label>
+        <input id="edituser-instructor" type="text" name="instructor" value="{{activity.instructor}}" placeholder="{{activity.instructor}}" >
+    </div>
+    <button type="submit">Send</button>
+</form>

@@ -1,29 +1,71 @@
-<img src="{{currentUserInfo.profilepic}}">
+ 
+<img src="{{user.profilepic}}">
 {{!-- asegurarsr en la ruta el nombre de "user" --}}
-<h1>{{currentUserInfo.name}}</h1>
+
+<h1>{{user.name}}</h1>
+
 <h3>Email:</h3>
-<h2>{{currentUserInfo.email}}</h2>
+<h2>{{user.email}}</h2>
+
 <h3>Age:</h3>
-<h2>{{currentUserInfo.age}}</h2>
+<h2>{{user.age}}</h2>
+
 <h3>Instructor</h3>
 {{!-- chequiar esta comprobacion --}}
-{{#if currentUserInfo.instructor:true}} 
+{{#if user.instructor}} 
     <h2>Yes</h2>
-{{else}}
+{{else}} 
     <h2>No</h2>
 {{/if}}
-{{!-- hay que chequear el "this.name" porque no sabemos cual es --}}
+
+<h2>MY CREATED ACTIVITIES</h2>
+
+    {{#each user.creatAct}} 
+    <ul>
+      <li>
+        <p>{{title}}</p>
+        <form action="/user/activity/{{activity._id}}/delete-activity" method="POST">
+            <button type="submit" class="btn-profile">DELETE</button>
+        </form>
+
+s
+      </li>
+    </ul>
+  {{/each}}
+
+<h2>MY RESERVED ACTIVITIES</h2>
+
+    {{#each user.reservAct}} 
+    <ul>
+      <li>
+        <p>{{title}}</p>
+        <form action="/user/activity/{{_id}}/book-activity-delete" method="POST">
+            <button type="submit" class="btn-profile">DELETE</button>
+        </form>
+      </li>
+    </ul>
+  {{/each}}
+
+
 <div class="btn-profile-container">
-    <form action="/user/{{this._id}}/delete" method="POST">
+    <form action="/user/delete" method="POST">
     <button type="submit" class="btn-profile">DELETE</button>
     </form>
-    <form action="/user/edit" method="GET">
+    <form action="/user/edit-profile" method="GET">
     <button type="submit" class="btn-profile">EDIT</button>
     </form>
 </div>
 <div>
     <a class="btn-profile" href="/user/activity-listing">See all activities</a>
 </div>
+
 <div>
     <a class="btn-profile" href="/user/new-activity">Create an activity</a>
 </div>
+
+
+
+
+
+
+
