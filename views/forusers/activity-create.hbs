@@ -8,15 +8,19 @@
 </p>
 {{/if}}
 
-
 <form action="/user/new-activity" method="post">
+
+     <div>
+        <label for='activitypic-input'>Activity picture</label>
+        <input type="file" name="activitypic" id="activitypic-input">
+    </div>
     <div>
         <label for="createactivity-name">Title:</label>
-        <input id="createactivity-name" type="text" name="title" value="" placeholder="Moon Walking" >
+        <input id="createactivity-name" type="text" name="title" value="" placeholder="Moon Walking" required>
     </div>
     <div>
         <label for="createactivity-email">Description:</label>
-        <input id="createactivity-email" type="text" name="description" value="" placeholder="yada yada yada" >
+        <input id="createactivity-email" type="text" name="description" value="" placeholder="yada yada yada" required>
     </div>
     <div>
         <label for="createactivity-password">Amenity:</label>
@@ -29,16 +33,17 @@
     </div>
     <div>
         <label for="createactivity-participants">Participants</label>
-        <input id="createactivity-participants" type="number" name="participants" value="" placeholder="0" >
+        <input id="createactivity-participants" type="number" name="participants" value="" placeholder="0" required>
     </div>
 
      <div>
         <label for="createactivity-date">Date</label>
-        <input id="createactivity-date" type="date" name="date" value="" placeholder="" >
+        <input id="createactivity-date" type="date" name="date" value="" placeholder="" required >
     </div>
          <div>
         <label for="createactivity-time">Time:</label>
-        <select id="createactivity-time"  name="time">
+        <select id="createactivity-time"  name="time" required>
+            <option value="" selected disabled hidden>Choose here</option>
             <option value="8:00">8:00</option>
             <option value="9:00">9:00</option>
             <option value="10:00">10:00</option>

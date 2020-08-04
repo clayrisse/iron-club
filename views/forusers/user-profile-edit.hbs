@@ -2,19 +2,32 @@
 
 <form action="/user/edit-profile?user_id={{currentUserInfo._id}}" method="POST">
     <div>
-        <label for="name-input"> Name </label>
-        <input type="text" name="name" id="name-input" placeholder="{{currentUserInfo.name}}">
+        <label for="name-input">Name</label>
+        <input id="name-input" type="text" name="name" placeholder="{{currentUserInfo.name}}">
     </div>
 
     <div>
-        <label for="email-input"> Email </label>
-        <input type="email" name="email" id="email-input" placeholder="{{currentUserInfo.email}}">
+        <label for="email-input">Email</label>
+        <input id="email-input" type="email" name="email" placeholder="{{currentUserInfo.email}}">
     </div>
 
     <div>
-        <label for="password-input"> Password </label>
-        <input type="password" name="password" id="password-input" placeholder="e.g., ••••••••••••">
+        <label for="password-input">Password</label>
+        <input id="password-input" type="password" name="password" placeholder="e.g., ••••••••••••">
+    </div>
+    <div>
+        <label for="age-input">Age</label>
+        <input id="age-input" type="number" name="age"  placeholder="e.g., 136" required>
+    </div>
+    <div>
+        <label for="instructor-input">Are you an instructor:</label>
+        <select id="instructor-input" name="instructor">
+            <option value=true>Yes</option>
+            <option value=false selected>NO</option>
+            
+            
+        </select>
     </div>
 
     <button> Submit </button>
-</form> 
+</form>  

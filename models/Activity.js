@@ -3,7 +3,7 @@ const Schema   = mongoose.Schema;
 
 const activitySchema = new Schema({
     title: String,
-    img: { type: String, default: '#' },
+    activitypic: { type: String, default: '/images/icon-userdefault.png'  },
     description: String,
     amenity: { type: String, enum: ['Tennis', 'Football', 'Pool'] },
     participants: Number,

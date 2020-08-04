@@ -4,6 +4,8 @@ const userRouter = express.Router();
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
+const parser = require('./../config/cloudinary');
+
 const User = require('./../models/User');
 const Activity = require('./../models/Activity');
 
@@ -54,9 +56,13 @@ userRouter.get('/edit-profile', (req, res, next) => {
     
 });
 
-userRouter.post('/edit-profile', (req, res, next) => {
+userRouter.post('/edit-profile', parser.single('activitypic'), (req, res, next) => {
     
-    const { name, email, password } = req.body;
+    const { name, email, password, instructor } = req.body;
+    let imageAct_url;
+    if (req.file){
+        imageAct = req.file.secure_url;
+    }
 
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPassword = bcrypt.hashSync(password, salt);
@@ -64,7 +70,7 @@ userRouter.post('/edit-profile', (req, res, next) => {
     User
         .findByIdAndUpdate(
             req.session.currentUser._id ,
-            { $set: { name, email, password: hashedPassword } },
+            { $set: { name, email, password: hashedPassword, instructor, activitypic: imageAct_url} },
             { new: true }
         )
         .then((userEDit) => {
