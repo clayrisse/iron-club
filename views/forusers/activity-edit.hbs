@@ -1,34 +1,28 @@
-<h2>Change your profile info</h2>
+<h2>{{activity.title}}</h2>
 {{!-- cambiar userEdit --}}
 {{!-- {{#each userEdit}} --}}
-<form action="user/{{this._id}}" method= "POST">
+<form action="/user/activity/{{activity._id}}/edit" method= "POST">
     <div>
-        <label for="edituser-img">Photo</label>
-        <img id="edituser-name" src="{{user.imgProfile}}"> {{!-- cambiar este nombre por el de UROS --}}
+        <label for="edituser-name">Title:</label>
+        <input id="edituser-name" type="text" name="title" value="{{activity.title}}" placeholder="{{activity.title}}" >
     </div>
     <div>
-        <label for="edituser-name">Name</label>
-        <input id="edituser-name" type="text" name="name" value="{{this.user.name}}" placeholder="{{user.name}}" >
+        <label for="edituser-email">Description:</label>
+        <input id="edituser-email" type="text" name="description" value="{{activity.description}}" placeholder="{{activity.description}}" >
     </div>
     <div>
-        <label for="edituser-email">Email</label>
-        <input id="edituser-email" type="email" name="email" value="{{this.user.email}}" placeholder="{{user.email}}" >
-    </div>
-    <div>
-        <label for="edituser-password">Password</label>
-        <input id="edituser-password" type="password" name="password" value="{{this.user.password}}" placeholder="{{user.password}}" >
+        <label for="edituser-password">Amenity:</label>
+        <select id="edituser-instructor" id="cars" name="amenity">
+            <option value="tennis">Tennis</option>
+            <option value="football">Football</option>
+            <option value="swimming">Swimming</option>
+        </select>
     </div>
     <div>
         <label for="edituser-age">Age</label>
         <input id="edituser-age" type="number" name="age" value="{{this.user.age}}" placeholder="{{user.age}}" >
     </div>
-    <div>
-        <label for="edituser-instructor">Instructor</label>
-        <select id="edituser-instructor" id="cars" name="instructor">
-            <option value="true">YES</option>
-            <option value="false" selected>N0</option>
-        </select>
-    </div>
+    
 </form>
 
 <button type="submit">Send</button>

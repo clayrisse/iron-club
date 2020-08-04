@@ -18,6 +18,7 @@ userRouter.use((req, res, next) => {
 });
 // <= MIDDLEWARE
 
+//USER
 userRouter.get('/profile', (req, res, next) => {
     res.render('forusers/user-profile');
   });
@@ -51,6 +52,20 @@ userRouter.post('/edit-profile', (req, res, next) => {
         })
 });
 
+userRouter.post('/delete', (req, res, next) => {
+    const userId = req.session.currentUser._id;
+
+    User
+        .findByIdAndDelete(userId)
+        .then(() => {
+            res.redirect('/');
+        })
+        .catch(error => {
+        console.log(error);
+        });
+});
+
+//ACTIVITY
 userRouter.get('/new-activity', (req, res, next) => {
     res.render('forusers/activity-create', { errorMessage: '' });
 });
@@ -58,11 +73,22 @@ userRouter.get('/new-activity', (req, res, next) => {
 userRouter.post('/new-activity', (req, res, next) => {
     
     const { title, description} = req.body;
+    const curUser = req.session.currentUser._id;
 
     Activity
         .create({ title, description })
         .then(newActivity => {
-        res.redirect(`/user/activity/${newActivity._id}`)
+
+            const actId = newActivity._id;
+            User.findByIdAndUpdate(
+                curUser,
+                { $push: { creatAct: actId} },
+                { new: true }
+                )
+                .then((user) => {
+                    console.log(user);
+                    res.redirect(`/user/activity/${newActivity._id}`)
+                })
         })
         .catch(error => {
         console.log('Error while create the activity: ', error);
@@ -115,5 +141,6 @@ userRouter.post('/activity/:id/edit', async(req, res, next) => {
             console.log('Error while retrieving activity details: ', error);
         })
 });
+
 
 module.exports = userRouter;

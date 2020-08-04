@@ -18,9 +18,14 @@
     <h2>No</h2>
 {{/if}}
 
+<h2>MY CREATED ACTIVITIES</h2>
+
+<ul>
+
+</ul>
 {{!-- hay que chequear el "this.name" porque no sabemos cual es --}}
 <div class="btn-profile-container">
-    <form action="/user/{{this._id}}/delete" method="POST">
+    <form action="/user/delete" method="POST">
     <button type="submit" class="btn-profile">DELETE</button>
     </form>
     <form action="/user/edit-profile" method="GET">
@@ -34,6 +39,7 @@
 <div>
     <a class="btn-profile" href="/user/new-activity">Create an activity</a>
 </div>
+
 
 
 

@@ -5,8 +5,6 @@ const activitySchema = new Schema({
     title: String,
     img: { type: String, default: '#' },
     description: String,
-    // no era esto el id de la cancha para porder unir las db?
-    amenity: { type: String, enum: ['tennis', 'football', 'swimming'] },
     participants: Number,
     date: Date, 
     // faltaria hora_?
