@@ -13,5 +13,15 @@
     {{!-- show partials of comments --}}
 </div> 
 
- 
+ {{!-- hacer un #if si esta login y si de hecho es un instructor --}}
   {{!-- esto no deberia estar en esta pag --}} <a href="forusers/activity-edit">EDIT</a>
+
+
+
+{{!----------------------------------editarrrrrrrrr --}}
+
+    <h1>{{activity.title}}</h1>
+    <h3>Description:</h3>
+    <p>{{activity.description}}</p>
+
+    <a href="/user/activity/edit?activity_id={{activity._id}}">EDIT</a>

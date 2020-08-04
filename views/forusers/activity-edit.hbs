@@ -33,3 +33,11 @@
 
 <button type="submit">Send</button>
 {{!-- {{/each}} --}}
+<h1>EDIT</h1>
+
+<!--<form action="/user/activity/edit?activity_id={{activity._id}}" method="POST">-->
+<form action="/user/activity/{{activity._id}}/edit" method="POST">
+    <input type="text" name="title" placeholder="{{activity.title}}">
+    <input type="text" name="description"  placeholder="{{activity.description}}">
+    <button type="submit">Send</button>
+</form>

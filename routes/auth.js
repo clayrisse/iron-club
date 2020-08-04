@@ -5,13 +5,11 @@ const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 const User = require('./../models/User');
 
-const parser = require('./../config/cloudinary');
-
 //SIGNUP
 authRouter.get('/signup', (req, res, next) => {
   res.render('auth/signup', { errorMessage: '' });
 });
-// esto "parser.single('profilepic')" es para la foto en el sign up
+
 authRouter.post('/signup', parser.single('profilepic'), async (req, res, next) => {
   console.log('req.body', req.body);
   const { name, email, password } = req.body;
@@ -56,12 +54,12 @@ authRouter.post('/login', (req, res, next) => {
     }
     
     User.findOne({ email }) 
-        .then((user) => { //este user
+        .then((user) => { 
             if(!user) {
                 res.render('auth/login', { errorMessage: "The user doesn't exist"});
                 return;
             }
-            const correctePass = (bcrypt.compareSync(password, user.password))//es este user
+            const correctePass = (bcrypt.compareSync(password, user.password))
             if(!correctePass) { 
               res.render('auth/login', { errorMessage: 'Incorrect password.' })
             } else {
