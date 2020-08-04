@@ -5,6 +5,8 @@ const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 const User = require('./../models/User');
 
+const parser = require('./../config/cloudinary')
+
 //SIGNUP
 authRouter.get('/signup', (req, res, next) => {
   res.render('auth/signup', { errorMessage: '' });
