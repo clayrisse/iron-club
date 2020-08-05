@@ -56,13 +56,10 @@ userRouter.get('/edit-profile', (req, res, next) => {
     
 });
 
-userRouter.post('/edit-profile', parser.single('activitypic'), (req, res, next) => {
+userRouter.post('/edit-profile',  (req, res, next) => {
     
     const { name, email, password, instructor, age } = req.body;
-    let imageAct_url;
-    if (req.file){
-        imageAct = req.file.secure_url;
-    }
+   
 
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPassword = bcrypt.hashSync(password, salt);
@@ -70,7 +67,7 @@ userRouter.post('/edit-profile', parser.single('activitypic'), (req, res, next) 
     User
         .findByIdAndUpdate(
             req.session.currentUser._id ,
-            { $set: { name, email, password: hashedPassword, instructor, age, activitypic: imageAct_url} },
+            { $set: { name, email, password: hashedPassword, instructor, age } },
             { new: true }
         )
         .then((userEDit) => {
@@ -96,19 +93,23 @@ userRouter.post('/delete', (req, res, next) => {
 });
 
 //ACTIVITY
-userRouter.get('/new-activity', (req, res, next) => {
+userRouter.get('/new-activity',  (req, res, next) => {
     
     res.render('forusers/activity-create', { errorMessage: '' });
 
 });
 
-userRouter.post('/new-activity', (req, res, next) => {
+userRouter.post('/new-activity', parser.single('activitypic'),(req, res, next) => {
     
     const { title, description, amenity, participants, date, time, instructor} = req.body;
-    const curUser = req.session.currentUser._id;
+    const currUser = req.session.currentUser._id;
+    let imageAct_url;
+    if (req.file){
+        imageAct_url = req.file.secure_url;
+    }
 
     Activity
-        .create({ title, description, amenity, participants, date, time, instructor })
+        .create({ title, description, amenity, participants, date, time, instructor, activitypic: imageAct_url })
         .then(newActivity => {
 
             const actId = newActivity._id;
