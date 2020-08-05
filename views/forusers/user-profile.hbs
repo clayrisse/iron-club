@@ -18,6 +18,7 @@
     <h2>No</h2>
 {{/if}}
 
+{{#if user.instructor}} 
 <h2>MY CREATED ACTIVITIES</h2>
 
     {{#each user.creatAct}} 
@@ -31,6 +32,8 @@
       </li>
     </ul>
   {{/each}}
+
+{{/if}}
 
 <h2>MY RESERVED ACTIVITIES</h2>
 
