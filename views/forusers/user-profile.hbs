@@ -55,13 +55,14 @@ s
     <button type="submit" class="btn-profile">EDIT</button>
     </form>
 </div>
-<div>
-    <a class="btn-profile" href="/user/activity-listing">See all activities</a>
-</div>
 
-<div>
+{{#if user.instructor}} 
+  <div>
     <a class="btn-profile" href="/user/new-activity">Create an activity</a>
-</div>
+  </div>
+{{/if}}
+
+
 
 
 
