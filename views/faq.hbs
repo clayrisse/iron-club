@@ -1,61 +1,51 @@
 {{!-- pricing and FAQ  --}}
 {{!-- <h1>FAQ</h1> --}}
 
-<div id="formedit" class="bigform form">
+<section id="formedit" class="bigform form">
     <header class="">
         <img id="logoform" src="images/logo-ironclub.png">
-        <h1 class="titleform">Edit Profile</h1>
+        <h1 class="titleform">Log In</h1>
     </header>
-    <form action="/user/edit-profile?user_id={{currentUserInfo._id}}" method="POST">
+
+    {{#if errorMessage}}
+    <p class="error-message">
+        {{ errorMessage }}
+    </p>
+    {{/if}}
+
+    <form action="/login" method="post">
+
         <div class="blockform">
+
             <div class="lineform">
                 <div class="labelform">
-                    <label for="name-input">Name</label>
+                    <label for="email-input"> Email </label>
                 </div>
-                <div class="inputform">
-                    <input id="name-input" type="text" name="name" value="{{currentUserInfo.name}}" requiredG>
-                </div>
-            </div>
-
-            <div class="lineform">
-                <div  class="labelform">
-                    <label for="email-input">Email</label>
-                </div>
-                <div class="inputform">
-                    <input id="email-input" type="email" name="email" value="{{currentUserInfo.email}}" required>
+                <div class="inputform">    
+                    <input type="email" name="email" id="email-input"
+                    placeholder="e.g., xena@warrior.company">
                 </div>
             </div>
 
             <div class="lineform">
-                <div  class="labelform">
-                    <label for="password-input">Password</label>
+                <div class="labelform">
+                    <label for="password-input"> Password </label>
                 </div>
                 <div class="inputform">
-                    <input id="password-input" type="password" name="password"  placeholder="repeart your password" required>
+                    <input type="password" name="password" id="password-input"
+                    placeholder="e.g., ••••••••••••">
                 </div>
             </div>
 
-            <div class="lineform">
-                <div  class="labelform">
-                    <label for="age-input">Age</label>
-                </div>
-                <div class="inputform">
-                    <input id="age-input" type="number" name="age"  value="{{currentUserInfo.age}}" placeholder="e.g., 136" required >
-                </div>
-            </div>
-
-            <div class="lineform">
-                <div  class="labelform">
-                    <label for="instructor-input">Are you an instructor:</label>
-                </div>
-                <div class="inputform">
-                    <select id="instructor-input" name="instructor">
-                        <option value=true>Yes</option>
-                        <option value=false selected>NO</option>
-                    </select>
-                </div>
-            </div>    
-            <button class="btnform"> Submit </button>
+            <button class="btnform">Log In</button>
         </div>
-    </form>  
-</div>
+    </form>
+
+    <p>Don't have an account?<a href="/signup">Create an account.</a></p>
+</section>
+
+
+
+
+
+

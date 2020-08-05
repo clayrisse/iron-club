@@ -158,13 +158,17 @@ body{
 }
 
 .inputform select{
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   border: 2px solid #e1e8ee;
   border-radius: 6px;
   color: black;
   padding: 8px 6px;
   width: 100%;
   
+}
+#editactivity-date{
+  background-color: #fff;
+
 }
 
 .btnform {

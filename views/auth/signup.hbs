@@ -1,41 +1,62 @@
-<h2> Sign Up </h2>
+<section id="formedit" class="bigform form">
+    <header class="">
+        <img id="logoform" src="images/logo-ironclub.png">
+        <h1 class="titleform">Sing Up</h1>
+    </header>
 
-{{#if errorMessage}}
-<p class="error-message">
-    {{ errorMessage }}
-</p>
-{{/if}}
+    {{#if errorMessage}}
+    <p class="error-message">
+        {{ errorMessage }}
+    </p>
+    {{/if}}
 
-<form action="/signup" method="POST" enctype="multipart/form-data">
-    <div>
-        <label for=''>Profile picture</label>
-        <input type="file" name="profilepic" id="profilepic-input">
-    </div>
-    <div>
-        <label for="name-input"> Name </label>
-        <input type="text" name="name" id="name-input" placeholder="e.g., Diana Prince" required>
-    </div>
+    <form action="/signup" method="POST" enctype="multipart/form-data">
+        
+        <div class="blockform">
 
-    <div>
-        <label for="email-input"> Email </label>
-        <input type="email" name="email" id="email-input" placeholder="e.g., diana@themyscira.agency" required>
-    </div>
+            <div class="lineform">
+                <div class="labelform">                
+                    <label for=''>Profile picture</label>
+                 </div>
+                <div class="inputform">             
+                    <input type="file" name="profilepic" id="profilepic-input">
+                </div>
+            </div>
 
-    <div>
-        <label for="password-input"> Password </label>
-        <input type="password" name="password" id="password-input" placeholder="e.g., ••••••••••••" required>
-    </div>
+            <div class="lineform">
+                <div class="labelform">            
+                    <label for="name-input"> Name </label>
+                </div>
+                <div class="inputform">             
+                    <input type="text" name="name" id="name-input" placeholder="e.g., Diana Prince" required>
+                </div>
+            </div>
 
-    <button> Create New Account </button>
-</form>
+            <div class="lineform">
+                <div class="labelform">            
+                    <label for="email-input"> Email </label>
+                </div>
+                <div class="inputform">             
+                    <input type="email" name="email" id="email-input" placeholder="e.g., diana@themyscira.agency" required>
+                </div>
+            </div>
+
+            <div class="lineform">
+                <div class="labelform">   
+                    <label for="password-input"> Password </label>
+                </div>
+                <div class="inputform">             
+                    <input type="password" name="password" id="password-input" placeholder="e.g., ••••••••••••" required>
+                </div>
+            </div>
+
+            <button class="btnform"> Create New Account </button>
+
+        </div>
+    </form>
 
 
 
 
-<p>
-    Already have an account?
-    <a href="/login">
-        Log in.
-    </a>
-</p>
+<p>Already have an account?<a href="/login">Log in.</a></p>
 
