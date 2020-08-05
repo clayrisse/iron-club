@@ -1,9 +1,9 @@
-/* <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> */
 
 body{ 
   background-color: #f8f8f8;
-  padding: 50px;
+  padding: 50px 0px;
   font: 16px 'Roboto', sans-serif, Helvetica, Arial, sans-serif;
+  font-weight: 400;
   margin: 1% auto 10%;
   text-align: center;
 }
@@ -100,43 +100,86 @@ body{
   }
 
  /*----------------------F O R M S------*/
- .form{
-  background-color: #d6d621;
+ #logoform{
+   width: 83px;
+ }
+ .titleform{
+  color: #2d354c;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
   text-align: center;
-  /* width: 80%; */
-  max-width: 600px;
-  margin: auto;
+  width: 100%;
+  /* width: 100%; */
+ }
+ .form{
+  /* background-color: #d6d621; */
+  background: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+    
+    margin: 24px auto 0;
+    max-width: 380px;
+    padding: 24px 30px 32px;
+
 }
 
-#formedit{
-  background-color: #d6d621;
-  text-align: center;
-  padding: 20px 0px 60px;
-}
 .blockform{
-  /* background-color: #d62121; */
-  text-align: center;
+  width: 90%;
+  margin: auto;
+  align-items: center;
 }
 
 .labelform{
-  /* background-color: #a8c9d4; */
-  /* padding: 2%; */
-
+  color: #86939E;
+  font-size: 14px;
+  font-weight: bold
+  line-height: 16px;
+  margin: 16px 0 8px;
+  text-align: left;
 }
 
 .inputform{
-  /* background-color: #252d30; */
-  padding: 2%;
-  
+  text-align: center;
+  color: black;
   margin: auto;
+  padding: 0px;
 }
+
 .inputform input{
-  width: 90%;
-  max-width: 300px;
-  padding: 5px;
-  
+  /* background-color: rgb(232, 240, 254); */
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+  color: black;
+  padding: 8px 5px;
+  width: 95%;
 
 }
+
+.inputform select{
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+  color: black;
+  padding: 8px 6px;
+  width: 100%;
+  
+}
+
+.btnform {
+  background: #2d354c;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  padding: 13px 0;
+  text-align: center;
+  width: 100%;
+}
+
 
 
 
