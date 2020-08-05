@@ -24,11 +24,10 @@
     <ul>
       <li>
         <p>{{title}}</p>
-        <form action="/user/activity/{{activity._id}}/delete-activity" method="POST">
+        <form action="/user/activity/{{_id}}/delete-activity" method="POST">
             <button type="submit" class="btn-profile">DELETE</button>
         </form>
-
-s
+        <a href="/user/activity/{{_id}}/edit">EDIT</a>
       </li>
     </ul>
   {{/each}}
@@ -61,6 +60,8 @@ s
     <a class="btn-profile" href="/user/new-activity">Create an activity</a>
   </div>
 {{/if}}
+
+
 
 
 

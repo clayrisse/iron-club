@@ -1,9 +1,11 @@
+
 body{ 
   background-color: #f8f8f8;
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0px auto;
- text-align: center;
+  padding: 50px 0px;
+  font: 16px 'Roboto', sans-serif, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 1% auto 10%;
+  text-align: center;
 }
 /* .superback{
   
@@ -97,6 +99,158 @@ body{
 
   }
 
- 
+ /*----------------------F O R M S------*/
+ #logoform{
+   width: 83px;
+ }
+ .titleform{
+  color: #2d354c;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  width: 100%;
+  /* width: 100%; */
+ }
+ .form{
+  /* background-color: #d6d621; */
+  background: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+    
+    margin: 24px auto 0;
+    max-width: 380px;
+    padding: 24px 30px 32px;
+
+}
+
+.blockform{
+  width: 90%;
+  margin: auto;
+  align-items: center;
+}
+
+.labelform{
+  color: #86939E;
+  font-size: 14px;
+  font-weight: bold
+  line-height: 16px;
+  margin: 16px 0 8px;
+  text-align: left;
+}
+
+.inputform{
+  text-align: center;
+  color: black;
+  margin: auto;
+  padding: 0px;
+}
+
+.inputform input{
+  /* background-color: rgb(232, 240, 254); */
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+  color: black;
+  padding: 8px 5px;
+  width: 95%;
+
+}
+
+.inputform select{
+  background-color: #fff;
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+  color: black;
+  padding: 8px 6px;
+  width: 100%;
+  
+}
+#editactivity-date{
+  background-color: #fff;
+
+}
+
+.btnform {
+  background: #2d354c;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  padding: 13px 0;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*rating*/
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
 
 /* Clau, rease this test line */
+

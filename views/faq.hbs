@@ -1,88 +1,51 @@
 {{!-- pricing and FAQ  --}}
-<h1>FAQ</h1>
+{{!-- <h1>FAQ</h1> --}}
 
+<section id="formedit" class="bigform form">
+    <header class="">
+        <img id="logoform" src="images/logo-ironclub.png">
+        <h1 class="titleform">Log In</h1>
+    </header>
 
+    {{#if errorMessage}}
+    <p class="error-message">
+        {{ errorMessage }}
+    </p>
+    {{/if}}
 
-<h2>Change your profile info</h2>
-{{!-- cambiar userEdit --}}
-{{!-- {{#each userEdit}} --}}
-<form action="user/{{this._id}}" method= "POST">
-    <div>
-        <label for="edituser-img">Photo</label>
-        <img id="edituser-name" src="{{user.imgProfile}}"> {{!-- cambiar este nombre por el de UROS --}}
-    </div>
-    <div>
-        <label for="edituser-name">Name</label>
-        <input id="edituser-name" type="text" name="name" value="{{this.user.name}}" placeholder="{{user.name}}" >
-    </div>
-    <div>
-        <label for="edituser-email">Email</label>
-        <input id="edituser-email" type="email" name="email" value="{{this.user.email}}" placeholder="{{user.email}}" >
-    </div>
-    <div>
-        <label for="edituser-password">Password</label>
-        <input id="edituser-password" type="password" name="password" value="{{this.user.password}}" placeholder="{{user.password}}" >
-    </div>
-    <div>
-        <label for="edituser-age">Age</label>
-        <input id="edituser-age" type="number" name="age" value="{{this.user.age}}" placeholder="{{user.age}}" >
-    </div>
-    <div>
-        <label for="edituser-instructor">Instructor</label>
-        <select id="edituser-instructor" id="cars" name="instructor">
-            <option value="true">YES</option>
-            <option value="false" selected>N0</option>
-        </select>
-    </div>
-</form>
+    <form action="/login" method="post">
 
-<button type="submit">Send</button>
-{{!-- {{/each}} --}}
+        <div class="blockform">
 
+            <div class="lineform">
+                <div class="labelform">
+                    <label for="email-input"> Email </label>
+                </div>
+                <div class="inputform">    
+                    <input type="email" name="email" id="email-input"
+                    placeholder="e.g., xena@warrior.company">
+                </div>
+            </div>
 
-<h2>User profile</h2>
-<img src="{{theUser.imgProfile}}">
-{{!-- asegurarsr en la ruta el nombre de "user" --}}
+            <div class="lineform">
+                <div class="labelform">
+                    <label for="password-input"> Password </label>
+                </div>
+                <div class="inputform">
+                    <input type="password" name="password" id="password-input"
+                    placeholder="e.g., ••••••••••••">
+                </div>
+            </div>
 
-<h1>{{theUser.name}}</h1>
+            <button class="btnform">Log In</button>
+        </div>
+    </form>
 
-<h3>Email:</h3>
-<h2>{{theUser.email}}</h2>
-
-<h3>Age:</h3>
-<h2>{{theUser.age}}</h2>
-
-<h3>Instructor</h3>
-{{!-- chequiar esta comprobacion --}}
-{{#if theUser.instructor:true}} 
-    <h2>Yes</h2>
-{{else}}
-    <h2>No</h2>
-{{/if}}
-
-{{!-- hay que chequear el "this.name" porque no sabemos cual es --}}
-<div class="btn-profile-container">
-<form action="/user/{{this._id}}/delete" method="POST">
-    <button type="submit" class="btn-profile">DELETE</button>
-</form>
-<form action="/user/{{this._id}}/edit" method="GET">
-    <button type="submit" class="btn-profile">EDIT</button>
-</form>
-</div>
-<div>
-    <a class="btn-profile" href="/user/activity-listing">See all activities</a>
-</div>
+    <p>Don't have an account?<a href="/signup">Create an account.</a></p>
+</section>
 
 
 
 
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu justo ipsum. Sed quis tellus sed magna dignissim sagittis sit amet id arcu. Vestibulum placerat lacinia diam sed suscipit. Nullam dapibus rutrum lacus vel gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris a aliquam ex. Donec molestie convallis sagittis. Nulla consectetur eu orci vel pharetra. Nulla facilisi.
 
-Ut in erat convallis, laoreet sem vitae, pellentesque urna. Quisque consectetur eget enim at tristique. Suspendisse a nunc viverra, ullamcorper ante sit amet, interdum lacus. Vestibulum tellus libero, maximus vel tortor non, dapibus pretium metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur vel mi id nisl scelerisque accumsan. Duis nisl augue, aliquam quis arcu non, aliquet iaculis ante.
-
-Suspendisse pulvinar facilisis quam, quis feugiat arcu vestibulum eu. Aliquam volutpat, risus sit amet hendrerit elementum, nisi metus malesuada urna, sed laoreet nunc velit eget quam. Curabitur tempus rhoncus odio a suscipit. Curabitur quis ex tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur scelerisque turpis aliquam lorem elementum condimentum. Nullam finibus sagittis nisl eu feugiat. Nam nec neque aliquam, euismod ante ullamcorper, pharetra augue. Mauris vulputate massa ac nibh luctus cursus. Integer ante augue, condimentum at convallis ac, vehicula ut sem. Fusce ullamcorper ac est nec dapibus. Praesent eget orci a dolor egestas scelerisque eget id augue. Morbi sagittis luctus diam, ac varius tellus.
-
-Integer sed convallis orci. In a purus in ipsum varius convallis vel id justo. Phasellus ullamcorper blandit blandit. Sed sit amet lorem sit amet orci euismod pharetra. Phasellus eget ligula in sapien semper efficitur. Proin in ultricies magna. Nam rutrum tortor magna, ut lobortis ante condimentum at.
-
-Vestibulum elementum purus eu ex fringilla iaculis at in felis. Integer erat odio, vehicula sit amet consectetur ac, suscipit vitae nisi. Donec mollis ante nec metus viverra gravida. Integer feugiat velit vitae faucibus tempor. Duis bibendum pretium purus, in accumsan tortor tristique at. Proin mattis massa ligula, vel auctor mauris tempor non. Praesent rhoncus scelerisque tincidunt. Aliquam bibendum vitae est et placerat. Quisque placerat tempus neque, ut consectetur eros iaculis et. Nulla consectetur massa diam, vel commodo libero blandit in. Donec et mauris eget neque pulvinar porttitor. Quisque dapibus est in lacinia finibus. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut bibendum porta metus vitae tincidunt. Mauris facilisis nisl diam, at vehicula turpis condimentum nec.</p>

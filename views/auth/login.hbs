@@ -1,30 +1,42 @@
-<h2> Log In </h2>
+<section id="formedit" class="bigform form">
+    <header class="">
+        <img id="logoform" src="images/logo-ironclub.png">
+        <h1 class="titleform">Log In</h1>
+    </header>
 
-{{#if errorMessage}}
-  <p class="error-message">
-    {{ errorMessage }}
-  </p>
-{{/if}}
+    {{#if errorMessage}}
+    <p class="error-message">
+        {{ errorMessage }}
+    </p>
+    {{/if}}
 
-<form action="/login" method="post">
-  <div>
-    <label for="email-input"> Email </label>
-    <input type="email" name="email" id="email-input"
-      placeholder="e.g., xena@warrior.company">
-  </div>
+    <form action="/login" method="post">
 
-  <div>
-    <label for="password-input"> Password </label>
-    <input type="password" name="password" id="password-input"
-      placeholder="e.g., ••••••••••••">
-  </div>
+        <div class="blockform">
 
-  <button> Log In </button>
-</form>
+            <div class="lineform">
+                <div class="labelform">
+                    <label for="email-input"> Email </label>
+                </div>
+                <div class="inputform">    
+                    <input type="email" name="email" id="email-input"
+                    placeholder="e.g., xena@warrior.company">
+                </div>
+            </div>
 
-<p>
-  Don't have an account?
-  <a href="/signup">
-    Create an account.
-  </a>
-</p>
+            <div class="lineform">
+                <div class="labelform">
+                    <label for="password-input"> Password </label>
+                </div>
+                <div class="inputform">
+                    <input type="password" name="password" id="password-input"
+                    placeholder="e.g., ••••••••••••">
+                </div>
+            </div>
+
+            <button class="btnform">Log In</button>
+        </div>
+    </form>
+
+    <p>Don't have an account?<a href="/signup">Create an account.</a></p>
+</section>

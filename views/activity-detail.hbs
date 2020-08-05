@@ -11,17 +11,39 @@
     <p><b>Time:</b>{{activity.time}}</p>
     {{!-- VER COMO HACER ESTO --}}
     <p><b>Places left:</b>`${{activity.participants}}-{{activity.usuarios.usersJoined.length}}`/p>  
-    <P><b>Reviews: </b></P>
+    <div>
+        <form action="/user/activity/{{activity._id}}/review" method="POST">
+            <P><b>Reviews: </b></P>
+            <textarea name="review" placeholder="Write something here"></textarea>
+            <div class="rate">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="text">1 star</label>
+            </div>
+            <button type="submit" class="btn-profile">POST</button>
+        </form>
+    </div>
     {{!-- show partials of comments --}}
 </div> 
+<div>
+    {{#each activity.comments}}
+    <p>{{creator.name}}</p>
+    <p>{{rating}}</p>
+    <p>{{review}}</p>
+    {{/each}}
+</div>
 
- {{!-- hacer un #if si esta login y si de hecho es un instructor --}}
-  {{!-- esto no deberia estar en esta pag --}}
- <a href="/user/activity/{{activity._id}}/edit">EDIT</a>
-
-<form action="/user/activity/{{activity._id}}/delete-activity" method="POST">
-<button type="submit" class="btn-profile">DELETE</button>
+<form action="/user/activity/{{_id}}/book-activity" method="POST">
+    <button type="submit" class="btn-profile">JOIN</button>
 </form>
+
 
    
 

@@ -13,15 +13,17 @@ userRouter.get('/activity/:id', (req, res, next) => {
     
     Activity
         .findById(req.params.id)
+        .populate('comments.creator')
         .then(actDetail => {
-            //console.log(actDetail)
-        res.render('activity-detail', {activity: actDetail})
+            //console.log(actDetail.comments);
+            res.render('activity-detail', {activity: actDetail})
+                
         })
         .catch(error => {
         console.log(error);
         });
+    
 });
-
 
 // MIDDLEWARE =>
 userRouter.use((req, res, next) => {
@@ -29,8 +31,7 @@ userRouter.use((req, res, next) => {
     next();
     return;
   }
-
-  res.redirect('/login');
+    res.redirect('/login');
 });
 // <= MIDDLEWARE
 
@@ -50,10 +51,8 @@ userRouter.get('/profile', (req, res, next) => {
         });
 });
 
-userRouter.get('/edit-profile', (req, res, next) => {
-    
+userRouter.get('/edit-profile', (req, res, next) => {    
     res.render('forusers/user-profile-edit', { errorMessage: '' });
-    
 });
 
 userRouter.post('/edit-profile',  (req, res, next) => {
@@ -93,10 +92,8 @@ userRouter.post('/delete', (req, res, next) => {
 });
 
 //ACTIVITY
-userRouter.get('/new-activity',  (req, res, next) => {
-    
+userRouter.get('/new-activity', (req, res, next) => {    
     res.render('forusers/activity-create', { errorMessage: '' });
-
 });
 
 userRouter.post('/new-activity', parser.single('activitypic'),(req, res, next) => {
@@ -138,21 +135,21 @@ userRouter.get('/activity/:id/edit', async(req, res, next) => {
     Activity
         .findById(req.params.id)
         .then((activity) => {
-            console.log(activity)
+            //console.log(activity)
             res.render('forusers/activity-edit', {activity});
         })
         .catch((error) => {
             console.log(error);
         });
+
 });
 
 userRouter.post('/activity/:id/edit', (req, res, next) => {
     
     const { title, description, amenity, participants, date, instructor } = req.body;
-console.log(req.body)
+    //console.log(req.body)
     Activity
         .findByIdAndUpdate(
-
             req.params.id,
             { $set: { title, description, amenity, participants, date, instructor } },
             { new: true }
@@ -220,7 +217,7 @@ userRouter.post('/activity/:id/book-activity-delete', (req, res, next) => {
                 });
         })
         .catch(error => {
-            console.log('Error while save the activity: ', error);
+            console.log('Error delete the activity: ', error);
             res.redirect('/activity-calendar');
         });
 
@@ -236,7 +233,33 @@ userRouter.post('/activity/:id/delete-activity', (req, res, next) => {
         .catch(error => {
         console.log(error);
         });
+
 });
 
+userRouter.post('/activity/:id/review', (req, res, next) => {
+
+    const currUser = req.session.currentUser._id;
+    const { review, rating } = req.body;
+    const comment = { review : review,
+                      creator: currUser,
+                      rating: rating};
+
+    const actId = req.params.id;
+        //console.log(comment);
+    Activity
+        .findByIdAndUpdate(
+        actId,
+        { $push: { comments: comment} },
+        { new: true }
+        )
+        .then((act) => {
+            //console.log('comentario crado',act);
+            res.redirect(`/user/activity/${actId}`)
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+});
 
 module.exports = userRouter;
