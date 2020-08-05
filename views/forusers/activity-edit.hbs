@@ -4,15 +4,15 @@
 <form action="/user/activity/{{activity._id}}/edit" method="POST">
     <div>
         <label for="edituser-name">Title:</label>
-        <input id="edituser-name" type="text" name="title" value="{{activity.title}}" placeholder="{{activity.title}}" >
+        <input id="edituser-name" type="text" name="title" value="{{activity.title}}" placeholder="{{activity.title}}" required>
     </div>
     <div>
         <label for="edituser-email">Description:</label>
-        <input id="edituser-email" type="text" name="description" value="{{activity.description}}" placeholder="{{activity.description}}" >
+        <input id="edituser-email" type="text" name="description" value="{{activity.description}}" placeholder="{{activity.description}}" required>
     </div>
     <div>
         <label for="edituser-instructor">Amenity:</label>
-        <select id="edituser-instructor" name="amenity">
+        <select id="edituser-instructor" name="amenity" required>
             <option value="Tennis">Tennis</option>
             <option value="Football">Football</option>
             <option value="Pool">Pool</option>
@@ -20,16 +20,16 @@
     </div>
     <div>
         <label for="edituser-participants">Participants</label>
-        <input id="edituser-participants" type="number" name="participants" value="{{activity.participants}}" placeholder="{{activity.participants}}" >
+        <input id="edituser-participants" type="number" name="participants" value="{{activity.participants}}" placeholder="{{activity.participants}}" required>
     </div>
 
      <div>
         <label for="edituser-date">Date</label>
-        <input id="edituser-date" type="date" name="date" value="{{activity.date}}">
+        <input id="edituser-date" type="date" name="date" value="{{activity.date}}" required>
     </div>
      <div>
         <label for="edituser-time">Time:</label>
-        <select id="edituser-time"  name="time">
+        <select id="edituser-time"  name="time" required>
             <option value="" selected disabled hidden>Choose here</option>
             <option value="8:00">8:00</option>
             <option value="9:00">9:00</option>

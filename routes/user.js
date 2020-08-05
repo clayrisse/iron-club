@@ -58,7 +58,7 @@ userRouter.get('/edit-profile', (req, res, next) => {
 
 userRouter.post('/edit-profile', parser.single('activitypic'), (req, res, next) => {
     
-    const { name, email, password, instructor } = req.body;
+    const { name, email, password, instructor, age } = req.body;
     let imageAct_url;
     if (req.file){
         imageAct = req.file.secure_url;
@@ -70,7 +70,7 @@ userRouter.post('/edit-profile', parser.single('activitypic'), (req, res, next) 
     User
         .findByIdAndUpdate(
             req.session.currentUser._id ,
-            { $set: { name, email, password: hashedPassword, instructor, activitypic: imageAct_url} },
+            { $set: { name, email, password: hashedPassword, instructor, age, activitypic: imageAct_url} },
             { new: true }
         )
         .then((userEDit) => {

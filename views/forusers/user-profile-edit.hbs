@@ -3,21 +3,21 @@
 <form action="/user/edit-profile?user_id={{currentUserInfo._id}}" method="POST">
     <div>
         <label for="name-input">Name</label>
-        <input id="name-input" type="text" name="name" placeholder="{{currentUserInfo.name}}">
+        <input id="name-input" type="text" name="name" value="{{currentUserInfo.name}}" required>
     </div>
 
     <div>
         <label for="email-input">Email</label>
-        <input id="email-input" type="email" name="email" placeholder="{{currentUserInfo.email}}">
+        <input id="email-input" type="email" name="email" value="{{currentUserInfo.email}}" required>
     </div>
 
     <div>
         <label for="password-input">Password</label>
-        <input id="password-input" type="password" name="password" placeholder="e.g., ••••••••••••">
+        <input id="password-input" type="password" name="password" value="e.g., ••••••••••••" required>
     </div>
     <div>
         <label for="age-input">Age</label>
-        <input id="age-input" type="number" name="age"  placeholder="e.g., 136" required>
+        <input id="age-input" type="text" name="age"  value="{{currentUserInfo.age}}" placeholder="e.g., 136" required >
     </div>
     <div>
         <label for="instructor-input">Are you an instructor:</label>
