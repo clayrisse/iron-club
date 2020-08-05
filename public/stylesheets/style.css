@@ -1,7 +1,9 @@
+/* <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> */
+
 body{ 
   background-color: #f8f8f8;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px 'Roboto', sans-serif, Helvetica, Arial, sans-serif;
   margin: 0px auto;
  text-align: center;
 }
@@ -97,6 +99,33 @@ body{
 
   }
 
- 
+ /*----------------------F O R M S------*/
+ #formedit{
+  background-color: #d6d621;
+  text-align: center;
+}
+
+.blockform{
+  background-color: #d62121;
+  text-align: center;
+}
+
+.labelform{
+  background-color: #a8c9d4;
+  padding: 2%;
+}
+
+.inputform{
+  background-color: #252d30;
+  padding: 2%;
+  width: 500px;
+  margin: auto;
+}
+.inputform input{
+  width: 80%;
+  padding: 5px;
+  
+
+}
 
 /* Clau, rease this test line */
