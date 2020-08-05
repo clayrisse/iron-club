@@ -1,0 +1,21 @@
+{{!-- PARTIAL litle detail of ONE activity of instructor item to make big list --}}
+
+<h2>MY CREATED ACTIVITIES</h2>
+  <div>
+    <a class="btn-profile" href="/user/new-activity">Create an activity</a>
+  </div>
+    
+    {{#each user.creatAct}} 
+    <ul>
+      <li>
+        <img src="{{activitypic}}" alt="activity_pic">
+        <p>{{title}}</p>
+        <p><b>Date: </b>{{date}}</p>
+        <p><b>Time: </b>{{time}}</p>
+        <form action="/user/activity/{{_id}}/delete-activity" method="POST">
+            <button type="submit" class="btn-profile">DELETE</button>
+        </form>
+        <a href="/user/activity/{{_id}}/edit">EDIT</a>
+      </li>
+    </ul>
+  {{/each}}

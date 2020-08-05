@@ -19,19 +19,8 @@
 {{/if}}
 
 {{#if user.instructor}} 
-<h2>MY CREATED ACTIVITIES</h2>
 
-    {{#each user.creatAct}} 
-    <ul>
-      <li>
-        <p>{{title}}</p>
-        <form action="/user/activity/{{_id}}/delete-activity" method="POST">
-            <button type="submit" class="btn-profile">DELETE</button>
-        </form>
-        <a href="/user/activity/{{_id}}/edit">EDIT</a>
-      </li>
-    </ul>
-  {{/each}}
+  {{> isInstructor }}
 
 {{/if}}
 
@@ -58,11 +47,7 @@
     </form>
 </div>
 
-{{#if user.instructor}} 
-  <div>
-    <a class="btn-profile" href="/user/new-activity">Create an activity</a>
-  </div>
-{{/if}}
+
 
 
 
