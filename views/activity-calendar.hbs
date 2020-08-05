@@ -9,7 +9,13 @@
         <p>{{title}}</p>
         <a class="" href="/user/activity/{{this.id}}">See More</a>
         <!--<a href="/user/activity/edit">EDIT</a>-->
-        <a href="/user/activity/{{this.id}}/edit">EDIT</a>
+        {{#if currentUser.instructor}}
+          <a href="/user/activity/{{this.id}}/edit">EDIT</a>
+        {{/if}}
+        
+        <form action="/user/activity/{{this.id}}/book-activity" method="POST">
+          <button type="submit" class="btn-profile">JOIN</button>
+        </form>
       </li>
     </ul>
   {{/each}}

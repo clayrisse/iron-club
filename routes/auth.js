@@ -13,9 +13,12 @@ authRouter.get('/signup', (req, res, next) => {
 });
 
 authRouter.post('/signup', parser.single('profilepic'), async (req, res, next) => {
-  console.log('req.body', req.body);
+  //console.log('req.body', req.body);
   const { name, email, password } = req.body;
-  const image_url = req.file.secure_url;
+  let image_url;
+  if (req.file){
+    image_url = req.file.secure_url;
+  }
 
   if(email === "" || password === "") {
     res.render('auth/signup', { errorMessage: "Enter both email and password "});
@@ -33,9 +36,10 @@ authRouter.post('/signup', parser.single('profilepic'), async (req, res, next) =
     const hashedPassword = bcrypt.hashSync(password, salt);
     
     // esto "profilepic: image_url " es para pasar el profilepic
-    await User.create({ name, email, password: hashedPassword, profilepic: image_url  })
-    
-    res.redirect('/login'); //levantar sesion al hacer signup
+    const newUser = await User.create({ name, email, password: hashedPassword, profilepic: image_url })
+    //console.log(newUser)
+    req.session.currentUser = newUser;
+    res.redirect('/user/profile'); 
   } 
   catch (error) {
     res.render('auth/signup', { errorMessage: "Error while creating account. Please try again."})
