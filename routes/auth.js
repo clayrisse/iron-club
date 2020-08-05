@@ -13,7 +13,7 @@ authRouter.get('/signup', (req, res, next) => {
 });
 
 authRouter.post('/signup', parser.single('profilepic'), async (req, res, next) => {
-  //console.log('req.body', req.body);
+
   const { name, email, password } = req.body;
   let image_url;
   if (req.file){
