@@ -99,7 +99,7 @@ userRouter.get('/new-activity', (req, res, next) => {
 userRouter.post('/new-activity', (req, res, next) => {
     
     const { title, description, amenity, participants, date, time, instructor} = req.body;
-    const curUser = req.session.currentUser._id;
+    const currUser = req.session.currentUser._id;
 
     Activity
         .create({ title, description, amenity, participants, date, time, instructor })
@@ -169,6 +169,8 @@ userRouter.post('/activity/:id/book-activity', (req, res, next) => {
             
             const bookId = bookAct._id;
 
+            
+
             User.findByIdAndUpdate(
                 currUser,
                 { $push: { reservAct: bookId} },
@@ -213,7 +215,7 @@ userRouter.post('/activity/:id/book-activity-delete', (req, res, next) => {
                 });
         })
         .catch(error => {
-            console.log('Error while save the activity: ', error);
+            console.log('Error delete the activity: ', error);
             res.redirect('/activity-calendar');
         });
 
@@ -223,6 +225,7 @@ userRouter.post('/activity/:id/delete-activity', (req, res, next) => {
 
     Activity
         .findByIdAndDelete(req.params.id)
+        //.then(if)
         .then(() => {
             res.redirect('/user/profile');
         })

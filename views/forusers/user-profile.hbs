@@ -24,11 +24,9 @@
     <ul>
       <li>
         <p>{{title}}</p>
-        <form action="/user/activity/{{activity._id}}/delete-activity" method="POST">
+        <form action="/user/activity/{{_id}}" method="GET">
             <button type="submit" class="btn-profile">DELETE</button>
         </form>
-
-
       </li>
     </ul>
   {{/each}}
@@ -55,13 +53,16 @@
     <button type="submit" class="btn-profile">EDIT</button>
     </form>
 </div>
-<div>
-    <a class="btn-profile" href="/activity-calendar">See all activities</a>
-</div>
 
 <div>
     <a class="btn-profile" href="/user/new-activity">Create an activity</a>
 </div>
+
+<div>
+    <a class="btn-profile" href="/activity-calendar">See all activities</a>
+</div>
+
+
 
 
 

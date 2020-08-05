@@ -69,8 +69,7 @@ authRouter.post('/login', (req, res, next) => {
             if(!correctePass) { 
               res.render('auth/login', { errorMessage: 'Incorrect password.' })
             } else {
-              req.session.currentUser = user;
-              //res.render('forusers/user-profile', {user})  
+              req.session.currentUser = user;  
               res.redirect('/user/profile'); 
             }
         })
