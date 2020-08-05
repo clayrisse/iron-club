@@ -13,8 +13,11 @@ const activitySchema = new Schema({
     //time: time,
     instructor:  String,
     //asisted: { type: Boolean, default: false },
-    coments: String,
-    rating: { type: Number, min: 1, max: 5 }
+    comments: [{
+        review: String,
+        creator: { type: Schema.Types.ObjectId, ref: 'User' },
+        rating: { type: Number, min: 1, max: 5 }
+    }]
 });
 
 const Activity = mongoose.model("Activity", activitySchema);
