@@ -6,7 +6,7 @@ const activitySchema = new Schema({
     activitypic: { type: String, default: '/images/icon-userdefault.png'  },
     description: String,
     amenity: { type: String, enum: ['Tennis', 'Football', 'Pool'] },
-    //participants: Number,
+    maxparticipants: Number,
     date: Date, 
     time: { type: String, enum: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'] },
     // faltaria hora_?

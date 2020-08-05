@@ -13,7 +13,7 @@ userRouter.get('/activity/:id', (req, res, next) => {
     
     Activity
         .findById(req.params.id)
-        .populate('comments.creator')
+        .populate('comments.creator participants')
         .then(actDetail => {
             //console.log(actDetail.comments);
             res.render('activity-detail', {activity: actDetail})
@@ -98,7 +98,7 @@ userRouter.get('/new-activity', (req, res, next) => {
 
 userRouter.post('/new-activity', parser.single('activitypic'),(req, res, next) => {
     
-    const { title, description, amenity, participants, date, time, instructor} = req.body;
+    const { title, description, amenity, participants, date, time, instructor, maxparticipants} = req.body;
     const currUser = req.session.currentUser._id;
     let imageAct_url;
     if (req.file){
@@ -106,7 +106,7 @@ userRouter.post('/new-activity', parser.single('activitypic'),(req, res, next) =
     }
 
     Activity
-        .create({ title, description, amenity, participants, date, time, instructor, activitypic: imageAct_url })
+        .create({ title, description, amenity, participants, date, time, instructor, activitypic: imageAct_url, maxparticipants })
         .then(newActivity => {
 
             const actId = newActivity._id;
@@ -116,7 +116,7 @@ userRouter.post('/new-activity', parser.single('activitypic'),(req, res, next) =
                 { new: true }
                 )
                 .then((user) => {
-                    console.log(user);
+                    //console.log(user);
                     res.redirect(`/user/activity/${newActivity._id}`)
                 })
                 .catch(error => {
@@ -264,7 +264,7 @@ userRouter.post('/activity/:id/review', (req, res, next) => {
     const { review, rating } = req.body;
     const comment = { review : review,
                       creator: currUser,
-                      rating: rating};
+                      rating: rating };
 
     const actId = req.params.id;
         //console.log(comment);

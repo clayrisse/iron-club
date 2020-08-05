@@ -10,7 +10,7 @@
     {{!-- //???? como es aca --}}
     <p><b>Time:</b>{{activity.time}}</p>
     {{!-- VER COMO HACER ESTO --}}
-    <p><b>Places left:</b>`${{activity.participants}}-{{activity.usuarios.usersJoined.length}}`/p>  
+    <p><b>Places left: </b>{{activity.participants.length}}/{{activity.maxparticipants}}</p>  
     <div>
         <form action="/user/activity/{{activity._id}}/review" method="POST">
             <P><b>Reviews: </b></P>
