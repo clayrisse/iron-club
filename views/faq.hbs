@@ -1,51 +1,42 @@
-{{!-- pricing and FAQ  --}}
-{{!-- <h1>FAQ</h1> --}}
-
-<section id="formedit" class="bigform form">
-    <header class="">
-        <img id="logoform" src="images/logo-ironclub.png">
-        <h1 class="titleform">Log In</h1>
-    </header>
-
-    {{#if errorMessage}}
-    <p class="error-message">
-        {{ errorMessage }}
-    </p>
-    {{/if}}
-
-    <form action="/login" method="post">
-
-        <div class="blockform">
-
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="email-input"> Email </label>
-                </div>
-                <div class="inputform">    
-                    <input type="email" name="email" id="email-input"
-                    placeholder="e.g., xena@warrior.company">
-                </div>
-            </div>
-
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="password-input"> Password </label>
-                </div>
-                <div class="inputform">
-                    <input type="password" name="password" id="password-input"
-                    placeholder="e.g., ••••••••••••">
-                </div>
-            </div>
-
-            <button class="btnform">Log In</button>
-        </div>
-    </form>
-
-    <p>Don't have an account?<a href="/signup">Create an account.</a></p>
-</section>
-
-
-
-
-
-
+<ul class="cards">
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--fence"></div>
+      <div class="card__content">
+        <div class="card__title">Flex</div>
+        <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+        <button class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--river"></div>
+      <div class="card__content">
+        <div class="card__title">Flex Grow</div>
+        <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
+        <button class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--record"></div>
+      <div class="card__content">
+        <div class="card__title">Flex Shrink</div>
+        <p class="card__text">This defines the ability for a flex item to shrink if necessary. Negative numbers are invalid.</p>
+        <button class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--flowers"></div>
+      <div class="card__content">
+        <div class="card__title">Flex Basis</div>
+        <p class="card__text">This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property."</p>
+        <button class="btn btn--block card__btn">Button</button>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -1,6 +1,18 @@
-<div>
+<div class="profile-cont">
   <article>
-    <img src="{{user.profilepic}}" alt="profilepic">
+    <img class="profile-pic" src="{{user.profilepic}}" alt="profilepic">
+    <div class="second-cont">
+      <article class="blue-cont">
+        <b>{{user.name}}</b>
+        <p><b></b>Email: </b>{{user.email}}</p>
+        <p><b>Age: </b>{{user.age}}</p>
+        {{#if user.instructor}}
+          <a class="btnform-link" href="/user/new-activity">Create an activity</a>        
+        {{else}}
+        <p>Become an <a href="/user/edit-profile">Instructor.</a></p>
+        {{/if}}
+      </article>
+    </div>
   </article>
 </div>
 
@@ -10,7 +22,7 @@
 
 
 
-
+<!--
 <div class="activity-detail">
     <img class="activity-pic" src="{{user.profilepic}}">
     <div>
@@ -33,7 +45,7 @@
     </div>
 </div>
 
-<!--CREATED ACTIVITIES-->
+CREATED ACTIVITIES
 
 {{#if user.instructor}} 
 
@@ -60,17 +72,33 @@
       </div>
   </div>
 {{/each}}
+</div>-->
+
+
+
+
+
+
+
+<!--
+<div class="row">
+  {{#each user.reservAct}} 
+  <div class="column" onclick="openTab('b1');" >
+    <div class="activity-card">
+  <img src="{{activitypic}}" alt="activitypic" >
+  <div class="container">
+    <a class="card-title" href="/user/activity/{{this.id}}">{{title}}</a>
+    <p><b>Instructor:</b>{{instructor}}</p>
+    <p><b>Day:</b>{{date}}</p>
+    <p><b>Time:</b>{{time}}</p>
+  </div>
+  </div>
+  </div>
+  {{/each}}
 </div>
 
 
-
-
-
-
-
-
-
-
+-->
 
 
 

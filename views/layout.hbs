@@ -3,19 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <!-- para agregar el favicon 
     <link rel="shortcut icon" type="image/png" href="images/title-img.png">
     -->
     <!-- Bootstrap CSS -->
-    
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+ 
     <!-- íconos fontawesome 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     -->
     
     {{!-- google font roboto --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
-    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
+       <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
 
     <title>IronClub</title>
   </head>
@@ -23,30 +24,29 @@
   <body>
     <header>
       {{!-- top navbar --}}
-      <nav  class="xnavbar-top">
+      <navtop  class="xnavbar-top">
         <div id="xbtn-back">
-          <a class="xnavbar-icontitle" href="/">
-            <img class="xnavbar-icon" src="/images/icon-back.png">
+          <a class="xnavbar-icontitle" onclick="goBack()" >
+            <img class="xnavbar-icon btnback" src="/images/icon-back.png">
           </a>
         </div>
         
         {{#if isUserLoggedIn}}
         <div>
-          <p>{{ currentUserInfo.name }}, you're loged </p>
+          <p class="logoutxt">{{ currentUserInfo.name }}, you're loged </p>
         </div>
-        <div class="xnavbar-texticon">
-          <a class="xnavbar-icontitle" href="/logout">
-            <p class="xnavbar-title">Log out</p>
+          <a  href="/logout">
+            <p class="logoutxt" class="xnavbar-title">Log out</p>
           </a>
         </div>
         {{/if}}
         
         <div id="logo">
-          <a class="xnavbar-icontitle" href="/">
-            <img class="xnavbar-icon" src="/images/logo-ironclub.png">
+          <a class="xnavbar-icontitle" >
+            <img id="iclogo" class="xnavbar-icon" src="/images/logo-ironclub.png">
           </a>
         </div>
-      </nav>
+      </navtop>
       {{!-- END top navbar --}}
       {{!-- bootom navbar --}}
       <nav class="xnavbar-bottom">
@@ -166,8 +166,15 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ 
+    <script src="../javascripts/menu.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    {{!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> --}}
+      <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
   </body>
 </html>
