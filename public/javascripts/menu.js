@@ -16,3 +16,6 @@ console.log(window.location.pathname);
 function goBack() {
     window.history.back();
   }
+
+
+  
