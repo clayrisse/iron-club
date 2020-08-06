@@ -355,7 +355,7 @@ background: #fff;
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
-  margin-top: 60px;
+  margin-top: 100px;
   border-radius: 6px;
 }
 
@@ -376,109 +376,109 @@ background: #fff;
   text-align: center;
 }
 
+/*profile card*/
+
+.image-profile {
+  position: absolute;
+  width: 150px;
+  left: 37%;
+  top: 25%;
+  border-radius: 10px;
+}
+.background-father {
+  background-color: #2dc5fa;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 170px;
+  border-radius: 10px;
+  color: white;
+}
+.profile-position {
+  display: flex;
+  justify-content: center;
+}
+
+.btnform-link {
+  color: white;
+  background: #2d354c;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 10px;
+  margin-top: 60px;
+  border-radius: 6px;
+  width: 155px;
+  padding-top: 10px;
+}
+
+/*botones delete & edit*/
+
 .btnprofile-cont {
   display: flex;
-  flex-direction: row;
-  align-content: center;
-}
-
-.btnform-delete {
-  background: #2dc5fa;
-  border-color: #2dc5fa;
-  border-radius: 6px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19px;
-  margin-top: 60px;
-  padding: 13px 50px;
-  text-align: center;
-}
-
-.btnform-edit {
-  background: #2dc5fa;
-  border-color: #2dc5fa;
-  border-radius: 6px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19px;
-  margin-top: 60px;
-  padding: 13px 62px;
-  text-align: center;
-}
-
-.activity-card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
-}
-
-/* Add rounded corners to the top left and the top right corner of the image */
- img {
-  border-radius: 5px 5px 0 0;
-}
-
-
-/* The grid: Three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 50px;
-  text-align: center;
-  font-size: 25px;
-  cursor: pointer;
-  color: black;
-}
-
-.containerTab {
-  padding: 20px;
-  color: black;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Closable button inside the image */
-.closebtn {
-  float: right;
-  color: black;
-  font-size: 35px;
-  cursor: pointer;
-}
- 
- 
-/*card profile superpuesto*/
-
-.profile-cont {
-  width: 30vw;
-  height: 40vw;
-
-}
-
-.profile-pic {
-  z-index: 1;
-  position: absolute;
-  left: 100px;
-}
-
-.blue-cont {
-  z-index: 2;
-  background-color: blue;
+  flex-direction: column;
   
 }
 
-.second-cont {
-  width: 30vw;
-  height: 40vw;
-  display: flex;
+.btnform-delete:hover{
+  background: #2dc5fa;
+  border-color: #2dc5fa;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+}
+
+.btnform-delete {
+  background: white;
+  border-color: #2dc5fa;
+  border-radius: 10px;
+  color: #2dc5fa;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+}
+
+.btnform-edit:hover {
+  background: #2dc5fa;
+  border-color: #2dc5fa;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
 }
 
 
+.btnform-edit {
+  background: white;
+  border-color: #2dc5fa;
+  border-radius: 10px;
+  color: #2dc5fa;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+}
 
 
 
@@ -528,3 +528,137 @@ background: #fff;
 
 /* Clau, rease this test line */
 
+@media screen and (max-width: 576px) {
+  /*componente hijo*/
+  .background-father {
+    width: 100vw;
+    height: 300px;
+    margin: 10px 10px;
+  }
+  .background-father b {
+   padding-top: 175px;
+  }
+  /*componente padre*/
+  .profile-position {
+   
+  }
+  /*imagen perfil*/
+  .image-profile {
+   position: absolute;
+   top: 10%;
+   left: 30%;
+  }
+
+}
+
+@media (min-width: 992px) {
+  
+  .background-father {
+    width: 30vw;
+    height: 30vw;
+    margin: 10px 10px;
+    text-align: left;
+  }
+  .background-father b {
+   padding-top: 175px;
+  }
+  /*componente padre*/
+  .profile-position {
+   
+  }
+  /*imagen perfil*/
+  .image-profile {
+   position: absolute;
+   top: 24%;
+   left: 20%;
+   width: 400px;
+  }
+
+  .background-father b {
+    padding-top: 100px;
+    font-size: 30px;
+    padding-left: 150px;
+  }
+
+  .background-father p{
+    font-size: 25px;
+  }
+
+  .btnform-link {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-top: 60px;
+    border-radius: 6px;
+    width: 200px;
+    height: 30px;
+    margin-left: 150px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+
+  /*botones delete & edit*/
+
+  .btnprofile-cont {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btnform-delete:hover{
+    background: #2dc5fa;
+    border-color: #2dc5fa;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-top: 60px;
+    width: 500px;
+    height: 90px;
+    text-align: center;
+  }
+
+  .btnform-delete {
+    background: white;
+    border-color: #2dc5fa;
+    border-radius: 10px;
+    color: #2dc5fa;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-top: 60px;
+    width: 500px;
+    height: 90px;
+    text-align: center;
+  }
+  .btnform-edit:hover {
+    background: #2dc5fa;
+    border-color: #2dc5fa;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-top: 60px;
+    width: 500px;
+    height: 90px;
+    text-align: center;
+  }
+  
+  .btnform-edit {
+    background: white;
+    border-color: #2dc5fa;
+    border-radius: 10px;
+    color: #2dc5fa;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-top: 60px;
+    width: 500px;
+    height: 90px;
+    text-align: center;
+  }
+  
+
+}
+  

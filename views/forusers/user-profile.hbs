@@ -1,58 +1,39 @@
-<div class="profile-cont">
-  <article>
-    <img class="profile-pic" src="{{user.profilepic}}" alt="profilepic">
-    <div class="second-cont">
-      <article class="blue-cont">
-        <b>{{user.name}}</b>
-        <p><b></b>Email: </b>{{user.email}}</p>
-        <p><b>Age: </b>{{user.age}}</p>
-        {{#if user.instructor}}
-          <a class="btnform-link" href="/user/new-activity">Create an activity</a>        
-        {{else}}
-        <p>Become an <a href="/user/edit-profile">Instructor.</a></p>
-        {{/if}}
-      </article>
-    </div>
-  </article>
+<div class="profile-position">
+  <div>
+    <img class="image-profile" src="{{user.profilepic}}" alt="profilepic">
+  </div>
+  <div class="background-father">
+    <b>{{user.name}}</b>
+    <p><b>Email:</b> {{user.email}}</p>
+    <p><b>Age: </b>{{user.age}}</p>
+    {{#if user.instructor}}
+    <a class="btnform-link" href="/user/new-activity">Create an activity</a>
+    {{else}}
+    <p>Become an <a class="btnform-link" href="/user/edit-profile">Instructor.</a></p>
+    {{/if}}
+  </div>
 </div>
 
-
-
-
-
+<div class="btnprofile-cont">
+  <form action="/user/edit-profile" method="GET">
+    <button class="btnform-edit" style="margin-bottom:10px" type="submit" >EDIT</button>
+  </form>
+  <form action="/user/delete" method="POST">
+    <button class="btnform-delete" type="submit" >DELETE</button>
+  </form>
+</div>
 
 
 <!--
-<div class="activity-detail">
-    <img class="activity-pic" src="{{user.profilepic}}">
-    <div>
-        <p class="card-title">{{user.name}}</p>
-        <p><b>Email: </b>{{user.email}}</p>
-        <p><b>Age: </b>{{user.age}}</p>
-      {{#if user.instructor}} 
-          <a class="btnform-link" href="/user/new-activity">Create an activity</a>
-      {{else}} 
-        <p>Become an <a href="/user/edit-profile">Instructor.</a></p>
-      {{/if}}
-    </div>
-    <div class="btnprofile-cont">
-      <form action="/user/edit-profile" method="GET">
-        <button class="btnform-edit" type="submit" class="btn-profile">EDIT</button>
-      </form>
-      <form action="/user/delete" method="POST">
-        <button class="btnform-delete" type="submit" class="btn-profile">DELETE</button>
-      </form>
-    </div>
-</div>
-
 CREATED ACTIVITIES
-
 {{#if user.instructor}} 
 
   {{> isInstructor }}
 
 {{/if}}
+-->
 
+<!--
 
 <h3>RESERVED ACTIVITIES</h3>
 <div class="superbigbox">
