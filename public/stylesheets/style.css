@@ -20,110 +20,110 @@ body{
   margin: auto;
 } */
 
-xnavbar-icontitle
-  .xnavbar-top{
-    background-color: rgba(255, 255, 255, 0.473);
-    position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
-    width: 100%;
-    height: 7%;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .xnavbar-top .xnavbar-icon{
-    padding: 0px 10px;
-  }
-  .xcar-img{
-    height: 300px;
-    background-color: red;
-    background-blend-mode: multiply; 
-    
-  }
-  .xnavbar-bottom {
-    background-color: rgb(255, 255, 255);
-    position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
-    width: 100%;
-    bottom: 0;
-    overflow: hidden;
-    left: 0px;
-  }
 
-  .xnavbar-bottom ul {
-    /*float: right; recordar quitar y 
-    usar bootstrap*/
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-  .xnavbar-bottom li {
-    display: inline-block;
-    padding: .4rem 4%;
-  
-  }
-  .xnavbar-bottom a {    
-    text-decoration: none;  
-  }
-  .xnavbar-title{
-    color:#000;
-    font-size: 0.7rem;
-    margin: 0px;
-  }
-
-  .xnavbar-texticon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .xnavbar-icon{
-    height: 10vh;
-    min-height: 25px;
-    max-height: 45px;
-
-  }
-  #btn-back img {
-    height: 1.8em;
-        
-  }
-
-  colors {
-    color: #1e2434;
-    color: #2dc5fa;
-    color: #fef4e5;
-    color: #fcdfb5;
-    color: #eaeaed;
-    color: #ddb85e;
-    color: #e5f3f8;
-    color: #eaeaed;
-
-  }
-
- /*----------------------F O R M S------*/
- #logoform{
-   width: 83px;
- }
- .titleform{
-  color: #2d354c;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 18px;
-  text-align: center;
+.xnavbar-top{
+  background-color: rgba(255, 255, 255, 0.473);
+  position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
   width: 100%;
-  /* width: 100%; */
- }
- .form{
-  /* background-color: #d6d621; */
-  background: #fff;
-    border-radius: 6px;
-    box-sizing: border-box;
-    box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
-    
-    margin: 24px auto 0;
-    max-width: 380px;
-    padding: 24px 30px 32px;
+  height: 7%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.xnavbar-top .xnavbar-icon{
+  padding: 0px 10px;
+}
+.xcar-img{
+  height: 300px;
+  background-color: red;
+  background-blend-mode: multiply; 
+  
+}
+.xnavbar-bottom {
+  background-color: rgb(255, 255, 255);
+  position: fixed; /*cambiar en res 500 y 1000. y ponerla hidden en 1000*/
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+  left: 0px;
+}
+
+.xnavbar-bottom ul {
+  /*float: right; recordar quitar y 
+  usar bootstrap*/
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.xnavbar-bottom li {
+  display: inline-block;
+  padding: .4rem 4%;
+
+}
+.xnavbar-bottom a {    
+  text-decoration: none;  
+}
+.xnavbar-title{
+  color:#000;
+  font-size: 0.7rem;
+  margin: 0px;
+}
+
+.xnavbar-texticon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.xnavbar-icon{
+  height: 10vh;
+  min-height: 25px;
+  max-height: 45px;
+
+}
+#btn-back img {
+  height: 1.8em;
+      
+}
+
+colors {
+  color: #1e2434;
+  color: #2dc5fa;
+  color: #fef4e5;
+  color: #fcdfb5;
+  color: #eaeaed;
+  color: #ddb85e;
+  color: #e5f3f8;
+  color: #eaeaed;
+
+}
+
+/*----------------------F O R M S------*/
+#logoform{
+  width: 83px;
+}
+.titleform{
+color: #2d354c;
+font-size: 18px;
+font-weight: 500;
+line-height: 18px;
+text-align: center;
+width: 100%;
+/* width: 100%; */
+}
+.form{
+/* background-color: #d6d621; */
+background: #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+  
+  margin: 24px auto 0;
+  max-width: 380px;
+  padding: 24px 30px 32px;
 
 }
 
