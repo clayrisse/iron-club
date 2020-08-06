@@ -480,7 +480,32 @@ background: #fff;
   text-align: center;
 }
 
+/*activity cards*/
 
+.list-title {
+  color: #2d354c;
+  font-size: 30px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.activity-wrap {
+  flex-wrap: wrap;
+}
+
+.activity-detail {
+  flex-direction: column;
+  will-change: 330px;
+  border: solid 2px;
+  border-color: #2d354c;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.activity-pic {
+  width: 100%;
+  border-radius: 10px;
+}
 
 
 
