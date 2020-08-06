@@ -13,10 +13,10 @@ userRouter.get('/activity/:id', (req, res, next) => {
     
     Activity
         .findById(req.params.id)
-        .populate('comments.creator')
+        .populate('comments.creator participants')
         .then(actDetail => {
             //console.log(actDetail.comments);
-            res.render('activity-detail', {activity: actDetail})
+            res.render('activity-detail', { activity: actDetail})
                 
         })
         .catch(error => {
@@ -70,7 +70,7 @@ userRouter.post('/edit-profile',  (req, res, next) => {
             { new: true }
         )
         .then((userEDit) => {
-            console.log(userEDit)
+            //console.log(userEDit)
             req.session.currentUser = userEDit;
             res.redirect('/user/profile')
         })
@@ -98,7 +98,7 @@ userRouter.get('/new-activity', (req, res, next) => {
 
 userRouter.post('/new-activity', parser.single('activitypic'),(req, res, next) => {
     
-    const { title, description, amenity, participants, date, time, instructor} = req.body;
+    const { title, description, amenity, participants, date, time, instructor, maxparticipants} = req.body;
     const currUser = req.session.currentUser._id;
     let imageAct_url;
     if (req.file){
@@ -106,7 +106,7 @@ userRouter.post('/new-activity', parser.single('activitypic'),(req, res, next) =
     }
 
     Activity
-        .create({ title, description, amenity, participants, date, time, instructor, activitypic: imageAct_url })
+        .create({ title, description, amenity, participants, date, time, instructor, activitypic: imageAct_url, maxparticipants })
         .then(newActivity => {
 
             const actId = newActivity._id;
@@ -116,7 +116,7 @@ userRouter.post('/new-activity', parser.single('activitypic'),(req, res, next) =
                 { new: true }
                 )
                 .then((user) => {
-                    console.log(user);
+                    //console.log(user);
                     res.redirect(`/user/activity/${newActivity._id}`)
                 })
                 .catch(error => {
@@ -168,7 +168,10 @@ userRouter.post('/activity/:id/book-activity', (req, res, next) => {
     const currUser = req.session.currentUser._id;
 
     Activity
-        .findById(req.params.id)
+        .findByIdAndUpdate(
+            req.params.id, 
+            { $push: {participants: currUser} },
+            { new: true })
         .then(bookAct => {
             
             const bookId = bookAct._id;
@@ -179,8 +182,8 @@ userRouter.post('/activity/:id/book-activity', (req, res, next) => {
                 { new: true }
                 )
                 .then((user) => {
-                    console.log(user);
-                    res.redirect('/user/profile')
+                    //console.log(user);
+                    res.redirect('/user/profile');
                 })
                 .catch(error => {
                     console.log(error);
@@ -198,7 +201,10 @@ userRouter.post('/activity/:id/book-activity-delete', (req, res, next) => {
     const currUser = req.session.currentUser._id;
 
     Activity
-        .findById(req.params.id)
+        .findByIdAndUpdate(
+            req.params.id, 
+            { $pull: {participants: currUser} },
+            { new: true })
         .then(bookAct => {
             
             const bookId = bookAct._id;
@@ -209,7 +215,7 @@ userRouter.post('/activity/:id/book-activity-delete', (req, res, next) => {
                 { new: true }
                 )
                 .then((user) => {
-                    console.log(user);
+                    //console.log(user);
                     res.redirect('/user/profile')
                 })
                 .catch(error => {
@@ -225,10 +231,26 @@ userRouter.post('/activity/:id/book-activity-delete', (req, res, next) => {
 
 userRouter.post('/activity/:id/delete-activity', (req, res, next) => {
 
+    const currUser = req.session.currentUser._id;
+
     Activity
         .findByIdAndDelete(req.params.id)
-        .then(() => {
-            res.redirect('/user/profile');
+        .then(delAct => {
+            
+            const bookId = delAct._id;
+
+            User.findByIdAndUpdate(
+                currUser,
+                { $pull: { creatAct: bookId} },
+                { new: true }
+                )
+                .then((user) => {
+                    console.log(user);
+                    res.redirect('/user/profile')
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         })
         .catch(error => {
         console.log(error);
@@ -242,7 +264,7 @@ userRouter.post('/activity/:id/review', (req, res, next) => {
     const { review, rating } = req.body;
     const comment = { review : review,
                       creator: currUser,
-                      rating: rating};
+                      rating: rating };
 
     const actId = req.params.id;
         //console.log(comment);
@@ -261,5 +283,6 @@ userRouter.post('/activity/:id/review', (req, res, next) => {
         });
 
 });
+
 
 module.exports = userRouter;

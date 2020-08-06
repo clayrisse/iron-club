@@ -1,95 +1,97 @@
-<div id="formedit" class="bigform form">
-    <header class="">
-        <img id="logoform" src="/images/logo-ironclub.png">
-        <h1 class="titleform">Edit Activity</h1>
-    </header>
+<body class="body-editback">
+    <section id="formedit" class="bigform form">
+        <header class="">
+            <img id="logoform" src="/images/logo-ironclub.png">
+            <h1 class="titleform">Edit Activity</h1>
+        </header>
 
-    <form action="/user/activity/{{activity._id}}/edit" method="POST">
+        <form action="/user/activity/{{activity._id}}/edit" method="POST">
 
-        <div class="blockform">
+            <div class="blockform">
 
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="editactivity-title">Title:</label>
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="editactivity-title">Title:</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="editactivity-title" type="text" name="title" value="{{activity.title}}" placeholder="{{activity.title}}" required>
+                    </div>
                 </div>
-                <div class="inputform">
-                    <input id="editactivity-title" type="text" name="title" value="{{activity.title}}" placeholder="{{activity.title}}" required>
-                </div>
-             </div>
 
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="editactivity-description">Description:</label>
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="editactivity-description">Description:</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="editactivity-description" type="text" name="description" value="{{activity.description}}" placeholder="{{activity.description}}" required>
+                    </div>
                 </div>
-                <div class="inputform">
-                    <input id="editactivity-description" type="text" name="description" value="{{activity.description}}" placeholder="{{activity.description}}" required>
+
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="editactivity-amenity">Amenity:</label>
+                    </div>
+                    <div class="inputform">
+                        <select id="editactivity-amenity" name="amenity" required>
+                            <option value="Tennis">Tennis</option>
+                            <option value="Football">Football</option>
+                            <option value="Pool">Pool</option>
+                        </select>
+                    </div>   
                 </div>
+
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="editactivity-participants">Participants</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="editactivity-participants" type="number" name="participants" value="{{activity.participants}}" placeholder="{{activity.participants}}" required>
+                    </div>
+                </div>
+
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="editactivity-date">Date</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="editactivity-date" type="date" name="date" value="{{activity.date}}" required>
+                    </div>
+                </div>
+
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="editactivity-time">Time:</label>
+                    </div>
+                    <div class="inputform">
+                        <select id="editactivity-time"  name="time" required>
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="8:00">8:00</option>
+                            <option value="9:00">9:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="editactivity-instructor">Instructor</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="editactivity-instructor" type="text" name="instructor" value="{{activity.instructor}}" placeholder="{{activity.instructor}}">
+                    </div>
+                </div>
+                <button class="btnform" type="submit">Submit</button>
             </div>
-
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="editactivity-amenity">Amenity:</label>
-                </div>
-                <div class="inputform">
-                    <select id="editactivity-amenity" name="amenity" required>
-                        <option value="Tennis">Tennis</option>
-                        <option value="Football">Football</option>
-                        <option value="Pool">Pool</option>
-                    </select>
-                </div>   
-            </div>
-
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="editactivity-participants">Participants</label>
-                </div>
-                <div class="inputform">
-                    <input id="editactivity-participants" type="number" name="participants" value="{{activity.participants}}" placeholder="{{activity.participants}}" required>
-                </div>
-            </div>
-
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="editactivity-date">Date</label>
-                </div>
-                <div class="inputform">
-                    <input id="editactivity-date" type="date" name="date" value="{{activity.date}}" required>
-                </div>
-            </div>
-
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="editactivity-time">Time:</label>
-                </div>
-                <div class="inputform">
-                    <select id="editactivity-time"  name="time" required>
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="8:00">8:00</option>
-                        <option value="9:00">9:00</option>
-                        <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
-                        <option value="12:00">12:00</option>
-                        <option value="13:00">13:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="15:00">15:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="17:00">17:00</option>
-                        <option value="18:00">18:00</option>
-                        <option value="19:00">19:00</option>
-                        <option value="20:00">20:00</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="editactivity-instructor">Instructor</label>
-                </div>
-                <div class="inputform">
-                    <input id="editactivity-instructor" type="text" name="instructor" value="{{activity.instructor}}" placeholder="{{activity.instructor}}">
-                </div>
-            </div>
-            <button class="btnform" type="submit">Submit</button>
-        </div>
-    </form>
-</div>
+        </form>
+    </section>
+</body>

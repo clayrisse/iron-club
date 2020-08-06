@@ -1,48 +1,54 @@
-<div>
-    <img src="{{activity.activitypic}}">
-    
-    <h1>{{activity.title}}</h1>
-    
-    <p><b>Description:</b>{{activity.description}}</p>
-    <p><b>Amenity:</b>{{activity.amenity}}</p>
-    <p><b>Instructor:</b>{{activity.instructor}}</p>
-    <p><b>Day:</b>{{activity.date}}</p>
-    {{!-- //???? como es aca --}}
-    <p><b>Time:</b>{{activity.time}}</p>
-    {{!-- VER COMO HACER ESTO --}}
-    <p><b>Places left:</b>`${{activity.participants}}-{{activity.usuarios.usersJoined.length}}`/p>  
+<div class="activity-detail">
+    <img class="activity-pic" src="{{activity.activitypic}}">
     <div>
-        <form action="/user/activity/{{activity._id}}/review" method="POST">
-            <P><b>Reviews: </b></P>
-            <textarea name="review" placeholder="Write something here"></textarea>
-            <div class="rate">
-                <input type="radio" id="star5" name="rating" value="5" />
-                <label for="star5" title="text">5 stars</label>
-                <input type="radio" id="star4" name="rating" value="4" />
-                <label for="star4" title="text">4 stars</label>
-                <input type="radio" id="star3" name="rating" value="3" />
-                <label for="star3" title="text">3 stars</label>
-                <input type="radio" id="star2" name="rating" value="2" />
-                <label for="star2" title="text">2 stars</label>
-                <input type="radio" id="star1" name="rating" value="1" />
-                <label for="star1" title="text">1 star</label>
-            </div>
-            <button type="submit" class="btn-profile">POST</button>
+        <p class="card-title">{{activity.title}}</p>
+        <p><b>Description: </b>{{activity.description}}</p>
+        <p><b>Amenity: </b>{{activity.amenity}}</p>
+        <p><b>Instructor: </b>{{activity.instructor}}</p>
+        <p><b>Day: </b>{{activity.date}}</p>
+        <p><b>Time: </b>{{activity.time}}</p>
+        <p><b>Places left: </b>{{activity.participants.length}}/{{activity.maxparticipants}}</p> 
+        <form action="/user/activity/{{activity._id}}/book-activity" method="POST">
+            <button type="submit" class="textarea-btnform">JOIN</button>
         </form>
     </div>
-    {{!-- show partials of comments --}}
-</div> 
-<div>
+</div>
+    
+<div class="reviews">
+<h1>Reviews</h1>
     {{#each activity.comments}}
-    <p>{{creator.name}}</p>
-    <p>{{rating}}</p>
+    <div> 
+    <h3>{{creator.name}}</h3>
+    <h3>{{rating}} ⭐</h3>
+    </div>
     <p>{{review}}</p>
     {{/each}}
 </div>
+    
+<div>
+    <form action="/user/activity/{{activity._id}}/review" method="POST">
+        <div class="starsbtn">
+            <div class="rate">
+                <input type="radio" id="star5" name="rating" value="5" />
+                    <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                    <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                    <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                    <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                    <label for="star1" title="text">1 star</label>
+            </div>
+        </div>
+        <textarea class="textarea" name="review" placeholder="You're opinion it's important for us."></textarea>
+        <button type="submit" class="textarea-btnform">POST</button>
+    </form>
+</div>
+ 
 
-<form action="/user/activity/{{_id}}/book-activity" method="POST">
-    <button type="submit" class="btn-profile">JOIN</button>
-</form>
+
+
 
 
    

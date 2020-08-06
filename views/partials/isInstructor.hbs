@@ -1,0 +1,23 @@
+{{!-- PARTIAL litle detail of ONE activity of instructor item to make big list --}}
+<div class="list-activities">
+<h3>CREATED ACTIVITIES</h3>
+
+
+ 
+
+{{#each user.creatAct}} 
+  <div class="activity-detail">
+      <img class="activity-pic" src="{{activitypic}}">
+      <div>
+          <a class="card-title" href="/user/activity/{{this.id}}">{{title}}</a>
+          <p><b>Instructor:</b>{{instructor}}</p>
+          <p><b>Day:</b>{{date}}</p>
+          <p><b>Time:</b>{{time}}</p>
+        <div class="">
+          <form action="/user/activity/{{_id}}/delete-activity" method="POST">
+            <button class="btnform-card" type="submit" class="btn-profile">DELETE</button>
+          </form>
+        </div>
+      </div>
+  </div>
+{{/each}}

@@ -3,151 +3,151 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
+    
     <!-- para agregar el favicon 
     <link rel="shortcut icon" type="image/png" href="images/title-img.png">
     -->
     <!-- Bootstrap CSS -->
-    {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> --}}
-    
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+ 
     <!-- íconos fontawesome 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     -->
     
     {{!-- google font roboto --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  
+       <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
+
     <title>IronClub</title>
   </head>
 
   <body>
     <header>
       {{!-- top navbar --}}
-      <nav  class="navbar-top">
-        <div id="btn-back">
-          <a class="xnavbar-icontitle" href="/">
-            <img class="navbar-icon" src="/images/icon-back.png">
+      <navtop  class="xnavbar-top">
+        <div id="xbtn-back">
+          <a class="xnavbar-icontitle" onclick="goBack()" >
+            <img class="xnavbar-icon btnback" src="/images/icon-back.png">
           </a>
         </div>
         
         {{#if isUserLoggedIn}}
         <div>
-          <p>{{ currentUserInfo.name }}, you're loged </p>
+          <p class="logoutxt">{{ currentUserInfo.name }}, you're loged </p>
         </div>
-        <div class="navbar-texticon">
-          <a class="navbar-icontitle" href="/logout">
-            <p class="navbar-title">Log out</p>
+          <a  href="/logout">
+            <p class="logoutxt" class="xnavbar-title">Log out</p>
           </a>
         </div>
         {{/if}}
         
         <div id="logo">
-          <a class="navbar-icontitle" href="/">
-            <img class="navbar-icon" src="/images/logo-ironclub.png">
+          <a class="xnavbar-icontitle" >
+            <img id="iclogo" class="xnavbar-icon" src="/images/logo-ironclub.png">
           </a>
         </div>
-      </nav>
+      </navtop>
       {{!-- END top navbar --}}
       {{!-- bootom navbar --}}
-      <nav class="navbar-bottom">
+      <nav class="xnavbar-bottom">
           <div class="" id="nav">
-              <ul class="navbar-nav">
+              <ul class="xnavbar-nav">
 
                 {{#if isUserLoggedIn}}
 
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                      <a class="navbar-icontitle" href="/">
-                        <img class="navbar-icon" src="/images/icon-home.png">
-                        <p class="navbar-title" >Home</p>
+                  <li class="xnav-item">
+                    <div class="xx">
+                      <a class="xnavbar-icontitle" href="/">
+                        <img class="xnavbar-icon" src="/images/icon-home.png">
+                        <p class="xnavbar-title" >Home</p>
                       </a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                        <a class="navbar-icontitle" href="/faq">
-                          <img class="navbar-icon" src="/images/icon-info.png">
-                          <p class="navbar-title">FAQ</p>
+                  <li class="xnav-item">
+                    <div class="xx">
+                        <a class="xnavbar-icontitle" href="/faq">
+                          <img class="xnavbar-icon" src="/images/icon-info.png">
+                          <p class="xnavbar-title">FAQ</p>
                       </a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                        <a class="navbar-icontitle" href="/activity-calendar">
-                        <img class="navbar-icon" src="/images/icon-calendar.png">
-                        <p class="navbar-title">Activities</p>
+                  <li class="xnav-item">
+                    <div class="xx">
+                        <a class="xnavbar-icontitle" href="/activity-calendar">
+                        <img class="xnavbar-icon" src="/images/icon-calendar.png">
+                        <p class="xnavbar-title">Activities</p>
                       </a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                      <a class="navbar-icontitle" href="/amenities">
-                        <img class="navbar-icon" src="/images/icon-amenities.png">
-                        <p class="navbar-title">Amenities</p>
+                  <li class="xnav-item">
+                    <div class="xnavbar-texticon">
+                      <a class="xnavbar-icontitle" href="/amenities">
+                        <img class="xnavbar-icon" src="/images/icon-amenities.png">
+                        <p class="xnavbar-title">Amenities</p>
                       </a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                      <a class="navbar-icontitle" href="/user/profile">
-                        <img class="navbar-icon" src="/images/icon-user.png">
-                        <p class="navbar-title">Profile</p>
+                  <li class="xnav-item">
+                    <div class="xnavbar-texticon">
+                      <a class="xnavbar-icontitle" href="/user/profile">
+                        <img class="xnavbar-icon" src="/images/icon-user.png">
+                        <p class="xnavbar-title">Profile</p>
                       </a>
                     </div>
                   </li>  
-                  {{!-- <li class="nav-item"> --}}
-                    {{!-- <div class="navbar-texticon"> --}}
+                  {{!-- <li class="xnav-item"> --}}
+                    {{!-- <div class="xnavbar-texticon"> --}}
                       {{!-- faltaria hacer un deplegable con log out --}}
-                      {{!-- <li class="nav-item"><a class="" href="/logout">Log out</a></li>  --}}
+                      {{!-- <li class="xnav-item"><a class="" href="/logout">Log out</a></li>  --}}
                     {{!-- </div> --}}
                   {{!-- </li>  --}}
 
                  {{else}}
 
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                      <a class="navbar-icontitle" href="/">
-                        <img class="navbar-icon" src="/images/icon-home.png">
-                        <p class="navbar-title" >Home</p>
+                  <li class="xnav-item">
+                    <div class="xnavbar-texticon">
+                      <a class="xnavbar-icontitle" href="/">
+                        <img class="xnavbar-icon" src="/images/icon-home.png">
+                        <p class="xnavbar-title" >Home</p>
                       </a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                        <a class="navbar-icontitle" href="/faq">
-                          <img class="navbar-icon" src="/images/icon-info.png">
-                          <p class="navbar-title">FAQ</p>
+                  <li class="xnav-item">
+                    <div class="xnavbar-texticon">
+                        <a class="xnavbar-icontitle" href="/faq">
+                          <img class="xnavbar-icon" src="/images/icon-info.png">
+                          <p class="xnavbar-title">FAQ</p>
                       </a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                        <a class="navbar-icontitle" href="/activity-calendar">
-                        <img class="navbar-icon" src="/images/icon-calendar.png">
-                        <p class="navbar-title">Activities</p>
+                  <li class="xnav-item">
+                    <div class="xnavbar-texticon">
+                        <a class="xnavbar-icontitle" href="/activity-calendar">
+                        <img class="xnavbar-icon" src="/images/icon-calendar.png">
+                        <p class="xnavbar-title">Activities</p>
                       </a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                      <a class="navbar-icontitle" href="/amenities">
-                        <img class="navbar-icon" src="/images/icon-amenities.png">
-                        <p class="navbar-title">Amenities</p>
+                  <li class="xnav-item">
+                    <div class="xnavbar-texticon">
+                      <a class="xnavbar-icontitle" href="/amenities">
+                        <img class="xnavbar-icon" src="/images/icon-amenities.png">
+                        <p class="xnavbar-title">Amenities</p>
                       </a>
                     </div>
                   </li>
-                  <li class="nav-item">
-                    <div class="navbar-texticon">
-                      <a class="navbar-icontitle" href="/login">
-                        <img class="navbar-icon" src="/images/icon-user.png">
-                        <p class="navbar-title">User</p>
+                  <li class="xnav-item">
+                    <div class="xnavbar-texticon">
+                      <a class="xnavbar-icontitle" href="/login">
+                        <img class="xnavbar-icon" src="/images/icon-user.png">
+                        <p class="xnavbar-title">User</p>
                       </a>
                     </div>
                   </li>
-                  {{!-- <li class="nav-item"> --}}
-                    {{!-- <div class="navbar-texticon"> --}}
+                  {{!-- <li class="xnav-item"> --}}
+                    {{!-- <div class="xnavbar-texticon"> --}}
                       {{!-- faltaria hacer un deplegable con signup --}}
-                      {{!-- <li class="nav-item"><a class="" href="/signup">Sign Up</a></li>  --}}
+                      {{!-- <li class="xnav-item"><a class="" href="/signup">Sign Up</a></li>  --}}
                     {{!-- </div> --}}
                   {{!-- </li>  --}}
                 {{/if}}
@@ -166,9 +166,15 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ 
+    <script src="../javascripts/menu.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  
+    {{!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> --}}
+      <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
   </body>
 </html>

@@ -1,113 +1,115 @@
-{{!-- Instructor activitiy form  --}}
-<section id="formedit" class="bigform form">
-    <header class="">
-        <img id="logoform" src="/images/logo-ironclub.png">
-        <h1 class="titleform">Create Activity</h1>
-    </header>
+<body class="body-createback">
+    <section id="formedit" class="bigform form">
+        <header class="">
+            <img id="logoform" src="/images/logo-ironclub.png">
+            <h1 class="titleform">Create Activity</h1>
+        </header>
 
-    {{#if errorMessage}}
-    <p class="error-message">
-        {{ errorMessage }}
-    </p>
-    {{/if}}
+        {{#if errorMessage}}
+        <p class="error-message">
+            {{ errorMessage }}
+        </p>
+        {{/if}}
 
-    <form action="/user/new-activity" method="post" enctype="multipart/form-data">
+        <form action="/user/new-activity" method="post" enctype="multipart/form-data">
 
-        <div class="blockform">
+            <div class="blockform">
 
-        
-            <div class="lineform">
-                <div class="labelform">
-                    <label for='activitypic-input'>Picture:</label>
-                </div>
-                <div class="inputform">
-                    <input type="file" name="activitypic" id="activitypic-input">
-                </div>
-            </div>
-        
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="createactivity-name">Title:</label>
-                </div>
-                <div class="inputform">
-                    <input id="createactivity-name" type="text" name="title" value="" placeholder="Moon Walking" required>
-                </div>
-            </div>
             
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="createactivity-email">Description:</label>
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for='activitypic-input'>Picture:</label>
+                    </div>
+                    <div class="inputform">
+                        <input type="file" name="activitypic" id="activitypic-input">
+                    </div>
                 </div>
-                <div class="inputform">
-                    <input id="createactivity-email" type="text" name="description" value="" placeholder="yada yada yada" required>
-                </div>
-            </div>
-        
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="createactivity-password">Amenity:</label>
-                </div>
-                <div class="inputform">
-                    <select id="createactivity-instructor"  name="amenity">
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="Tennis">Tennis</option>
-                        <option value="Football">Football</option>
-                        <option value="Pool">Pool</option>
-                </select>
-            </div>
             
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="createactivity-participants">Participants:</label>
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="createactivity-name">Title:</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="createactivity-name" type="text" name="title" value="" placeholder="Moon Walking" required>
+                    </div>
                 </div>
-                <div class="inputform">
-                    <input id="createactivity-participants" type="number" name="participants" value="" placeholder="0" required>
-                </div>
-            </div>
-
-        
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="createactivity-date">Date:</label>
-                </div>
-                <div class="inputform">
-                    <input id="createactivity-date" type="date" name="date" value="" placeholder="" required >
-                </div>
-            </div>
                 
-            <div class="lineform"></div>
-                <div class="labelform">
-                    <label for="createactivity-time">Time:</label>
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="createactivity-email">Description:</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="createactivity-email" type="text" name="description" value="" placeholder="yada yada yada" required>
+                    </div>
                 </div>
-                <div class="inputform">
-                    <select id="createactivity-time"  name="time" required>
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option value="8:00">8:00</option>
-                        <option value="9:00">9:00</option>
-                        <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
-                        <option value="12:00">12:00</option>
-                        <option value="13:00">13:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="15:00">15:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="17:00">17:00</option>
-                        <option value="18:00">18:00</option>
-                        <option value="19:00">19:00</option>
-                    <option value="20:00">20:00</option>
+            
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="createactivity-password">Amenity:</label>
+                    </div>
+                    <div class="inputform">
+                        <select id="createactivity-instructor"  name="amenity">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="Tennis">Tennis</option>
+                            <option value="Football">Football</option>
+                            <option value="Pool">Pool</option>
                     </select>
                 </div>
-            </div>
-        
-            <div class="lineform">
-                <div class="labelform">
-                    <label for="createactivity-instructor">Instructor:</label>
+                
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="createactivity-participants">Participants:</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="createactivity-participants" type="number" name="maxparticipants" value="" placeholder="0" required>
+                    </div>
                 </div>
-                <div class="inputform">
-                    <input id="createactivity-instructor" type="text" name="instructor" value="" placeholder="Michael Jackson" >
+
+            
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="createactivity-date">Date:</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="createactivity-date" type="date" name="date" value="" placeholder="" required >
+                    </div>
                 </div>
+                    
+                <div class="lineform"></div>
+                    <div class="labelform">
+                        <label for="createactivity-time">Time:</label>
+                    </div>
+                    <div class="inputform">
+                        <select id="createactivity-time"  name="time" required>
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="8:00">8:00</option>
+                            <option value="9:00">9:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="lineform">
+                    <div class="labelform">
+                        <label for="createactivity-instructor">Instructor:</label>
+                    </div>
+                    <div class="inputform">
+                        <input id="createactivity-instructor" type="text" name="instructor" value="" placeholder="Michael Jackson" >
+                    </div>
+                </div>
+                <button class="btnform"> Create New Activity </button>
             </div>
-            <button class="btnform"> Create New Activity </button>
-        </div>
-    </form>
-<section
+        </form>
+    </section> 
+</body>
+    

@@ -1,65 +1,59 @@
- 
-<img src="{{user.profilepic}}">
-{{!-- asegurarsr en la ruta el nombre de "user" --}}
 
-<h1>{{user.name}}</h1>
-
-<h3>Email:</h3>
-<h2>{{user.email}}</h2>
-
-<h3>Age:</h3>
-<h2>{{user.age}}</h2>
-
-<h3>Instructor</h3>
-{{!-- chequiar esta comprobacion --}}
-{{#if user.instructor}} 
-    <h2>Yes</h2>
-{{else}} 
-    <h2>No</h2>
-{{/if}}
-
-<h2>MY CREATED ACTIVITIES</h2>
-
-    {{#each user.creatAct}} 
-    <ul>
-      <li>
-        <p>{{title}}</p>
-        <form action="/user/activity/{{_id}}/delete-activity" method="POST">
-            <button type="submit" class="btn-profile">DELETE</button>
-        </form>
-        <a href="/user/activity/{{_id}}/edit">EDIT</a>
-      </li>
-    </ul>
-  {{/each}}
-
-<h2>MY RESERVED ACTIVITIES</h2>
-
-    {{#each user.reservAct}} 
-    <ul>
-      <li>
-        <p>{{title}}</p>
-        <form action="/user/activity/{{_id}}/book-activity-delete" method="POST">
-            <button type="submit" class="btn-profile">DELETE</button>
-        </form>
-      </li>
-    </ul>
-  {{/each}}
-
-
-<div class="btn-profile-container">
-    <form action="/user/delete" method="POST">
-    <button type="submit" class="btn-profile">DELETE</button>
-    </form>
-    <form action="/user/edit-profile" method="GET">
-    <button type="submit" class="btn-profile">EDIT</button>
-    </form>
+<div class="activity-detail">
+    <img class="activity-pic" src="{{user.profilepic}}">
+    <div>
+        <p class="card-title">{{user.name}}</p>
+        <p><b>Email: </b>{{user.email}}</p>
+        <p><b>Age: </b>{{user.age}}</p>
+      {{#if user.instructor}} 
+          <a class="btnform-link" href="/user/new-activity">Create an activity</a>
+      {{else}} 
+        <p>Become an <a href="/user/edit-profile">Instructor.</a></p>
+      {{/if}}
+    </div>
+    <div class="btnprofile-cont">
+      <form action="/user/edit-profile" method="GET">
+        <button class="btnform-edit" type="submit" class="btn-profile">EDIT</button>
+      </form>
+      <form action="/user/delete" method="POST">
+        <button class="btnform-delete" type="submit" class="btn-profile">DELETE</button>
+      </form>
+    </div>
 </div>
 
+<!--CREATED ACTIVITIES-->
+
 {{#if user.instructor}} 
-  <div>
-    <a class="btn-profile" href="/user/new-activity">Create an activity</a>
-  </div>
+
+  {{> isInstructor }}
+
 {{/if}}
+
+
+<h3>RESERVED ACTIVITIES</h3>
+<div class="superbigbox">
+{{#each user.reservAct}} 
+  <div class="activity-detail">
+      <img class="activity-pic" src="{{activitypic}}">
+      <div>
+          <a class="card-title" href="/user/activity/{{this.id}}">{{title}}</a>
+          <p><b>Instructor:</b>{{instructor}}</p>
+          <p><b>Day:</b>{{date}}</p>
+          <p><b>Time:</b>{{time}}</p>
+        <div class="">
+          <form action="/user/activity/{{_id}}/book-activity-delete" method="POST">
+            <button class="btnform-card" type="submit" class="btn-profile">DELETE</button>
+          </form>
+        </div>
+      </div>
+  </div>
+{{/each}}
+</div>
+
+
+
+
+
 
 
 
