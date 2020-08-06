@@ -1,6 +1,5 @@
- 
+<!-- 
 <img src="{{user.profilepic}}">
-{{!-- asegurarsr en la ruta el nombre de "user" --}}
 
 <h1>{{user.name}}</h1>
 
@@ -17,6 +16,36 @@
 {{else}} 
     <h2>No</h2>
 {{/if}}
+-->
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{user.profilepic}}" class="card-img" alt="profile-pic">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">{{user.name}}</h3>
+        <p class="card-text"><b>Email: </b>{{user.email}}</p>
+        <p class="card-text"><b>Age: </b>{{user.age}}</p>
+        {{#if user.instructor}} 
+        <div>
+          <a class="btn-profile" href="/user/new-activity">Create an activity</a>
+        </div>
+        {{else}} 
+        <p>Become an 
+          <a href="/user/edit-profile">
+            Instructor.
+          </a>
+        </p>
+        {{/if}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--CREATED ACTIVITIES-->
 
 {{#if user.instructor}} 
 
@@ -24,19 +53,29 @@
 
 {{/if}}
 
-<h2>MY RESERVED ACTIVITIES</h2>
+<h3>RESERVED ACTIVITIES</h3>
 
-    {{#each user.reservAct}} 
-    <ul>
-      <li>
-        <p>{{title}}</p>
-        <form action="/user/activity/{{_id}}/book-activity-delete" method="POST">
-            <button type="submit" class="btn-profile">DELETE</button>
-        </form>
-      </li>
-    </ul>
-  {{/each}}
 
+  {{#each user.reservAct}} 
+  <div class="card w-auto p-3 h-auto d-inline-block" style="">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{activitypic}}" class="card-img" alt="activity_pic">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text"><b>Date: </b>{{date}}</p>
+        <p class="card-text"><b>Time: </b>{{time}}</p>
+      </div>
+    </div>
+    <form action="/user/activity/{{_id}}/book-activity-delete" method="POST">
+      <button type="submit" class="btn-profile">DELETE</button>
+    </form>
+  </div>
+  
+</div>
+{{/each}}
 
 <div class="btn-profile-container">
     <form action="/user/delete" method="POST">
