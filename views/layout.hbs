@@ -52,11 +52,9 @@
       <nav class="xnavbar-bottom">
           <div class="" id="nav">
               <ul class="xnavbar-nav">
-
-                {{#if isUserLoggedIn}}
-
+                
                   <li class="xnav-item">
-                    <div class="xx">
+                    <div class="xnavbar-texticon">
                       <a class="xnavbar-icontitle" href="/">
                         <img class="xnavbar-icon" src="/images/icon-home.png">
                         <p class="xnavbar-title" >Home</p>
@@ -64,7 +62,7 @@
                     </div>
                   </li>
                   <li class="xnav-item">
-                    <div class="xx">
+                    <div class="xnavbar-texticon">
                         <a class="xnavbar-icontitle" href="/faq">
                           <img class="xnavbar-icon" src="/images/icon-info.png">
                           <p class="xnavbar-title">FAQ</p>
@@ -72,7 +70,7 @@
                     </div>
                   </li>
                   <li class="xnav-item">
-                    <div class="xx">
+                    <div class="xnavbar-texticon">
                         <a class="xnavbar-icontitle" href="/activity-calendar">
                         <img class="xnavbar-icon" src="/images/icon-calendar.png">
                         <p class="xnavbar-title">Activities</p>
@@ -87,6 +85,9 @@
                       </a>
                     </div>
                   </li>
+
+                {{#if isUserLoggedIn}}
+
                   <li class="xnav-item">
                     <div class="xnavbar-texticon">
                       <a class="xnavbar-icontitle" href="/user/profile">
@@ -95,47 +96,9 @@
                       </a>
                     </div>
                   </li>  
-                  {{!-- <li class="xnav-item"> --}}
-                    {{!-- <div class="xnavbar-texticon"> --}}
-                      {{!-- faltaria hacer un deplegable con log out --}}
-                      {{!-- <li class="xnav-item"><a class="" href="/logout">Log out</a></li>  --}}
-                    {{!-- </div> --}}
-                  {{!-- </li>  --}}
+                 
+                {{else}}
 
-                 {{else}}
-
-                  <li class="xnav-item">
-                    <div class="xnavbar-texticon">
-                      <a class="xnavbar-icontitle" href="/">
-                        <img class="xnavbar-icon" src="/images/icon-home.png">
-                        <p class="xnavbar-title" >Home</p>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="xnav-item">
-                    <div class="xnavbar-texticon">
-                        <a class="xnavbar-icontitle" href="/faq">
-                          <img class="xnavbar-icon" src="/images/icon-info.png">
-                          <p class="xnavbar-title">FAQ</p>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="xnav-item">
-                    <div class="xnavbar-texticon">
-                        <a class="xnavbar-icontitle" href="/activity-calendar">
-                        <img class="xnavbar-icon" src="/images/icon-calendar.png">
-                        <p class="xnavbar-title">Activities</p>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="xnav-item">
-                    <div class="xnavbar-texticon">
-                      <a class="xnavbar-icontitle" href="/amenities">
-                        <img class="xnavbar-icon" src="/images/icon-amenities.png">
-                        <p class="xnavbar-title">Amenities</p>
-                      </a>
-                    </div>
-                  </li>
                   <li class="xnav-item">
                     <div class="xnavbar-texticon">
                       <a class="xnavbar-icontitle" href="/login">
@@ -144,12 +107,7 @@
                       </a>
                     </div>
                   </li>
-                  {{!-- <li class="xnav-item"> --}}
-                    {{!-- <div class="xnavbar-texticon"> --}}
-                      {{!-- faltaria hacer un deplegable con signup --}}
-                      {{!-- <li class="xnav-item"><a class="" href="/signup">Sign Up</a></li>  --}}
-                    {{!-- </div> --}}
-                  {{!-- </li>  --}}
+           
                 {{/if}}
 
               </ul>
