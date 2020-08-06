@@ -6,8 +6,7 @@
   {{#each activities}} {{!-- ref app.js l-93 --}}
     <ul>
       <li>
-        <p>{{title}}</p>
-        <a class="" href="/user/activity/{{this.id}}">See More</a>
+        <a class="" href="/user/activity/{{this.id}}">{{title}}</a>
         <!--<a href="/user/activity/edit">EDIT</a>-->
         {{#if currentUser.instructor}}
           <a href="/user/activity/{{this.id}}/edit">EDIT</a>

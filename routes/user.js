@@ -182,8 +182,8 @@ userRouter.post('/activity/:id/book-activity', (req, res, next) => {
                 { new: true }
                 )
                 .then((user) => {
-                    console.log(user);
-                    res.redirect('/user/profile')
+                    //console.log(user);
+                    res.redirect('/user/profile');
                 })
                 .catch(error => {
                     console.log(error);
