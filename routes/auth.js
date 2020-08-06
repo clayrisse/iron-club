@@ -48,6 +48,7 @@ authRouter.post('/signup', parser.single('profilepic'), async (req, res, next) =
 
 //LOGIN
 authRouter.get('/login', (req, res, next) => {
+ 
     res.render('auth/login', { errorMessage: '' })
 });
 

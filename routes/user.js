@@ -16,7 +16,7 @@ userRouter.get('/activity/:id', (req, res, next) => {
         .populate('comments.creator participants')
         .then(actDetail => {
             //console.log(actDetail.comments);
-            res.render('activity-detail', {activity: actDetail})
+            res.render('activity-detail', { activity: actDetail})
                 
         })
         .catch(error => {
