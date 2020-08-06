@@ -319,8 +319,17 @@ background: #fff;
   text-align: center;
 }
 
-
-
+article {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 50%;
+  padding: 3.2rem;
+}
 
 
 
