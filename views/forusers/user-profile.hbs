@@ -1,48 +1,24 @@
-<!-- 
-<img src="{{user.profilepic}}">
 
-<h1>{{user.name}}</h1>
-
-<h3>Email:</h3>
-<h2>{{user.email}}</h2>
-
-<h3>Age:</h3>
-<h2>{{user.age}}</h2>
-
-<h3>Instructor</h3>
-{{!-- chequiar esta comprobacion --}}
-{{#if user.instructor}} 
-    <h2>Yes</h2>
-{{else}} 
-    <h2>No</h2>
-{{/if}}
--->
-
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="{{user.profilepic}}" class="card-img" alt="profile-pic">
+<div class="activity-detail">
+    <img class="activity-pic" src="{{user.profilepic}}">
+    <div>
+        <p class="card-title">{{user.name}}</p>
+        <p><b>Email: </b>{{user.email}}</p>
+        <p><b>Age: </b>{{user.age}}</p>
+      {{#if user.instructor}} 
+          <a class="btnform-link" href="/user/new-activity">Create an activity</a>
+      {{else}} 
+        <p>Become an <a href="/user/edit-profile">Instructor.</a></p>
+      {{/if}}
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h3 class="card-title">{{user.name}}</h3>
-        <p class="card-text"><b>Email: </b>{{user.email}}</p>
-        <p class="card-text"><b>Age: </b>{{user.age}}</p>
-        {{#if user.instructor}} 
-        <div>
-          <a class="btn-profile" href="/user/new-activity">Create an activity</a>
-        </div>
-        {{else}} 
-        <p>Become an 
-          <a href="/user/edit-profile">
-            Instructor.
-          </a>
-        </p>
-        {{/if}}
-        </p>
-      </div>
+    <div class="btnprofile-cont">
+      <form action="/user/edit-profile" method="GET">
+        <button class="btnform-edit" type="submit" class="btn-profile">EDIT</button>
+      </form>
+      <form action="/user/delete" method="POST">
+        <button class="btnform-delete" type="submit" class="btn-profile">DELETE</button>
+      </form>
     </div>
-  </div>
 </div>
 
 <!--CREATED ACTIVITIES-->
@@ -53,38 +29,29 @@
 
 {{/if}}
 
+
 <h3>RESERVED ACTIVITIES</h3>
-
-
-  {{#each user.reservAct}} 
-  <div class="card w-auto p-3 h-auto d-inline-block" style="">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="{{activitypic}}" class="card-img" alt="activity_pic">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h3 class="card-title"><a class="" href="/user/activity/{{this.id}}">{{title}}</a></h3>
-        <p class="card-text"><b>Date: </b>{{date}}</p>
-        <p class="card-text"><b>Time: </b>{{time}}</p>
+<div class="superbigbox">
+{{#each user.reservAct}} 
+  <div class="activity-detail">
+      <img class="activity-pic" src="{{activitypic}}">
+      <div>
+          <a class="card-title" href="/user/activity/{{this.id}}">{{title}}</a>
+          <p><b>Instructor:</b>{{instructor}}</p>
+          <p><b>Day:</b>{{date}}</p>
+          <p><b>Time:</b>{{time}}</p>
+        <div class="">
+          <form action="/user/activity/{{_id}}/book-activity-delete" method="POST">
+            <button class="btnform-card" type="submit" class="btn-profile">DELETE</button>
+          </form>
+        </div>
       </div>
-    </div>
-    <form action="/user/activity/{{_id}}/book-activity-delete" method="POST">
-      <button type="submit" class="btn-profile">DELETE</button>
-    </form>
   </div>
-  
-</div>
 {{/each}}
-
-<div class="btn-profile-container">
-    <form action="/user/delete" method="POST">
-    <button type="submit" class="btn-profile">DELETE</button>
-    </form>
-    <form action="/user/edit-profile" method="GET">
-    <button type="submit" class="btn-profile">EDIT</button>
-    </form>
 </div>
+
+
+
 
 
 

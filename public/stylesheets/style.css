@@ -1,7 +1,7 @@
 
 body{ 
   background-color: #f8f8f8;
-  padding: 50px 0px;
+  padding: 100px 0px;
   font: 16px 'Roboto', sans-serif, Helvetica, Arial, sans-serif;
   font-weight: 400;
   margin: 1% auto 10%;
@@ -136,7 +136,7 @@ background: #fff;
 .labelform{
   color: #86939E;
   font-size: 14px;
-  font-weight: bold
+  font-weight: bold;
   line-height: 16px;
   margin: 16px 0 8px;
   text-align: left;
@@ -187,15 +187,137 @@ background: #fff;
 }
 
 
+/*ANGELA*/
 
+.activity-detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+}
 
+.activity-detail div {
+  margin-left: 10px;
+  padding: 20px;
+  width: 50%;
+  text-align: justify;
+}
 
+.activity-detail div h1,
+.activity-detail div b {
+  color: #2d354c;
+}
 
+.activity-pic {
+  width: 600px;
+}
 
+.reviews {
+  padding: 30px;
+  text-align: justify;
+}
 
+.reviews div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.reviews h1,
+.reviews h3 {
+  color: #2d354c;
+}
 
+.textarea{
+  resize: none;
+  overflow: auto;
+  height: 20em;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: #fcdfb5;
+  font-size: large;
+  padding: 30px;
+}
 
+.textarea-btnform {
+  background: #2d354c;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  padding: 13px 150px;
+  text-align: center;
+}
+
+.starsbtn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.btnform-link {
+  color: white;
+  background: #2d354c;
+  padding: 13px 100px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  border-radius: 6px;
+}
+
+.card-title {
+  text-decoration: none;
+  font-size: 50px;
+}
+
+.btnform-card {
+  background: #2d354c;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  padding: 13px 100px;
+  text-align: center;
+}
+
+.btnprofile-cont {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.btnform-delete {
+  background: #2dc5fa;
+  border-color: #2dc5fa;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  padding: 13px 50px;
+  text-align: center;
+}
+
+.btnform-edit {
+  background: #2dc5fa;
+  border-color: #2dc5fa;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 60px;
+  padding: 13px 62px;
+  text-align: center;
+}
 
 
 
