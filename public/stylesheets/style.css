@@ -2,7 +2,8 @@
   
   background: no-repeat center 5% fixed;
   background-size: cover;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.959) 0%, rgba(0, 0, 0, 0.486) 4%,rgba(255, 255, 255, 0.911) 20%, transparent 30%, rgba(0, 0, 0, 0.308) 55%,rgba(0, 0, 0, 0.226) 100%), url(./../assets/img/background-coinbat.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.959) 0%, rgba(0, 0, 0, 0.486) 
+  4%,rgba(255, 255, 255, 0.911) 20%, transparent 30%, rgba(0, 0, 0, 0.308) 55%,rgba(0, 0, 0, 0.226) 100%), url(./../assets/img/background-coinbat.jpg);
   background-blend-mode: multiply; 
   height: 99vh;
   font-family: 'Montaga', serif;
@@ -13,11 +14,29 @@
 
 body{ 
   background-color: #f8f8f8;
-  padding: 100px 0px;
+  padding: 100px 0px 0px;
   font: 16px 'Roboto', sans-serif, Helvetica, Arial, sans-serif;
   font-weight: 400;
   margin: 1% auto 10%;
+  width: 100vW;
   text-align: center ;
+}
+/* .body-back{
+  background: no-repeat center 5% fixed;
+  background-size: cover;
+  background-blend-mode: multiply; 
+  height: 99vh;
+  text-align: center;
+  margin: auto;
+} */
+.body-homeback {
+  background: no-repeat center 5% fixed;
+  background-size: cover;
+  /* background-image:  url(./../images/fondo-all33.jpg); */
+  background-image:  linear-gradient(to bottom, #f1f1f1f8 0%, #f8f8f857 100%),url(./../images/fondo-all33.jpg);
+  background-blend-mode: multiply; 
+  height: 99vh;
+  /* background-color: rgb(255, 255, 255); */
 }
 .body-editback {
   background: no-repeat center 5% fixed;
@@ -25,26 +44,15 @@ body{
   background-image: url(./../images/fondo-blue.jpg);
   background-blend-mode: multiply; 
   height: 99vh;
-  text-align: center;
   margin: auto;
 }
+
 .body-signupback {
   background: no-repeat center 5% fixed;
   background-size: cover;
   background-image: url(./../images/fondo-football.jpg);
   background-blend-mode: multiply; 
   height: 99vh;
-  text-align: center;
-  margin: auto;
-}
-.body-signupback {
-  background: no-repeat center 5% fixed;
-  background-size: cover;
-  background-image: url(./../images/fondo-football.jpg);
-  background-blend-mode: multiply; 
-  height: 99vh;
-  text-align: center;
-  margin: auto;
 }
 
 .body-createback {
@@ -53,8 +61,6 @@ body{
   background-image: url(./../images/fondo-tennis2.jpg);
   background-blend-mode: multiply; 
   height: 99vh;
-  text-align: center;
-  margin: auto;
 }
 .body-loginback {
   background: no-repeat center 5% fixed;
@@ -62,8 +68,13 @@ body{
   background-image: url(./../images/fondo-pool.jpg);
   background-blend-mode: multiply; 
   height: 99vh;
-  text-align: center;
-  margin: auto;
+}
+.body-amenityback {
+  background: no-repeat center 5% fixed;
+  background-size: cover;
+  background-image: url(./../images/fondo-darkbluebig.jpg);
+  background-blend-mode: multiply; 
+  height: 99vh;
 }
 /* .superback{
   
@@ -120,9 +131,7 @@ body{
   left: 0px;
 }
 
-#iclogo {
-  height: 30px;
-}
+
 
 .xnavbar-bottom ul {
   /*float: right; recordar quitar y 
@@ -133,7 +142,7 @@ body{
 }
 .xnavbar-bottom li {
   display: inline-block;
-  padding: .4rem 4%;
+  padding: .4rem 3.5%;
 
 }
 .xnavbar-bottom a {    
@@ -141,7 +150,7 @@ body{
 }
 .xnavbar-title{
   color:#000;
-  font-size: 0.7rem;
+  font-size: .8rem;
   margin: 0px;
 }
 
@@ -154,15 +163,15 @@ body{
 .xnavbar-icon{
   height: 10vh;
   min-height: 25px;
-  max-height: 45px;
+  max-height: 40px;
 }
 #iclogo {
   height: 11vh;
 }
 .btnback {
-  height: 8vh;
+  height: 6vh;
   min-height: 15px;
-  max-height: 40px;
+  max-height: 30px;
 }
 
 #btn-back img {
@@ -190,6 +199,81 @@ colors {
 
 }
 
+
+
+.logosec {
+  background-color: rgba(255, 255, 255, 0.767);
+ margin-top: -120px;
+ padding-top: 55vh;
+ height: 70vh;
+
+
+}
+#homebiglogo {
+  width: 85%; 
+  max-width: 600px;
+}
+.firstclass {
+  color: #2d354c;
+font-size: 18px;
+font-weight: 500;
+line-height: 18px;
+text-align: center;
+width: 100%;
+/* margin-top: -120px; */
+padding-top: 30vh;
+height: 65vh;
+}
+
+.firstclassbtn {
+  font-family: Roboto;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    cursor: pointer;
+    width:15rem;
+    font-size: 1.8rem;
+    background: rgb(45, 197, 250);
+    border-radius: 0.6rem;
+    text-decoration: none;
+    border-width: 0px;
+
+    padding: 2.4rem 4rem;
+}
+/*-----------------------F A C k-----*/
+
+.boxwhitefaq {
+  background: #fff;
+  color: #2d354c;
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+  width: 70vw;
+  margin: -40px auto 100px;
+  max-width: 1200px;
+  min-width: 350px;
+  padding: 24px 30px 32px;
+  text-align: left;
+}
+.titlefaq {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2.1rem;
+}
+.fulltext {
+  margin-top: 3.2rem;
+  color: #2d354c;
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  width: 100%;
+  text-align: left;
+}
+.fulltext p{
+color: rgba(45, 53, 76, 0.6);
+}
+
+
 /*----------------------F O R M S------*/
 #logoform{
   width: 83px;
@@ -210,8 +294,8 @@ background: #fff;
   box-sizing: border-box;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
   
-  margin: 24px auto 200px;
-  max-width: 380px;
+  margin: -12px auto 0px;
+  max-width: 355px;
   padding: 24px 30px 32px;
 
 }
@@ -276,11 +360,16 @@ background: #fff;
 }
 
 
-/*ANGELA*/
+/*----------------ANGELA-------------------*/
+#whitetitle{
+  color: #ffffff !important;
+  /* font-family: 'Montserrat',  */
+}
 
 /*activity detail*/
 .activitydetail {
   display: flex;
+  background-color: #fff;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 20px;
@@ -392,7 +481,7 @@ background: #fff;
   border-radius: 10px;
 }
 .background-father {
-  background-color: #2dc5fa;
+  background-color: white;
   width: 300px;
   height: 300px;
   display: flex;
@@ -400,7 +489,7 @@ background: #fff;
   flex-direction: column;
   margin-left: 170px;
   border-radius: 10px;
-  color: white;
+  color: #2d354c;
 }
 .profile-position {
   display: flex;
@@ -501,18 +590,123 @@ background: #fff;
   flex-wrap: wrap;
 }
 
+.card-title {
+  text-decoration: none;
+  font-size: 25px;
+  color: #2d354c;
+}
+
+/*---------------------faq--------*/
+
+
+
+/*----------------------amenities-------*/
+
+.histoyplayers {
+  /* background: no-repeat center 5% fixed; */
+  /* background-size: cover; */
+  /* background-image:  url(./../assets/img/concrete-background.jpg); */
+  /* background-blend-mode: multiply; */
+  /* background-color: rgba(109, 109, 109, 0.507);; */
+  /* height: 70vh; */
+  text-align: center;
+  margin: auto;
+  padding: 20px 0px 70px;
+}
+.histoyplayers h1{
+  color: #ffffff;
+  /* text-shadow: 6px 6px 5px #000000; */
+  text-align: center;
+  /* font-family: 'Anton', sans-serif; */
+  margin: -90px auto 0px;
+  padding: 3% 0px 3%;
+  font-size: 2.5rem;
+  max-width:1200px;
+  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin: -50px 0px 20px;
+  font-size: 3rem;
+ 
+  text-align: center;
+}
+.titleform{
+ 
+  
+  /* width: 100%; */
+  }
+
+
+.histoyplayers h3{
+  color: #2d354c;
+  font-family: 'Roboto;', sans-serif;
+  font-weight: 600;
+  margin: 20px 0px 0px;
+  font-size: 1.3rem;
+  font-size: 18px;
+  text-align: center;
+  
+  
+}
+
+.allplayerinfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width:1300px;
+  margin: auto;
+  
+}
+.playerinfo {
+  background: #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+  margin: 24px auto 0px;
+  padding: 24px 30px 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30%;
+  height: 450px;
+  min-width: 355px
+}
+
+
+.playerinfo p {
+  text-align: left;
+  font-size: 15px;
+  color: rgba(45, 53, 76, 0.6);
+  padding: 8px;
+  /* width: 100px; */
+}
+.playericonhome {
+width: 280px;
+padding-left: 5px;
+margin: auto;
+}
+
+
+
+/*---------------------------------------*/
+
+
+
 .activity-detail {
   flex-direction: column;
   will-change: 330px;
   border: solid 0px;
   border-radius: 10px;
   margin: 10px;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09); 
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+  background-color: #fff;
 }
 
 .activity-pic {
   width: 100%;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 20px;
 }
 
 /*rating*/
@@ -554,6 +748,97 @@ background: #fff;
 
 /* Clau, rease this test line */
 
+/*clau*/
+@media (min-width: 576px) {
+  .form{
+      max-width: 380px;
+  }
+  .logosec {
+    background-color: rgba(255, 255, 255, 0.767);
+   margin-top: -120px;
+   padding-top: 45vh;
+   height: 90vh;
+  
+  }
+  #homebiglogo {
+    width: 80%; 
+    max-width: 700px;
+  }
+
+  .firstclassbtn {
+    width:25rem;
+    font-size: 2rem;
+    padding: 2.4rem 4.8rem;
+}
+.firstclassbtn {
+  font-family: Roboto;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    cursor: pointer;
+    width:15rem;
+    font-size: 1.8rem;
+    background: rgb(45, 197, 250);
+    border-radius: 0.6rem;
+    text-decoration: none;
+    border-width: 0px;
+
+    padding: 2.4rem 4rem;
+}
+/*-----------------------F A C k-----*/
+
+.boxwhitefaq {
+  width: 80vw;
+  margin: -15px auto 100px;
+  max-width: 1100px;
+  padding: 24px 90px 32px 60px;
+}
+.titlefaq {
+  font-size: 3rem;
+}
+.fulltext {
+  margin-top: 3.2rem;
+  font-size: 1.2em;
+}
+
+}
+
+
+
+@media (min-width: 992px) {
+  .logosec {
+    background-color: rgba(255, 255, 255, 0.767);
+   margin-top: -120px;
+   padding-top: 35vh;
+   height: 90vh;
+  
+  }
+  #homebiglogo {
+    width: 80%; 
+    max-width: 620px;
+  }
+  .histoyplayers h1{
+    margin: -80px auto 0px;
+  }
+
+  
+  .boxwhitefaq {
+    width: 80vw;
+    margin: -15px auto 100px;
+    max-width: 1100px;
+    padding: 24px 180px 32px 60px;
+  }
+  .titlefaq {
+    font-size: 3.5rem;
+  }
+  .fulltext {
+    margin-top: 3.2rem;
+    font-size: 1.2em;
+    line-height: 170%;
+  }
+
+}
+
+/*angela*/
 @media screen and (max-width: 576px) {
   /*componente hijo*/
   .background-father {
@@ -578,6 +863,7 @@ background: #fff;
   .btnform-card {
     height: 50px;
     width: 250px;
+    margin: 10px 10px 20px 10px;
   }
 
   .btnprofile-cont {
@@ -655,11 +941,11 @@ background: #fff;
   .btnform-card {
     height: 50px;
     width: 250px;
-    margin-left: 75px;
+    margin: 10px 50px 20px;
   }
 
   .activity-wrap {
-    margin:50px 100px;
+    margin: 50px 175px;
   }
 
   .list-title {

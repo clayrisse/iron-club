@@ -1,24 +1,25 @@
 
-<div class="list-title">
-  <p>AVIABLE ACTIVITIES</p>
-</div>
+<body class="body-amenityback">
+  <div class="list-title">
+    <h1 class="histoyplayers" id="whitetitle">AVIABLE ACTIVITIES</h1>
+  </div>
 
-<div class="activity-wrap">
-{{#each activities}} 
-  <div class="activity-detail">
-      <img class="activity-pic" src="{{activitypic}}">
-      <div>
-          <a class="card-title" href="/user/activity/{{this.id}}">{{title}}</a>
-          <p><b>Instructor: </b>{{instructor}}</p>
-          <p><b>Day: </b>{{date}}</p>
-          <p><b>Time: </b>{{time}}</p>
-          <p><b>Places left: </b>{{participants.length}}/{{maxparticipants}}</p> 
-          <form action="/user/activity/{{this.id}}/book-activity" method="POST">
-          <button class="btnform-card" type="submit">JOIN</button>
-          </form>
-        </div>
-    </div>
-{{/each}}
-</div>
-
+  <div class="activity-wrap">
+  {{#each activities}} 
+    <div class="activity-detail">
+        <img class="activity-pic" src="{{activitypic}}">
+        <div>
+            <a class="card-title" href="/user/activity/{{this.id}}">{{title}}</a>
+            <p><b>Instructor: </b>{{instructor}}</p>
+            <p><b>Day: </b>{{date}}</p>
+            <p><b>Time: </b>{{time}}</p>
+            <p><b>Places left: </b>{{participants.length}}/{{maxparticipants}}</p> 
+            <form action="/user/activity/{{this.id}}/book-activity" method="POST">
+            <button class="btnform-card" type="submit">JOIN</button>
+            </form>
+          </div>
+      </div>
+  {{/each}}
+  </div>
+</body>
 
