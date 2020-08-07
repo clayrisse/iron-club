@@ -499,8 +499,7 @@ background: #fff;
 .activity-detail {
   flex-direction: column;
   will-change: 330px;
-  border: solid 1px;
-  border-color: #2d354c;
+  border: solid 0px;
   border-radius: 10px;
   margin: 10px;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, .09); 
@@ -569,7 +568,7 @@ background: #fff;
   }
   /*componente padre*/
   .profile-position {
-   
+    margin: 10px;
   }
   /*imagen perfil*/
   .image-profile {
