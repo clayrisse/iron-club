@@ -239,6 +239,41 @@ height: 65vh;
 
     padding: 2.4rem 4rem;
 }
+/*-----------------------F A C k-----*/
+
+.boxwhitefaq {
+  background: #fff;
+  color: #2d354c;
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+  width: 70vw;
+  margin: -40px auto 100px;
+  max-width: 1200px;
+  min-width: 350px;
+  padding: 24px 30px 32px;
+  text-align: left;
+}
+.titlefaq {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2.1rem;
+}
+.fulltext {
+  margin-top: 3.2rem;
+  color: #2d354c;
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  width: 100%;
+  text-align: left;
+}
+.fulltext p{
+color: rgba(45, 53, 76, 0.6);
+}
+
+
 /*----------------------F O R M S------*/
 #logoform{
   width: 83px;
@@ -489,6 +524,12 @@ background: #fff;
   font-size: 2.5rem;
   max-width:1200px;
   
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin: -50px 0px 20px;
+  font-size: 3rem;
+ 
+  text-align: center;
 }
 .titleform{
  
@@ -528,15 +569,15 @@ background: #fff;
   flex-direction: row;
   align-items: center;
   width: 30%;
-  height: 400px;
+  height: 450px;
   min-width: 355px
 }
 
 
 .playerinfo p {
-  text-align: right;
+  text-align: left;
   font-size: 15px;
-  color: #2d354c
+  color: rgba(45, 53, 76, 0.6);
   padding: 8px;
   /* width: 100px; */
 }
@@ -620,6 +661,36 @@ margin: auto;
     font-size: 2rem;
     padding: 2.4rem 4.8rem;
 }
+.firstclassbtn {
+  font-family: Roboto;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    cursor: pointer;
+    width:15rem;
+    font-size: 1.8rem;
+    background: rgb(45, 197, 250);
+    border-radius: 0.6rem;
+    text-decoration: none;
+    border-width: 0px;
+
+    padding: 2.4rem 4rem;
+}
+/*-----------------------F A C k-----*/
+
+.boxwhitefaq {
+  width: 80vw;
+  margin: -15px auto 100px;
+  max-width: 1100px;
+  padding: 24px 90px 32px 60px;
+}
+.titlefaq {
+  font-size: 3rem;
+}
+.fulltext {
+  margin-top: 3.2rem;
+  font-size: 1.2em;
+}
+
 }
 
 
@@ -638,4 +709,22 @@ margin: auto;
   }
   .histoyplayers h1{
     margin: -80px auto 0px;
+  }
+
+  
+  .boxwhitefaq {
+    width: 80vw;
+    margin: -15px auto 100px;
+    max-width: 1100px;
+    padding: 24px 180px 32px 60px;
+  }
+  .titlefaq {
+    font-size: 3.5rem;
+  }
+  .fulltext {
+    margin-top: 3.2rem;
+    font-size: 1.2em;
+    line-height: 170%;
+  }
+
 }
