@@ -361,7 +361,8 @@ background: #fff;
 
 .card-title {
   text-decoration: none;
-  font-size: 50px;
+  font-size: 30px;
+  color: #2d354c;
 }
 
 .btnform-card {
@@ -420,7 +421,7 @@ background: #fff;
 .btnprofile-cont {
   display: flex;
   flex-direction: column;
-  
+  margin-right: 50px;
 }
 
 .btnform-delete:hover{
@@ -428,10 +429,10 @@ background: #fff;
   border-color: #2dc5fa;
   border-radius: 6px;
   color: #fff;
-  font-size: 10px;
+  font-size: 30px;
   font-weight: 500;
   line-height: 19px;
-  margin-top: 60px;
+  margin-top: 20px;
   width: 300px;
   height: 50px;
   text-align: center;
@@ -445,7 +446,7 @@ background: #fff;
   font-size: 30px;
   font-weight: 500;
   line-height: 19px;
-  margin-top: 60px;
+  margin-top: 20px;
   width: 300px;
   height: 50px;
   text-align: center;
@@ -490,16 +491,19 @@ background: #fff;
 }
 
 .activity-wrap {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 
 .activity-detail {
   flex-direction: column;
   will-change: 330px;
-  border: solid 2px;
+  border: solid 1px;
   border-color: #2d354c;
   border-radius: 10px;
   margin: 10px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09); 
 }
 
 .activity-pic {
@@ -558,7 +562,7 @@ background: #fff;
   .background-father {
     width: 100vw;
     height: 300px;
-    margin: 10px 10px;
+    margin: 10px;
   }
   .background-father b {
    padding-top: 175px;
@@ -577,6 +581,10 @@ background: #fff;
   .btnform-card {
     height: 50px;
     width: 250px;
+  }
+
+  .btnprofile-cont {
+    margin-left: 40px;
   }
 
 }
@@ -599,7 +607,7 @@ background: #fff;
   /*imagen perfil*/
   .image-profile {
    position: absolute;
-   top: 24%;
+   top: 20%;
    left: 20%;
    width: 400px;
   }
@@ -615,16 +623,31 @@ background: #fff;
   }
 
   .btnform-link {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 30px;
     margin-top: 60px;
     border-radius: 6px;
     width: 200px;
     height: 30px;
-    margin-left: 150px;
+    margin-left: 125px;
     margin-bottom: 100px;
     text-align: center;
+  }
+
+  .btnform-card {
+    height: 50px;
+    width: 250px;
+    margin-left: 75px;
+  }
+
+  .activity-wrap {
+    margin:50px 100px;
+  }
+
+  .list-title {
+    margin-left: 40px;
+    font-size: 60px;
   }
 
   /*botones delete & edit*/
@@ -632,6 +655,7 @@ background: #fff;
   .btnprofile-cont {
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
   }
 
   .btnform-delete:hover{
@@ -642,7 +666,7 @@ background: #fff;
     font-size: 30px;
     font-weight: 500;
     line-height: 19px;
-    margin-top: 60px;
+    margin-top: 20px;
     width: 500px;
     height: 90px;
     text-align: center;
@@ -656,7 +680,7 @@ background: #fff;
     font-size: 30px;
     font-weight: 500;
     line-height: 19px;
-    margin-top: 60px;
+    margin-top: 20px;
     width: 500px;
     height: 90px;
     text-align: center;

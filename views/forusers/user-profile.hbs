@@ -9,7 +9,7 @@
     {{#if user.instructor}}
     <a class="btnform-link" href="/user/new-activity">Create an activity</a>
     {{else}}
-    <p>Become an <a class="btnform-link" href="/user/edit-profile">Instructor.</a></p>
+    <a class="btnform-link" href="/user/edit-profile">Become an Instructor</a>
     {{/if}}
   </div>
 </div>
@@ -50,7 +50,6 @@
           <form action="/user/activity/{{_id}}/book-activity-delete" method="POST">
             <button class="btnform-card" type="submit">DELETE</button>
           </form>
-        </div>
       </div>
   </div>
 {{/each}}
