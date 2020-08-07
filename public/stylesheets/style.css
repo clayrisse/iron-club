@@ -14,7 +14,7 @@
 
 body{ 
   background-color: #f8f8f8;
-  padding: 100px 0px;
+  padding: 100px 0px 0px;
   font: 16px 'Roboto', sans-serif, Helvetica, Arial, sans-serif;
   font-weight: 400;
   margin: 1% auto 10%;
@@ -66,6 +66,13 @@ body{
   background: no-repeat center 5% fixed;
   background-size: cover;
   background-image: url(./../images/fondo-pool.jpg);
+  background-blend-mode: multiply; 
+  height: 99vh;
+}
+.body-amenityback {
+  background: no-repeat center 5% fixed;
+  background-size: cover;
+  background-image: url(./../images/fondo-darkbluebig.jpg);
   background-blend-mode: multiply; 
   height: 99vh;
 }
@@ -162,9 +169,9 @@ body{
   height: 11vh;
 }
 .btnback {
-  height: 8vh;
+  height: 6vh;
   min-height: 15px;
-  max-height: 40px;
+  max-height: 30px;
 }
 
 #btn-back img {
@@ -227,7 +234,7 @@ height: 65vh;
     font-size: 1.8rem;
     background: rgb(45, 197, 250);
     border-radius: 0.6rem;
-    
+    text-decoration: none;
     border-width: 0px;
 
     padding: 2.4rem 4rem;
@@ -252,8 +259,8 @@ background: #fff;
   box-sizing: border-box;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
   
-  margin: 24px auto 200px;
-  max-width: 380px;
+  margin: -12px auto 0px;
+  max-width: 355px;
   padding: 24px 30px 32px;
 
 }
@@ -457,155 +464,86 @@ background: #fff;
 
 /*---------------------faq--------*/
 
-#navbar {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
-  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
-  position: fixed; /* Sticky/fixed navbar */
-  width: 100%;
-  top: 0; /* At the top */
-  z-index: 99;
-}
-
-/* Style the navbar links */
-#navbar a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-/* Style the logo */
-#navbar #logo {
-  font-size: 35px;
-  font-weight: bold;
-  transition: 0.4s;
-}
-
-/* The dropdown container */
-.dropdown {
-  /* float: left; */
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 
 
 /*----------------------amenities-------*/
 
 .histoyplayers {
-  background: no-repeat center 5% fixed;
-  background-size: cover;
-  background-image:  url(./../assets/img/concrete-background.jpg);
-  background-blend-mode: multiply;
-  background-color: rgba(109, 109, 109, 0.507);;
+  /* background: no-repeat center 5% fixed; */
+  /* background-size: cover; */
+  /* background-image:  url(./../assets/img/concrete-background.jpg); */
+  /* background-blend-mode: multiply; */
+  /* background-color: rgba(109, 109, 109, 0.507);; */
   /* height: 70vh; */
-  
-  margin-top: 0px;
+  text-align: center;
+  margin: auto;
   padding: 20px 0px 70px;
 }
-.histoyplayers h2{
-  color: rgb(230, 230, 212);
-  text-shadow: 6px 6px 5px #000000;
+.histoyplayers h1{
+  color: #ffffff;
+  /* text-shadow: 6px 6px 5px #000000; */
   text-align: center;
-  font-family: 'Anton', sans-serif;
-  margin: 0px auto 0px;
+  /* font-family: 'Anton', sans-serif; */
+  margin: -90px auto 0px;
   padding: 3% 0px 3%;
   font-size: 2.5rem;
-  max-width:1000px;
+  max-width:1200px;
+  
 }
+.titleform{
+ 
+  
+  /* width: 100%; */
+  }
+
+
 .histoyplayers h3{
-  color: rgb(230, 230, 212);
-  font-family: 'Anton', sans-serif;
-  text-shadow: 6px 6px 5px #000000;
-  text-align:right;
-  margin: 0px 0px 0px;
-  padding: 0% 5px 0%;
+  color: #2d354c;
+  font-family: 'Roboto;', sans-serif;
+  font-weight: 600;
+  margin: 20px 0px 0px;
   font-size: 1.3rem;
+  font-size: 18px;
+  text-align: center;
+  
+  
 }
 
 .allplayerinfo {
-  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width:1500px;
+  max-width:1300px;
+  margin: auto;
+  
 }
 .playerinfo {
-  background-color: rgba(139, 137, 109, 0.397);
+  background: #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+  margin: 24px auto 0px;
+  padding: 24px 30px 32px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 300px;
-  height: 210px;
-  margin: 15px;
-  /* border: 5px outset; */
- 
+  width: 30%;
+  height: 400px;
+  min-width: 355px
 }
-/* } */
+
 
 .playerinfo p {
   text-align: right;
   font-size: 15px;
-  color: rgb(233, 233, 233);
+  color: #2d354c
   padding: 8px;
   /* width: 100px; */
 }
 .playericonhome {
-width: 120px;
+width: 280px;
 padding-left: 5px;
-
+margin: auto;
 }
 
 
@@ -662,6 +600,9 @@ padding-left: 5px;
 /* Clau, rease this test line */
 
 @media (min-width: 576px) {
+  .form{
+      max-width: 380px;
+  }
   .logosec {
     background-color: rgba(255, 255, 255, 0.767);
    margin-top: -120px;
@@ -695,4 +636,6 @@ padding-left: 5px;
     width: 80%; 
     max-width: 620px;
   }
+  .histoyplayers h1{
+    margin: -80px auto 0px;
 }
