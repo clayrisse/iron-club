@@ -278,27 +278,32 @@ background: #fff;
 
 /*ANGELA*/
 
-.activity-detail {
+/*activity detail*/
+.activitydetail {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 20px;
+  margin-left: 20px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, .09);
+  border-radius: 20px;
 }
 
-.activity-detail div {
+.activitydetail div {
   margin-left: 10px;
   padding: 20px;
   width: 50%;
   text-align: justify;
 }
 
-.activity-detail div h1,
-.activity-detail div b {
+.activitydetail div h1,
+.activitydetail div b {
   color: #2d354c;
 }
 
-.activity-pic {
+.activitypic {
   width: 600px;
+  border-radius: 20px;
 }
 
 .reviews {
@@ -329,7 +334,7 @@ background: #fff;
   padding: 30px;
 }
 
-.textarea-btnform {
+.textareabtnform {
   background: #2d354c;
   border-radius: 6px;
   color: #fff;
@@ -359,7 +364,7 @@ background: #fff;
   border-radius: 6px;
 }
 
-.card-title {
+.cardtitle {
   text-decoration: none;
   font-size: 30px;
   color: #2d354c;
@@ -510,14 +515,7 @@ background: #fff;
   border-radius: 10px;
 }
 
-
-
-
-
-
-
 /*rating*/
-
 .rate {
     float: left;
     height: 46px;
@@ -584,6 +582,26 @@ background: #fff;
 
   .btnprofile-cont {
     margin-left: 40px;
+  }
+
+  /*activity detail*/
+  .activitydetail {
+    width: 300px;
+    flex-direction: column;
+    
+  }
+
+  .activitydetail p {
+    padding: 0;
+  }
+
+  .activitypic {
+    width: 300px;
+  }
+
+  .textareabtnform {
+    width: 10px;
+    margin-left: 30px;
   }
 
 }

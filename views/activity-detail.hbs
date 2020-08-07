@@ -1,7 +1,7 @@
-<div class="activity-detail">
-    <img class="activity-pic" src="{{activity.activitypic}}">
+<div class="activitydetail">
+    <img class="activitypic" src="{{activity.activitypic}}">
     <div>
-        <p class="card-title">{{activity.title}}</p>
+        <p class="cardtitle">{{activity.title}}</p>
         <p><b>Description: </b>{{activity.description}}</p>
         <p><b>Amenity: </b>{{activity.amenity}}</p>
         <p><b>Instructor: </b>{{activity.instructor}}</p>
@@ -9,7 +9,7 @@
         <p><b>Time: </b>{{activity.time}}</p>
         <p><b>Places left: </b>{{activity.participants.length}}/{{activity.maxparticipants}}</p> 
         <form action="/user/activity/{{activity._id}}/book-activity" method="POST">
-            <button type="submit" class="textarea-btnform">JOIN</button>
+            <button type="submit" class="textareabtnform">JOIN</button>
         </form>
     </div>
 </div>
