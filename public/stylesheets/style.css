@@ -231,7 +231,7 @@ height: 65vh;
     font-weight: 500;
     cursor: pointer;
     width:15rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     background: rgb(45, 197, 250);
     border-radius: 0.6rem;
     text-decoration: none;
@@ -582,7 +582,7 @@ background: #fff;
   color: #2d354c;
   font-size: 30px;
   padding-left: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .activity-wrap {
