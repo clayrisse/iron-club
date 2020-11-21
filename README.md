@@ -91,11 +91,11 @@ See our [Trello](https://trello.com/b/xgit0IQmzYu/ironclub) board.
 
 **Git**
 
-[Git]() repository.
+[Git](https://github.com/clayrisse/iron-club) repository.
 
 **Deploy**
 
-[Deploy]().
+[Deploy](https://new-ironclub.herokuapp.com/).
 
 **Slides**
 
